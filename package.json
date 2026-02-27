@@ -15,5 +15,9 @@
     "tailwindcss": "^4.2.1",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "motion-v": "^2.0.0",
+    "ogl": "^1.0.11"
   }
 }

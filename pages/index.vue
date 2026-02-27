@@ -1,12 +1,29 @@
 <template>
   <main class="space-y-16 sm:space-y-20">
-    <section id="top" class="flex items-center py-12 sm:py-16">
-      <div class="mx-auto max-w-2xl px-4 sm:px-6">
+    <section id="top" class="relative flex min-h-[500px] items-center py-12 sm:py-16">
+      <div
+        class="overflow-hidden"
+      >
+          <div>
+            <Dither
+              :wave-speed="0.05"
+              :wave-frequency="3"
+              :wave-amplitude="0.3"
+              :wave-color="[0.15, 0.15, 0.15]"
+              :color-num="3"
+              :pixel-size="2"
+              :disable-animation="false"
+              :enable-mouse-interaction="true"
+              :mouse-radius="1"
+            />
+          </div>
+      </div>
+      <div class="z-10 mx-auto max-w-2xl px-4 sm:px-6">
         <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
           Product Manager · San Diego, California
         </p>
         <h1 class="mb-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-          Turning complex problems into clear solutions
+          Turn complex problems into clear solutions
         </h1>
         <p class="mb-6 max-w-prose text-slate-300">
           Ten-plus years in B2B SaaS. I lead product delivery, UX design, and stakeholder
