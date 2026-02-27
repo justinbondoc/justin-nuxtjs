@@ -18,21 +18,21 @@
             />
           </div>
       </div>
-      <div class="z-10 mx-auto max-w-2xl px-4 sm:px-6">
+      <div class="z-10 mx-auto max-w-5xl px-4 sm:px-6">
+
         <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Product Manager · San Diego, California
+          Justin Bondoc · Product Manager · Ontario, California
         </p>
-        <h1 class="mb-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-          Turn complex problems into clear solutions
-        </h1>
+        <h1 class="mb-3 text-7xl font-semibold tracking-tight">
+          Justin's journey: From Sales to <GradientText>Full-stack Product Management</GradientText>
+        </h1>   
         <p class="mb-6 max-w-prose text-slate-300">
-          Ten-plus years in B2B SaaS. I lead product delivery, UX design, and stakeholder
-          communication — and I prototype and design in Figma and Axure RP to bring ideas to life.
+          I'm Justin and I'm a full-stack product manager with over 10 years of experience in B2B SaaS.
         </p>
         <div class="flex flex-wrap gap-3">
           <a
             href="#about"
-            class="inline-flex items-center justify-center rounded-full border border-transparent bg-indigo-500 px-4 py-2 text-sm font-medium text-slate-50 shadow-sm transition-colors hover:bg-indigo-400"
+            class="inline-flex items-center justify-center rounded-full border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-slate-50 shadow-sm transition-colors hover:bg-indigo-400"
           >
             About me
           </a>
@@ -42,91 +42,27 @@
           >
             View projects
           </a>
-          <a
+          <!-- <a
             href="#contact"
             class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800/80 hover:text-white"
           >
             Get in touch
-          </a>
+          </a> -->
         </div>
       </div>
     </section>
+    <HorizontalScrollStrip />
 
-    <section id="about" class="py-10 sm:py-14 scroll-mt-24">
-      <div class="mx-auto max-w-2xl px-4 sm:px-6">
-        <h2 class="mb-4 text-2xl font-semibold tracking-tight">About</h2>
-        <p class="text-slate-300">
-          Ten-plus years in B2B SaaS. I lead product delivery, UX design, and stakeholder
-          communication — and I prototype and design in Figma and Axure RP to bring ideas to life.
-        </p>
+    <AboutSection />
+    <div class="border-y border-slate-700/70">
+      <ToolsSection />
+    </div>
 
-        <h3 class="mt-8 mb-3 text-lg font-semibold">Skills &amp; Strengths</h3>
-        <div class="mt-2 space-y-4 text-slate-200">
-          <div>
-            <h4 class="text-sm font-semibold">Product Delivery &amp; Roadmapping</h4>
-            <p class="text-sm text-slate-300">
-              Owning end-to-end delivery: prioritization, visibility, and execution from strategy to
-              launch.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold">UX Design &amp; Prototyping</h4>
-            <p class="text-sm text-slate-300">
-              Figma and Axure RP — high-fidelity prototypes, flows, and design that brings ideas to
-              life.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold">Stakeholder Communication &amp; Presentations</h4>
-            <p class="text-sm text-slate-300">
-              Clear, confident communication with execs and cross-functional teams. Turning
-              complexity into clarity.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold">User Research &amp; Strategy</h4>
-            <p class="text-sm text-slate-300">
-              Discovery, interviews, and insight synthesis that inform roadmap and product
-              decisions.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold">Process Optimization</h4>
-            <p class="text-sm text-slate-300">
-              Jira, analytics, and systems thinking — building structure for roadmapping and
-              visibility.
-            </p>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold">Interaction Design &amp; Visual Design</h4>
-            <p class="text-sm text-slate-300">
-              Craft-focused design: interaction patterns, visual hierarchy, and polished product
-              experiences.
-            </p>
-          </div>
-        </div>
 
-        <h3 class="mt-10 mb-3 text-lg font-semibold">Education &amp; Certifications</h3>
-        <div class="space-y-3 text-slate-200">
-          <div>
-            <h4 class="text-sm font-semibold">Education</h4>
-            <p class="text-sm text-slate-300">
-              UC San Diego — B.A. Visual Arts: Media Computing
-            </p>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold">Certifications</h4>
-            <p class="text-sm text-slate-300">
-              Certified Associate in Project Management (CAPM)&reg;
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section id="projects" class="py-10 sm:py-14 scroll-mt-24">
-      <div class="mx-auto max-w-2xl px-4 sm:px-6">
-        <h2 class="mb-4 text-2xl font-semibold tracking-tight">Selected Work</h2>
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected Work</h2>
         <p class="mb-4 text-slate-300">
           A sample of product and design work — strategy, prototyping, and delivery across B2B SaaS.
         </p>
@@ -172,9 +108,10 @@
       </div>
     </section>
 
+    <!--
     <section id="contact" class="py-10 sm:py-14 scroll-mt-24">
-      <div class="mx-auto max-w-2xl px-4 sm:px-6">
-        <h2 class="mb-4 text-2xl font-semibold tracking-tight">Contact</h2>
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Contact</h2>
         <p class="text-slate-300">
           Connect for product, design, or collaboration opportunities.
         </p>
@@ -221,6 +158,7 @@
         </form>
       </div>
     </section>
+    -->
   </main>
 </template>
 
