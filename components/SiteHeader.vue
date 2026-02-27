@@ -4,7 +4,7 @@
       class="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3 text-sm text-slate-200 sm:px-6"
     >
       <a href="#top" class="text-xs font-semibold tracking-[0.16em] text-slate-100 uppercase">
-        Your Name
+        Justin Bondoc
       </a>
       <nav class="flex flex-wrap items-center gap-2 sm:gap-3">
         <a

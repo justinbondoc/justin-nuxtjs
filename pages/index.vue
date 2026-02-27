@@ -3,11 +3,14 @@
     <section id="top" class="flex items-center py-12 sm:py-16">
       <div class="mx-auto max-w-2xl px-4 sm:px-6">
         <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Hi, my name is
+          Product Manager · San Diego, California
         </p>
-        <h1 class="mb-3 text-3xl font-semibold tracking-tight sm:text-4xl">Your Name</h1>
+        <h1 class="mb-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          Turning complex problems into clear solutions
+        </h1>
         <p class="mb-6 max-w-prose text-slate-300">
-          A short tagline about what you do.
+          Ten-plus years in B2B SaaS. I lead product delivery, UX design, and stakeholder
+          communication — and I prototype and design in Figma and Axure RP to bring ideas to life.
         </p>
         <div class="flex flex-wrap gap-3">
           <a
@@ -36,58 +39,119 @@
       <div class="mx-auto max-w-2xl px-4 sm:px-6">
         <h2 class="mb-4 text-2xl font-semibold tracking-tight">About</h2>
         <p class="text-slate-300">
-          This is a placeholder about section. Replace this text with a short bio that describes who
-          you are and what you do.
+          Ten-plus years in B2B SaaS. I lead product delivery, UX design, and stakeholder
+          communication — and I prototype and design in Figma and Axure RP to bring ideas to life.
         </p>
 
-        <h3 class="mt-8 mb-3 text-lg font-semibold">Skills &amp; Technologies</h3>
-        <ul class="mt-1 list-disc space-y-1 pl-5 text-slate-200">
-          <li>JavaScript / TypeScript</li>
-          <li>Vue &amp; Nuxt</li>
-          <li>Frontend architecture</li>
-          <li>Testing &amp; tooling</li>
-        </ul>
+        <h3 class="mt-8 mb-3 text-lg font-semibold">Skills &amp; Strengths</h3>
+        <div class="mt-2 space-y-4 text-slate-200">
+          <div>
+            <h4 class="text-sm font-semibold">Product Delivery &amp; Roadmapping</h4>
+            <p class="text-sm text-slate-300">
+              Owning end-to-end delivery: prioritization, visibility, and execution from strategy to
+              launch.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold">UX Design &amp; Prototyping</h4>
+            <p class="text-sm text-slate-300">
+              Figma and Axure RP — high-fidelity prototypes, flows, and design that brings ideas to
+              life.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold">Stakeholder Communication &amp; Presentations</h4>
+            <p class="text-sm text-slate-300">
+              Clear, confident communication with execs and cross-functional teams. Turning
+              complexity into clarity.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold">User Research &amp; Strategy</h4>
+            <p class="text-sm text-slate-300">
+              Discovery, interviews, and insight synthesis that inform roadmap and product
+              decisions.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold">Process Optimization</h4>
+            <p class="text-sm text-slate-300">
+              Jira, analytics, and systems thinking — building structure for roadmapping and
+              visibility.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold">Interaction Design &amp; Visual Design</h4>
+            <p class="text-sm text-slate-300">
+              Craft-focused design: interaction patterns, visual hierarchy, and polished product
+              experiences.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="mt-10 mb-3 text-lg font-semibold">Education &amp; Certifications</h3>
+        <div class="space-y-3 text-slate-200">
+          <div>
+            <h4 class="text-sm font-semibold">Education</h4>
+            <p class="text-sm text-slate-300">
+              UC San Diego — B.A. Visual Arts: Media Computing
+            </p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold">Certifications</h4>
+            <p class="text-sm text-slate-300">
+              Certified Associate in Project Management (CAPM)&reg;
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="projects" class="py-10 sm:py-14 scroll-mt-24">
       <div class="mx-auto max-w-2xl px-4 sm:px-6">
-        <h2 class="mb-4 text-2xl font-semibold tracking-tight">Projects</h2>
+        <h2 class="mb-4 text-2xl font-semibold tracking-tight">Selected Work</h2>
         <p class="mb-4 text-slate-300">
-          Here are a few placeholder projects. Swap these out with your own work.
+          A sample of product and design work — strategy, prototyping, and delivery across B2B SaaS.
         </p>
 
         <div class="mt-6 grid gap-4 sm:grid-cols-2">
           <article
             class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4"
           >
-            <h3 class="text-lg font-semibold">Project One</h3>
+            <h3 class="text-lg font-semibold">Product &amp; design work</h3>
             <p class="mt-1 text-sm text-slate-200">
-              A short description of what this project is about and what you worked on.
+              End-to-end product delivery, UX flows, and high-fidelity prototypes.
             </p>
-            <p class="mt-3 text-xs font-medium text-slate-400">Nuxt · Vue · TypeScript</p>
+            <p class="mt-3 text-xs font-medium text-slate-400">Figma · Axure RP · Product Strategy</p>
           </article>
 
           <article
             class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4"
           >
-            <h3 class="text-lg font-semibold">Project Two</h3>
+            <h3 class="text-lg font-semibold">Research &amp; strategy</h3>
             <p class="mt-1 text-sm text-slate-200">
-              Another brief description. Highlight your impact and the technologies you used.
+              User research, discovery, and roadmap decisions from insight to execution.
             </p>
-            <p class="mt-3 text-xs font-medium text-slate-400">Node.js · APIs</p>
+            <p class="mt-3 text-xs font-medium text-slate-400">UX Research · Stakeholder Communication · Jira</p>
           </article>
 
           <article
             class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4 sm:col-span-2"
           >
-            <h3 class="text-lg font-semibold">Project Three</h3>
+            <h3 class="text-lg font-semibold">Prototyping &amp; interaction</h3>
             <p class="mt-1 text-sm text-slate-200">
-              One more example project to round things out.
+              Interactive prototypes and visual design for web and product experiences.
             </p>
-            <p class="mt-3 text-xs font-medium text-slate-400">Design · UX</p>
+            <p class="mt-3 text-xs font-medium text-slate-400">
+              Interaction Design · Visual Design · Axure RP
+            </p>
           </article>
         </div>
+
+        <p class="mt-6 text-sm text-slate-400">
+          Portfolio case studies coming soon. Selected projects and detailed work samples available
+          upon request.
+        </p>
       </div>
     </section>
 
@@ -95,9 +159,9 @@
       <div class="mx-auto max-w-2xl px-4 sm:px-6">
         <h2 class="mb-4 text-2xl font-semibold tracking-tight">Contact</h2>
         <p class="text-slate-300">
-          This is a simple, non-functional contact form. Wire it up to your preferred backend or
-          service when you're ready.
+          Connect for product, design, or collaboration opportunities.
         </p>
+        <p class="mt-2 text-sm text-slate-400">LinkedIn: Justin R. Bondoc</p>
 
         <form class="mt-6 grid gap-4" @submit.prevent>
           <label class="grid gap-1 text-sm text-slate-200">
