@@ -5,7 +5,7 @@
         <!-- Left column: header, title, image -->
         <div class="lg:col-span-5">
           <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-            Product Manager. No-Code Enthusiast. World Traveler.
+            Product Manager. Designer. Leader.
           </p>
           <h2 class="mb-8 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Meet Justin: Your Partner in Digital Success
@@ -13,7 +13,7 @@
           <div class="relative h-[min(72vh,400px)] w-full overflow-hidden rounded-lg bg-slate-800/50">
             <img
               v-show="!imageError"
-              src="/images/IndieAndMe.jpeg"
+              src="/images/Indie.png"
               alt="Justin Bondoc"
               class="h-full w-full object-cover object-top"
               @error="imageError = true"

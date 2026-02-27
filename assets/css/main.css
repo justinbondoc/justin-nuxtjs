@@ -6,6 +6,10 @@
     @apply min-h-screen bg-black text-slate-50 antialiased;
   }
 
+  p {
+    @apply text-lg;
+  }
+
   a {
     @apply text-inherit no-underline;
   }
