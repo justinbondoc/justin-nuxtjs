@@ -8,7 +8,7 @@
 
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
         <article
-          class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4"
+          class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-green-500/20 via-slate-900 to-slate-900 p-4"
         >
           <h2 class="text-lg font-semibold">Project One</h2>
           <p class="mt-1 text-sm text-slate-200">
@@ -18,7 +18,7 @@
         </article>
 
         <article
-          class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4"
+          class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-green-500/20 via-slate-900 to-slate-900 p-4"
         >
           <h2 class="text-lg font-semibold">Project Two</h2>
           <p class="mt-1 text-sm text-slate-200">
@@ -28,7 +28,7 @@
         </article>
 
         <article
-          class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4 sm:col-span-2"
+          class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-green-500/20 via-slate-900 to-slate-900 p-4 sm:col-span-2"
         >
           <h2 class="text-lg font-semibold">Project Three</h2>
           <p class="mt-1 text-sm text-slate-200">

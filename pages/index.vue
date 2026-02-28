@@ -32,13 +32,13 @@
         <div class="flex flex-wrap gap-3">
           <a
             href="#about"
-            class="inline-flex items-center justify-center rounded-full border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-slate-50 shadow-sm transition-colors hover:bg-indigo-400"
+            class="inline-flex items-center justify-center rounded-full border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-slate-50 shadow-sm transition-colors hover:bg-green-500"
           >
             About me
           </a>
           <a
             href="#projects"
-            class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800/80 hover:text-white"
+            class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
           >
             View projects
           </a>
@@ -62,14 +62,14 @@
 
     <section id="projects" class="py-10 sm:py-14 scroll-mt-24">
       <div class="mx-auto max-w-5xl px-4 sm:px-6">
-        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected Work</h2>
+        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected <GradientText>Work</GradientText></h2>
         <p class="mb-4 text-slate-300">
           A sample of product and design work — strategy, prototyping, and delivery across B2B SaaS.
         </p>
 
         <div class="mt-6 grid gap-4 sm:grid-cols-2">
           <article
-            class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4"
+            class="rounded-xl border border-neutral-700/70 bg-gradient-to-br from-green-200/20 via-black to-black p-4"
           >
             <h3 class="text-lg font-semibold">Product &amp; design work</h3>
             <p class="mt-1 text-sm text-slate-200">
@@ -79,7 +79,7 @@
           </article>
 
           <article
-            class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4"
+            class="rounded-xl border border-neutral-700/70 bg-gradient-to-br from-lime-200/20 via-black to-black p-4"
           >
             <h3 class="text-lg font-semibold">Research &amp; strategy</h3>
             <p class="mt-1 text-sm text-slate-200">
@@ -89,7 +89,7 @@
           </article>
 
           <article
-            class="rounded-xl border border-slate-700/70 bg-gradient-to-br from-indigo-500/20 via-slate-900 to-slate-900 p-4 sm:col-span-2"
+            class="rounded-xl border border-neutral-700/70 bg-gradient-to-br from-lime-200/20 via-black to-black p-4 sm:col-span-2"
           >
             <h3 class="text-lg font-semibold">Prototyping &amp; interaction</h3>
             <p class="mt-1 text-sm text-slate-200">
@@ -108,57 +108,85 @@
       </div>
     </section>
 
-    <!--
     <section id="contact" class="py-10 sm:py-14 scroll-mt-24">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="mx-auto max-w-5xl px-4 mb-48 sm:px-6">
         <h2 class="mb-4 text-7xl font-semibold tracking-tight">Contact</h2>
         <p class="text-slate-300">
-          Connect for product, design, or collaboration opportunities.
+          Connect for product, design, or sales engineering opportunities.
         </p>
-        <p class="mt-2 text-sm text-slate-400">LinkedIn: Justin R. Bondoc</p>
+        <p class="mt-2 text-sm text-slate-400">
+          LinkedIn:
+          <a
+            href="https://linkedin.com/in/justin-bondoc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-lime-400 underline decoration-lime-500/50 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400"
+          >
+            linkedin.com/in/justin-bondoc
+          </a>
+        </p>
 
-        <form class="mt-6 grid gap-4" @submit.prevent>
+        <form class="mt-6 grid gap-4" @submit.prevent="openMailto">
           <label class="grid gap-1 text-sm text-slate-200">
             Name
             <input
+              v-model="contactName"
               type="text"
               name="name"
               placeholder="Your name"
-              class="mt-1 rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+              class="mt-1 rounded-lg border border-slate-700 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
             />
           </label>
 
           <label class="grid gap-1 text-sm text-slate-200">
             Email
             <input
+              v-model="contactEmail"
               type="email"
               name="email"
               placeholder="you@example.com"
-              class="mt-1 rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+              class="mt-1 rounded-lg border border-slate-700 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
             />
           </label>
 
           <label class="grid gap-1 text-sm text-slate-200">
             Message
             <textarea
+              v-model="contactMessage"
               name="message"
               rows="4"
               placeholder="Write a short message"
-              class="mt-1 rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950"
+              class="mt-1 rounded-lg border border-slate-700 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
             ></textarea>
           </label>
 
           <button
             type="submit"
-            class="inline-flex w-fit items-center justify-center rounded-full border border-transparent bg-indigo-500 px-4 py-2 text-sm font-medium text-slate-50 shadow-sm transition-colors hover:bg-indigo-400 disabled:cursor-not-allowed disabled:opacity-60"
-            disabled
+            class="inline-flex w-fit items-center justify-center rounded-full border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-slate-50 shadow-sm transition-colors hover:bg-lime-500 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Send (placeholder)
+            Send
           </button>
         </form>
       </div>
     </section>
-    -->
+
   </main>
 </template>
+
+<script setup lang="ts">
+const contactName = ref('')
+const contactEmail = ref('')
+const contactMessage = ref('')
+
+function openMailto() {
+  const to = 'jstnbondoc@gmail.com'
+  const parts = [`mailto:${to}`]
+  const params = new URLSearchParams()
+  if (contactName.value) params.set('subject', `Message from ${contactName.value}`)
+  if (contactMessage.value) params.set('body', contactMessage.value)
+  const query = params.toString()
+  const url = query ? `${parts[0]}?${query}` : parts[0]
+  window.location.href = url
+}
+</script>
 

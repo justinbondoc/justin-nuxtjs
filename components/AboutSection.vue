@@ -8,7 +8,7 @@
             Product Manager. Designer. Leader.
           </p>
           <h2 class="mb-8 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Meet Justin: Your Partner in Digital Success
+            Meet Justin: Your Partner in <GradientText>Digital Success</GradientText>
           </h2>
           <div class="relative h-[min(72vh,400px)] w-full overflow-hidden rounded-lg bg-slate-800/50">
             <img

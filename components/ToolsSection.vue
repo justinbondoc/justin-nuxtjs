@@ -7,7 +7,7 @@
         {{ subheading }}
       </p>
       <h2 class="mb-6 text-7xl font-bold tracking-tight text-white">
-        {{ title }}
+        Mastery in <GradientText>Industry-Leading Tools</GradientText>
       </h2>
       <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-slate-300">
         {{ description }}

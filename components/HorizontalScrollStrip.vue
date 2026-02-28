@@ -35,12 +35,15 @@
 
 <script setup lang="ts">
 const defaultItems = [
-  { icon: 'crosshair', label: 'Website Optimization' },
-  { icon: 'hand', label: 'Data-Driven Design' },
-  { icon: 'cart', label: 'Conversion Boosting' },
-  { icon: 'star', label: 'User Experience' },
-  { icon: 'crosshair', label: 'Website Optimization' },
-  { icon: 'hand', label: 'Data-Driven Design' },
+  { icon: 'target', label: 'Sales & Marketing' },
+  { icon: 'brain', label: 'Data-Driven Design' },
+  { icon: 'target', label: 'Product Strategy' },
+  { icon: 'user', label: 'User Experience' },
+  { icon: 'crosshair', label: 'Product Management' },
+  { icon: 'code', label: 'Product Development' },
+  { icon: 'users', label: 'Stakeholder Communication' },
+  { icon: 'list', label: 'Project Management' },
+  { icon: 'video', label: 'Content Creation' },
 ]
 </script>
 
