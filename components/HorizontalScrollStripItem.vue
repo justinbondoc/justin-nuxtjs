@@ -23,17 +23,31 @@
 
 <script setup lang="ts">
 import {
+  Brain,
+  Code,
   Crosshair,
   Hand,
+  List,
   ShoppingCart,
   Star,
+  Target,
+  User,
+  Users,
+  Video,
 } from 'lucide-vue-next'
 
 const iconComponents: Record<string, typeof Crosshair> = {
+  brain: Brain,
+  code: Code,
   crosshair: Crosshair,
   hand: Hand,
+  list: List,
   cart: ShoppingCart,
   star: Star,
+  target: Target,
+  user: User,
+  users: Users,
+  video: Video,
 }
 
 const props = withDefaults(
