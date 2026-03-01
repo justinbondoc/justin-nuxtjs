@@ -85,7 +85,6 @@ const logosRow1 = [
 
 const logosRow2 = [
   { src: '/images/logos/Figma.svg', name: 'Figma', href: 'https://figma.com', variant: 'icon' as const },
-  { src: '/images/logos/Paper.svg', name: 'Paper', href: 'https://paper.design', variant: 'icon' as const },
   { src: '/images/logos/Sketch.svg', name: 'Sketch', href: 'https://sketch.com', variant: 'icon' as const },
   { src: '/images/logos/vue.svg', name: 'Vue', href: 'https://vuejs.org', variant: 'icon' as const },
   { src: '/images/logos/claude.svg', name: 'Claude', href: 'https://anthropic.com', variant: 'icon' as const },
