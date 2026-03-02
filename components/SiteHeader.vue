@@ -1,11 +1,11 @@
 <template>
   <header class="sticky top-0 z-50 bg-black/50 backdrop-blur-xl">
     <div
-      class="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3 text-sm text-slate-200 sm:px-6"
+      class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 text-sm text-slate-200 sm:px-6"
     >
-      <a href="#top" class="text-xs font-semibold tracking-[0.16em] text-slate-100 uppercase">
+      <NuxtLink to="/" class="text-xs font-semibold tracking-[0.16em] text-slate-100 uppercase">
         Justin Bondoc
-      </a>
+      </NuxtLink>
 
       <!-- Desktop nav: visible from md up -->
       <nav class="hidden flex-wrap items-center gap-2 sm:gap-3 md:flex">

@@ -68,43 +68,35 @@
         </p>
 
         <div class="mt-6 grid gap-4 sm:grid-cols-2">
-          <article
-            class="rounded-xl border border-neutral-700/70 bg-gradient-to-br from-green-200/20 via-black to-black p-4"
+          <SpotlightCard
+            v-for="s in studies"
+            :key="s.slug"
+            class="border-neutral-700/70 bg-neutral-900/50"
           >
-            <h3 class="text-lg font-semibold">Product &amp; design work</h3>
-            <p class="mt-1 text-sm text-slate-200">
-              End-to-end product delivery, UX flows, and high-fidelity prototypes.
-            </p>
-            <p class="mt-3 text-xs font-medium text-slate-400">Figma · Axure RP · Product Strategy</p>
-          </article>
-
-          <article
-            class="rounded-xl border border-neutral-700/70 bg-gradient-to-br from-lime-200/20 via-black to-black p-4"
-          >
-            <h3 class="text-lg font-semibold">Research &amp; strategy</h3>
-            <p class="mt-1 text-sm text-slate-200">
-              User research, discovery, and roadmap decisions from insight to execution.
-            </p>
-            <p class="mt-3 text-xs font-medium text-slate-400">UX Research · Stakeholder Communication · Jira</p>
-          </article>
-
-          <article
-            class="rounded-xl border border-neutral-700/70 bg-gradient-to-br from-lime-200/20 via-black to-black p-4 sm:col-span-2"
-          >
-            <h3 class="text-lg font-semibold">Prototyping &amp; interaction</h3>
-            <p class="mt-1 text-sm text-slate-200">
-              Interactive prototypes and visual design for web and product experiences.
-            </p>
-            <p class="mt-3 text-xs font-medium text-slate-400">
-              Interaction Design · Visual Design · Axure RP
-            </p>
-          </article>
+            <NuxtLink
+              :to="`/case-studies/${s.slug}`"
+              class="block focus:outline-none"
+            >
+              <img
+                v-if="s.meta?.coverImage"
+                :src="s.meta.coverImage"
+                :alt="s.meta?.title ?? ''"
+                class="mb-3 aspect-video w-full rounded-lg object-cover"
+              >
+              <h3 class="text-lg font-semibold text-white">
+                {{ s.meta?.title }}
+              </h3>
+              <p class="mt-1 text-sm text-slate-300">
+                {{ s.meta?.oneLiner }}
+              </p>
+              <p v-if="s.meta?.role || s.meta?.tools?.length" class="mt-3 text-xs text-slate-400">
+                <span v-if="s.meta?.role">{{ s.meta.role }}</span>
+                <template v-if="s.meta?.role && s.meta?.tools?.length"> · </template>
+                <span v-if="s.meta?.tools?.length">{{ s.meta.tools.join(', ') }}</span>
+              </p>
+            </NuxtLink>
+          </SpotlightCard>
         </div>
-
-        <p class="mt-6 text-sm text-slate-400">
-          Portfolio case studies coming soon. Selected projects and detailed work samples available
-          upon request.
-        </p>
       </div>
     </section>
 
@@ -174,6 +166,18 @@
 </template>
 
 <script setup lang="ts">
+type CaseStudyMeta = {
+  title?: string
+  oneLiner?: string
+  role?: string
+  tools?: string[]
+  coverImage?: string
+  [key: string]: unknown
+}
+type CaseStudyListItem = { slug: string; meta: CaseStudyMeta }
+const { data } = await useAsyncData<CaseStudyListItem[]>('case-studies-list', () => $fetch<CaseStudyListItem[]>('/api/case-studies'))
+const studies = computed(() => data.value ?? [])
+
 const contactName = ref('')
 const contactEmail = ref('')
 const contactMessage = ref('')
