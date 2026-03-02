@@ -24,10 +24,10 @@
           Justin Bondoc · Product Manager · Ontario, California
         </p>
         <h1 class="mb-3 text-7xl font-semibold tracking-tight">
-          Justin's journey: From Sales to <GradientText>Full-stack Product Management</GradientText>
+          One PM. <GradientText>Discovery. Design. Delivery. Done.</GradientText>
         </h1>   
         <p class="mb-6 max-w-prose text-slate-300">
-          I'm Justin and I'm a full-stack product manager with over 10 years of experience in B2B SaaS.
+          10+ years in B2B SaaS - I lead discovery, design, delivery, and go-to-market. Let's get it done.
         </p>
         <div class="flex flex-wrap gap-3">
           <a
