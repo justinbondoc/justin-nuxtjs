@@ -15,7 +15,7 @@
     "coverImage": "/images/case-studies/placeholder.svg"
   },
   "overview": {
-    "companyContext": "Axure Cloud is the collaboration and hosting platform for Axure RP and Axure Whiteboards, used by product managers, UX designers, and business analysts to share prototypes, specs, and design files. The platform had accumulated UI debt and performance issues as usage scaled.",
+    "companyContext": "Axure Cloud is the collaboration and hosting platform for Axure RP and Axure Whiteboards, used by product managers, UX designers, and business analysts to share prototypes, specs, and design files. The platform had accumulated UI debt and performance issues as usage scaled. A major driver for the refresh was to prepare a modern, cohesive Cloud UI for the upcoming launch of Axure Whiteboards and Documents.",
     "mandate": "Deliver a major update that modernizes the visual design, improves platform speed and responsiveness, and ships a set of features that make files, workspaces, and settings easier to find and manage—without disrupting existing projects or integrations.",
     "constraints": [
       "No breaking changes to existing share links, embeds, or SSO in this release",
@@ -40,7 +40,7 @@
   "problem": {
     "userProblem": "Users found Axure Cloud’s navigation and layout dated and sometimes slow. Locating recent files, switching workspaces, and managing settings required too many clicks; comment discovery and activity visibility were limited.",
     "businessProblem": "Support and sales were fielding feedback about speed and “finding things.” Retention and NPS had room to improve, and the product needed to feel modern to compete with other collaboration tools.",
-    "whyNow": "We had already planned an architecture refresh for performance; leadership approved scope to pair it with a design refresh and a focused set of workflow improvements so one release could move the needle on both perception and daily use.",
+    "whyNow": "The planned release of Axure Whiteboards and Documents required a Cloud experience that could serve as a modern entry point for both new products. We had already planned an architecture refresh for performance; leadership approved scope to pair it with a design refresh and a focused set of workflow improvements so one release could move the needle on both perception and daily use—and be ready for the Whiteboards and Documents launch.",
     "workflowImage": {
       "src": "/images/case-studies/placeholder.svg",
       "caption": "Pre-refresh Axure Cloud: navigation and layout before the update."

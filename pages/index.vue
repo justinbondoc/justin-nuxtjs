@@ -36,6 +36,12 @@
           >
             About me
           </a>
+          <NuxtLink
+            to="/resume"
+            class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          >
+            View resume
+          </NuxtLink>
           <a
             href="#projects"
             class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
@@ -71,7 +77,7 @@
           <SpotlightCard
             v-for="s in studies"
             :key="s.slug"
-            class="border-neutral-700/70 bg-neutral-900/50"
+            class="bg-neutral-900/50"
           >
             <NuxtLink
               :to="`/case-studies/${s.slug}`"
