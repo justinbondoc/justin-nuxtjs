@@ -19,7 +19,7 @@
         <div
           v-for="(cont, i) in overview.myContributions"
           :key="i"
-          class="border-l-2 border-neutral-700 pl-4"
+          class="border-l-2 border-lime-200 pl-4"
         >
           <h4 v-if="cont.title" class="font-medium text-white">
             {{ cont.title }}

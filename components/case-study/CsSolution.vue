@@ -19,7 +19,7 @@
           :key="i"
           class="border-t border-neutral-700/70 pt-8 first:border-t-0 first:pt-0"
         >
-          <h3 v-if="feat.title" class="text-lg font-semibold text-white">
+          <h3 v-if="feat.title" class="text-2xl font-semibold text-white">
             {{ feat.title }}
           </h3>
           <p v-if="feat.problem" class="mt-2 text-sm text-slate-400">

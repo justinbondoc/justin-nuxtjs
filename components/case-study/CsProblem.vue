@@ -1,8 +1,8 @@
 <template>
   <section v-if="problem" class="cs-problem py-10 sm:py-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
-      <h2 class="mb-4 text-xl font-semibold tracking-tight">
-        Problem
+      <h2 class="mb-4 text-4xl font-semibold tracking-tight">
+        <GradientText>Problem</GradientText>
       </h2>
       <p v-if="problem.userProblem" class="text-slate-300">
         {{ problem.userProblem }}

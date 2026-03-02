@@ -9,7 +9,7 @@
       <span v-if="label" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">
         {{ label }}
       </span>
-      <h2 v-if="title" class="mt-1 text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 v-if="title" class="mt-1 text-4xl font-semibold tracking-tight">
         <GradientText>{{ title }}</GradientText>
       </h2>
     </div>

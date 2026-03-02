@@ -1,8 +1,8 @@
 <template>
   <section v-if="meta" class="cs-hero py-10 sm:py-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
-      <h1 v-if="meta.title" class="text-3xl font-semibold tracking-tight sm:text-4xl">
-        {{ meta.title }}
+      <h1 v-if="meta.title" class="text-4xl font-semibold tracking-tight">
+        <GradientText>{{ meta.title }}</GradientText>
       </h1>
       <p v-if="meta.oneLiner" class="mt-2 max-w-2xl text-slate-300">
         {{ meta.oneLiner }}
