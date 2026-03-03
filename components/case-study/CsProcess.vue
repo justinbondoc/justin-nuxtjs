@@ -1,9 +1,18 @@
 <template>
   <section v-if="process" class="cs-process py-10 sm:py-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
-      <p v-if="process.researchApproach" class="text-slate-300">
+      <p v-if="typeof process.researchApproach === 'string'" class="text-slate-300">
         {{ process.researchApproach }}
       </p>
+      <div v-else-if="Array.isArray(process.researchApproach)" class="mt-2 space-y-6">
+        <div v-for="step in process.researchApproach" :key="step.step">
+          <div class="flex items-baseline gap-3">
+            <span class="shrink-0 text-xs tabular-nums text-slate-500">{{ step.step }}</span>
+            <h4 class="font-medium text-white">{{ step.heading }}</h4>
+          </div>
+          <p class="mt-1 pl-7 text-sm text-slate-300">{{ step.body }}</p>
+        </div>
+      </div>
       <template v-if="process.challenges && (process.challenges.technoFunctional?.length || process.challenges.experiential?.length)">
         <h3 class="mt-8 font-semibold uppercase tracking-wider text-slate-400">
           Challenges

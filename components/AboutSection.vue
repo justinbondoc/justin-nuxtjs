@@ -37,7 +37,12 @@
               I started my career as a Sales Engineer where I fell in love with improving user experience. That curiosity pulled me into product management, where I've worn multiple hats across design, product, marketing, and sales.
             </p>
             <p class="leading-relaxed">
-              <span class="font-bold underline decoration-dotted underline-offset-2 text-lime-200">AI has fundamentally changed how I work.</span> I no longer manage products from a distance. I plan and prioritize work, design interfaces, record and publish product videos, and write code to ship and communicate with users.
+              <NuxtLink
+                to="#research"
+                class="font-bold underline decoration-dotted underline-offset-2 hover:decoration-lime-400 transition-colors inline-block"
+              >
+                <GradientText>AI has fundamentally changed how I work.</GradientText>
+              </NuxtLink> I no longer manage products from a distance. I plan and prioritize work, design interfaces, record and publish product videos, and write code to ship and communicate with users.
             </p>
             <p class="leading-relaxed">
               That technical range means I can move fast and speak the language of every team in the room.

@@ -2,6 +2,7 @@
   <main class="py-12 sm:py-16">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 print:max-w-none print:px-0">
       <!-- Header / contact -->
+      <AnimatedContent :delay="0" class="print:opacity-100">
       <header class="mb-8 border-b border-slate-800 pb-6 print:border-b-0">
         <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">
           <GradientText class="text-4xl sm:text-5xl">Justin Bondoc</GradientText>
@@ -35,8 +36,10 @@
           </NuxtLink>
         </div>
       </header>
+      </AnimatedContent>
 
       <!-- Experience -->
+      <AnimatedContent :delay="0.1" class="print:opacity-100">
       <section class="mb-8 break-inside-avoid">
         <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
           Experience
@@ -148,8 +151,10 @@
           </ul>
         </article>
       </section>
+      </AnimatedContent>
 
       <!-- Education & Certifications -->
+      <AnimatedContent :delay="0.15" class="print:opacity-100">
       <section class="mb-8 break-inside-avoid">
         <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
           Education &amp; Certifications
@@ -163,8 +168,10 @@
           </li>
         </ul>
       </section>
+      </AnimatedContent>
 
       <!-- References -->
+      <AnimatedContent :delay="0.2" class="print:opacity-100">
       <section class="break-inside-avoid">
         <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
           References
@@ -173,9 +180,10 @@
           Available upon request, including references from Axure's CEO and CTO.
         </p>
       </section>
+      </AnimatedContent>
     </div>
   </main>
- </template>
+</template>
 
 <script setup lang="ts">
 useSeoMeta({

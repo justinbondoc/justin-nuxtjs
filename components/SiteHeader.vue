@@ -22,12 +22,18 @@
           About
         </NuxtLink>
         <NuxtLink
-          to="/#projects"
-          class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+        to="/#research"
+        class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
-          Projects
-        </NuxtLink>
-        <NuxtLink
+        Research+AI
+      </NuxtLink>
+      <NuxtLink
+        to="/#projects"
+        class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+      >
+        Projects
+      </NuxtLink>
+      <NuxtLink
           to="/resume"
           class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
@@ -122,6 +128,13 @@
           @click="menuOpen = false"
         >
           Projects
+        </NuxtLink>
+        <NuxtLink
+          to="/#research"
+          class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+          @click="menuOpen = false"
+        >
+          Research+AI
         </NuxtLink>
         <NuxtLink
           to="/resume"

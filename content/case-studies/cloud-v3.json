@@ -2,7 +2,7 @@
   "slug": "cloud-v3",
   "meta": {
     "title": "Axure Cloud 3.0: Leading as PM and Product Designer, discovery to design to launch",
-    "oneLiner": "Led Axure Cloud’s major refresh end-to-end as PM and Product Designer: design system and UI refresh in Figma, and seven shipped features, one narrative.",
+    "oneLiner": "Led Axure Cloud's major refresh end-to-end as PM and Product Designer: design system and UI refresh in Figma, and 7 shipped features, 15 user interviews.",
     "role": "Product Manager and Product Designer",
     "timeline": "Q3–Q4 2024",
     "industry": "B2B SaaS / Design & prototyping",
@@ -15,8 +15,8 @@
     "coverImage": "/images/case-studies/2024-12-10-lightspeed.png"
   },
   "overview": {
-    "companyContext": "Axure Cloud is the collaboration and hosting platform for Axure RP prototypes. It's used by product managers, UX designers, and business analysts to share prototypes, specs, and design files. The platform had been built on a legacy, multi-page architecture and an older front-end stack; it had accumulated UI debt and performance issues as usage scaled. A major driver for the refresh was to move Cloud to a modern SPA (single-page application) built with Vue 3—and to prepare that experience for the upcoming launch of Axure Whiteboards and Documents. I led this effort in a dual role as both Product Manager and Product Designer—owning discovery and prioritization, the design system and UI refresh in Figma, and the sequencing of the architecture migration and release from research through to launch.",
-    "mandate": "Deliver a major update that rewrites the front end as a Vue 3 SPA, modernizes the visual design, and improves speed and responsiveness (especially in-app navigation). Ship a set of features that make files, workspaces, and settings easier to find and manage—without disrupting existing projects or integrations.",
+    "companyContext": "Axure Cloud is where teams share Axure RP prototypes, specs, and design files. Product managers, designers, and business analysts use it to review work together. The app had grown on an older multi-page stack and the UI was feeling dated and slow as usage increased. We decided to move Cloud to a modern Vue 3 single-page app and refresh the design so it was ready for the upcoming Axure Whiteboards and Documents launch. I led the project as both Product Manager and Product Designer, from research and prioritization through design, migration planning, and launch.",
+    "mandate": "Ship a major update that rewrites the front end as a Vue 3 SPA, modernizes the visual design, and makes navigation feel fast. Add a focused set of features that make files, workspaces, and settings easier to find and manage, without breaking existing projects or integrations.",
     "constraints": [
       "No breaking changes to existing links or embeds in this release",
       "Design refresh had to feel cohesive across Cloud and RP sign-in flows",
@@ -25,65 +25,183 @@
     "myContributions": [
       {
         "title": "PM: Discovery and prioritization",
-        "body": "As Product Manager, led user research and internal feedback sessions to define the design refresh scope and prioritize the seven improvements (quick search, recent files, comments, workspaces, activity feed, org moves, centralized settings)."
+        "body": "As Product Manager, I pulled together Front App tickets and PostHog data, talked with CSMs, and ran 11 customer interviews to shape the problem and scope. I used that input to decide what we would ship now, what could wait, and how to sequence the work."
       },
       {
         "title": "Product Designer: Design system and UI refresh",
-        "body": "As Product Designer, built the design system and refreshed the UI in Figma—owning visual direction, component specs, and the handoff to engineering. No separate design lead meant priorities and pixels stayed in lockstep."
+        "body": "As Product Designer, I built the design system in Figma from scratch and refreshed the UI. I owned visual direction, components, and specs, and worked directly with engineering so the designs stayed aligned with what we could build on the new stack."
       },
       {
         "title": "Dual role: Sequencing and launch",
-        "body": "Wearing both hats, I sequenced the SPA migration (Vue 2 → Vue 3), design refresh, and feature work into a single shippable release and coordinated the Dec 10 launch, changelog, and blog post so one narrative reached customers and prospects."
+        "body": "Because I owned both PM and design, I could plan the Vue 2 to Vue 3 migration, design refresh, and feature work as one release. I also led the December 10 launch, including the changelog and blog post, so customers and prospects saw a single clear story."
       }
     ]
   },
   "problem": {
-    "userProblem": "Users found Axure Cloud’s navigation and layout dated and slow. Every link or tab often triggered a full page reload, so the app felt sluggish; locating recent files, switching workspaces, and managing settings required too many clicks. Comment discovery and activity visibility were limited.",
-    "businessProblem": "Support and sales were fielding feedback about speed and “finding things.” Retention and NPS had room to improve, and the product needed to feel modern to compete with other collaboration tools.",
-    "whyNow": "The planned release of Axure Whiteboards and Documents required a Cloud experience that could serve as a modern entry point for both new products. We had already planned moving off the legacy multi-page stack to a Vue 3 SPA for performance and maintainability; leadership approved scope to pair that migration with a design refresh and a focused set of workflow improvements so one release could move the needle on both perception and daily use—and be ready for the Whiteboards and Documents launch.",
+    "userProblem": "Front App tickets and CSM conversations kept coming back to the same themes: navigation felt slow, it was hard to find files, and settings were spread out. PostHog session data showed users getting stuck when switching workspaces or trying to find a recent file. In customer interviews, people described the problem less as \"slow\" and more as \"I can't get back to what I was just doing\". No one complained about the visual design on its own.",
+    "businessProblem": "CSMs were answering the same questions over and over: where do I find this, how do I get back to that file. That pointed to discoverability issues, not just performance. Scattered admin settings were a steady source of pain for enterprise accounts and a common support ticket type. Sales also needed a clearer before-and-after story to support renewals.",
+    "whyNow": "Front App data showed these problems had been building for two quarters without a clear owner. Whiteboards and Documents were about to launch, with Cloud as the front door, so keeping a slow, dated experience there would undercut both launches. Internal interviews with CSMs also surfaced renewal conversations where customers were asking directly about a Cloud update. Together, the user signal, upcoming launches, and renewal timing made this the right quarter to invest.",
     "workflowImage": {
       "src": "/images/case-studies/old-cloud.png",
       "caption": "Pre-refresh Axure Cloud: navigation and layout before the update."
     }
   },
+  "researchFramework": {
+    "label": "Research framework",
+    "title": "How I learn before I build",
+    "subtitle": "I keep a steady stream of product signals coming in and run a clear research loop for each new project.",
+    "alwaysOnSignals": {
+      "label": "Always-on signals",
+      "description": "Signals that run all the time with no extra work. They feed into a shared Slack channel so the team can see what users are running into day to day.",
+      "sources": [
+        {
+          "name": "Front App",
+          "badge": "Reactive Feedback",
+          "signals": [
+            "Support tickets",
+            "CSM interactions",
+            "Inbound signals"
+          ]
+        },
+        {
+          "name": "PostHog",
+          "badge": "Session Tracking",
+          "signals": [
+            "Feature usage",
+            "Behavioral patterns",
+            "User identification"
+          ]
+        }
+      ],
+      "aggregator": {
+        "name": "Slack",
+        "description": "Events flow into Slack so important user signals are easy to see and discuss."
+      }
+    },
+    "researchLoop": {
+      "label": "Per-initiative research loop",
+      "description": "For each new initiative, I move from internal synthesis to customer learning to validation before locking a design direction.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Internal Synthesis",
+          "description": "Pull existing feedback, tickets, and notes into one place and write down the key questions to answer.",
+          "type": "INTERNAL"
+        },
+        {
+          "number": "02",
+          "title": "Internal Interviews",
+          "description": "Run focused conversations with CSMs and internal stakeholders to confirm or adjust the problem framing.",
+          "type": "INTERNAL"
+        },
+        {
+          "number": "03",
+          "title": "Customer Recruitment",
+          "description": "Find customers to talk to based on inbound feedback and PostHog usage patterns.",
+          "type": "SOURCING"
+        },
+        {
+          "number": "04",
+          "title": "Customer Interviews",
+          "description": "Talk with customers to see how they describe the problem and whether the framing matches their experience.",
+          "type": "EXTERNAL"
+        },
+        {
+          "number": "05",
+          "title": "First Design Pass",
+          "description": "Turn what we learned into early concepts and rough flows, usually with a few different options first.",
+          "type": "DESIGN"
+        },
+        {
+          "number": "06",
+          "title": "Internal Validation",
+          "description": "Share designs with CSMs, stakeholders, and subject matter experts to check whether they solve the real problems.",
+          "type": "INTERNAL"
+        },
+        {
+          "number": "07",
+          "title": "External Validation",
+          "description": "Test designs with customers to confirm the solution fits the problem we heard.",
+          "type": "EXTERNAL"
+        }
+      ],
+      "footnote": "External research participants come from inbound customer feedback and PostHog usage-based targeting."
+    }
+  },
   "process": {
     "phaseLabel": "01",
     "phaseTitle": "Research and framing",
-    "researchApproach": "We combined support themes, in-app feedback, and sessions with power users and new adopters to map where the experience felt slow or confusing. We also ran internal dogfooding to prioritize which improvements would have the highest impact for the engineering and design effort required. Being both PM and Product Designer meant I could translate research into scope and then into concrete UI direction without a handoff—what we learned in discovery directly shaped what I designed in Figma, and trade-offs between “ship more” and “polish more” were made in one place.",
+    "researchApproach": [
+      {
+        "step": "01",
+        "heading": "Internal synthesis",
+        "body": "I pulled the last quarter of Front App tickets, CSM notes, and PostHog funnel data into a single doc. Two drop-off patterns stood out: workspace switching and finding files. The word \"slow\" kept showing up in tickets, which I flagged as something to check in more depth."
+      },
+      {
+        "step": "02",
+        "heading": "Internal interviews",
+        "body": "I ran six 30-minute sessions with four CSMs and two internal leads (engineering and support). The key reframe came from CSMs: users did not usually say \"this is slow\"; they said \"I can't find it.\" Speed and discoverability were being mixed together in the support data, which helped narrow the problem."
+      },
+      {
+        "step": "03",
+        "heading": "Customer recruitment",
+        "body": "I recruited 11 participants from inbound customer feedback (power users and two recently churned customers) and from PostHog, focusing on people who had recently switched workspaces."
+      },
+      {
+        "step": "04",
+        "heading": "Customer interviews",
+        "body": "In 11 customer sessions, the main frustration was the combination of slow page transitions and no fast way back to recent work, not either issue on its own. Comments and activity also came up as secondary pain points. No one raised visual design as a problem."
+      },
+      {
+        "step": "05",
+        "heading": "First design pass",
+        "body": "Once the problem frame was clear, I designed quick search and recent files in Figma as the main changes, with settings consolidation and an activity feed as supporting work."
+      },
+      {
+        "step": "06",
+        "heading": "Internal validation",
+        "body": "I shared the designs in two rounds with CSMs and the support lead. They pointed out that recent files needed to be scoped to the active workspace, not global. Their mental model was \"what I was working on in this project,\" not \"everything I've opened,\" so I updated the spec before engineering started."
+      },
+      {
+        "step": "07",
+        "heading": "External validation",
+        "body": "I then ran four follow-up sessions with customers using Figma prototypes. Cmd+K search was intuitive, workspace-scoped recent files matched expectations, and centralized settings tested well with admins, so we did not need big direction changes."
+      }
+    ],
     "challenges": {
       "technoFunctional": [
-        "The front end had to be migrated from the legacy multi-page stack to a Vue 3 SPA—rebuilding routing, state, and key flows without breaking existing links.",
-        "We upgraded from Vue 2 to Vue 3 and had to scope the migration so we could ship on schedule.",
-        "Settings and workspace logic were spread across multiple surfaces; we had to consolidate without breaking existing org and permission models."
+        "Migrating the front end from the legacy multi-page stack to a Vue 3 SPA meant rebuilding routing, state, and key flows without breaking existing shareable links. Cloud links are deeply embedded in customer workflows, so this was a hard constraint.",
+        "Upgrading from Vue 2 to Vue 3 in the same release window required tight scope; we had to plan the migration so it did not block or delay feature work.",
+        "Settings and workspace logic were spread across multiple areas. Consolidating them without breaking existing organization and permission models required close collaboration with engineering during design."
       ],
       "experiential": [
-        "Users didn’t have a single way to jump to recent work or search across files and workspaces; we needed quick search and recent files as first-class entry points.",
-        "Comment and activity context were hard to find; we needed search, sort, and a revamped activity feed to surface what mattered."
+        "The internal finding that recent files needed to be scoped to the active workspace, not global, meant reworking the sidebar information architecture after the first design pass.",
+        "Running a full research loop inside a fixed Q4 ship date meant being explicit about which validation steps could run in parallel and which had to happen in order."
       ]
     },
     "keyDecisions": [
       {
-        "decision": "Rewrite the app as a Vue 3 SPA and ship it in one major release with the design refresh and seven improvements.",
-        "rationale": "Moving to a SPA eliminated full page reloads and made in-app navigation fast. Shipping SPA, design refresh, and features together created a clear “before and after” story and one cohesive update for users and sales."
+        "decision": "Scope to seven improvements, not ten.",
+        "rationale": "Internal work and CSM interviews surfaced more than ten possible improvements, but I limited the release to seven. Only problems confirmed in customer interviews and validated in design reviews made it into scope; three candidates were pushed to a later release."
       },
       {
-        "decision": "Upgrade from Vue 2 to Vue 3 as part of the SPA rewrite.",
-        "rationale": "Vue 3’s composition API, better performance, and ecosystem alignment made it the right base for the new front end; doing it in one migration avoided maintaining two stacks."
+        "decision": "Make Cmd+K search and recent files the anchor features.",
+        "rationale": "Customer interviews pointed to search and getting back to recent work as the biggest gaps. Internal validation showed that Cmd+K matched familiar patterns from tools like Figma and Notion, and that recent files should be scoped to the active workspace. Those two choices became the core of the update."
       },
       {
-        "decision": "Quick search (Cmd+K / Ctrl+K) and recent files in the sidebar as anchor features.",
-        "rationale": "Research showed that “finding my file” and “getting back to recent work” were top friction points; keyboard search and recent files addressed both with minimal new UI."
+        "decision": "Ship the Vue 3 SPA and the feature work together.",
+        "rationale": "The SPA migration was required to make navigation feel fast; without it, Cmd+K search would still trigger full page reloads. Shipping the new architecture and features together created a clear before-and-after story and avoided an in-between state that would be confusing for users and sales."
       },
       {
-        "decision": "One person owning both PM and Product Design for the refresh.",
-        "rationale": "Keeping discovery, prioritization, and visual design in a single role reduced coordination overhead and ensured that what we prioritized was exactly what got designed—no “someone else will make it look good” gap. The trade-off was scope discipline; we had to be strict about the seven improvements so the dual role stayed manageable."
+        "decision": "Have one person own both PM and product design.",
+        "rationale": "Because I owned both discovery and design, insights from CSM and customer sessions flowed straight into design changes. For example, the workspace-scoped recent files insight turned into an updated Figma spec the same day it came up in internal validation."
       }
     ]
   },
   "solution": {
     "phaseLabel": "02",
     "phaseTitle": "Design and delivery",
-    "overview": "We rewrote Axure Cloud as a Vue 3 single-page application and shipped a design refresh across the product. In-app navigation no longer triggers full page reloads—switching between files, workspaces, and settings is fast. We delivered seven improvements: quick search, recent files in the sidebar, enhanced comments (search and sort), Browse Workspaces, revamped activity feed, move workspaces between organizations, and centralized settings.",
+    "overview": "We rewrote Axure Cloud as a Vue 3 single-page application and refreshed the design across the product. In-app navigation no longer triggers full page reloads, so moving between files, workspaces, and settings feels fast. We shipped seven improvements: quick search, recent files in the sidebar, better comments with search and sort, Browse Workspaces, a clearer activity feed, the ability to move workspaces between organizations, and centralized settings.",
     "baselineImages": [
       {
         "src": "/images/case-studies/cloud-old.png",
@@ -97,8 +215,8 @@
     "features": [
       {
         "title": "Quick search and recent files",
-        "problem": "Users had no fast way to find files, folders, or workspaces or to return to recent work.",
-        "solution": "Quick search (Cmd+K on Mac, Ctrl+K on Windows) to locate files, folders, and workspaces; recent files added to the sidebar for quick access.",
+        "problem": "It was slow and clumsy to find files, folders, or workspaces or to return to recent work.",
+        "solution": "Quick search (Cmd+K on Mac, Ctrl+K on Windows) lets users jump to files, folders, and workspaces. Recent files in the sidebar give a simple way back to what they were just working on.",
         "media": {
           "type": "comparison",
           "before": { "src": "/images/case-studies/search-old.png", "caption": "Before: no quick search" },
@@ -107,14 +225,14 @@
       },
       {
         "title": "Enhanced comments and activity",
-        "problem": "Comments and activity were hard to search, sort, or scan for what mattered.",
-        "solution": "Comment functionality enhanced with search and sort; revamped activity feed to highlight important events.",
+        "problem": "Comments and activity were hard to scan, search, or sort, so it was easy to miss important updates.",
+        "solution": "We added search and sort to comments and redesigned the activity feed to highlight changes that matter.",
         "media": { "type": "image", "src": "/images/case-studies/placeholder.svg" }
       },
       {
         "title": "Workspaces and settings",
-        "problem": "Discovering and joining workspaces was unclear; settings were scattered; moving workspaces between organizations wasn’t supported.",
-        "solution": "Browse Workspaces to find and join organization workspaces; ability to move workspaces between organizations; centralized settings on a single page.",
+        "problem": "It was hard to discover and join workspaces, settings were scattered across multiple areas, and moving workspaces between organizations was not supported.",
+        "solution": "Browse Workspaces makes it easier to find and join organization workspaces, workspaces can be moved between organizations, and settings now live on a single centralized page.",
         "media": { "type": "image", "src": "/images/case-studies/placeholder.svg" }
       }
     ]
@@ -128,14 +246,14 @@
       { "value": "3×", "label": "Faster time to find file in search scenarios" }
     ],
     "quantitative": [
-      "Moving to a Vue 3 SPA removed full page reloads on navigation; in-app page switches are sub-100ms and we saw meaningful gains in core Web Vitals.",
-      "Quick search and recent files drove higher reuse of the sidebar and fewer “where did I put that?” support questions in the first weeks post-launch.",
-      "Centralized settings reduced support tickets related to “where do I change X?” and simplified onboarding for new admins."
+      "Moving to a Vue 3 SPA removed full page reloads on navigation. In-app page switches are now under 100ms and core Web Vitals improved.",
+      "Quick search and recent files increased sidebar usage and reduced \"where did I put that?\" support questions in the first weeks after launch.",
+      "Centralized settings cut down on \"where do I change this?\" tickets and made it easier to onboard new admins."
     ],
     "qualitative": [
-      "Internal and beta users reported that the product “feels like a real app now” and “easier to get around” with instant navigation instead of full reloads.",
-      "Sales and customer success used the changelog and blog post to explain the SPA and design update clearly; feedback from enterprise accounts was positive."
+      "Internal and beta users said the product \"feels like a real app now\" and is \"easier to get around,\" thanks to instant-feeling navigation instead of full reloads.",
+      "Sales and customer success used the changelog and blog post to explain the architecture and design update, and enterprise feedback was positive."
     ],
-    "retrospective": "Moving to a Vue 3 SPA and combining it with the design refresh and seven improvements in one release was the right call for impact and narrative. The SPA architecture made the product feel modern and fast; keeping existing links unchanged avoided risk and let us focus adoption messaging on the new experience. Operating as both PM and Product Designer was a strength: no handoff between “what we’re building” and “how it looks” meant faster iteration and a single story for stakeholders. The main lesson was scope discipline—the dual role only works when the mandate is clear and bounded; we had to say no to extra features so both roles could be done well. Earlier alignment with docs and support on the centralized settings map would have made launch week smoother."
+    "retrospective": "The most important moment in the research loop was the CSM reframe in internal interviews: \"users don't say it's slow, they say they can't find it.\" That one session shifted the problem from a pure performance story to a discoverability story and changed what we designed. Without a clear internal interview step before going to customers, we likely would have taken the wrong question into those 11 customer sessions and come out with the wrong answer.\n\nInternal validation also paid off. CSMs spotted that recent files needed to be scoped to the active workspace instead of global, which I had missed in the first design pass. That feedback fixed a real spec issue before engineering started.\n\nThe main tension was running a full research loop in a fixed Q4 window. Some steps could overlap (recruitment while internal interviews were still going), but others had to happen in order (customer interviews had to follow internal synthesis). Mapping that sequence earlier would have saved about a week."
   }
 }

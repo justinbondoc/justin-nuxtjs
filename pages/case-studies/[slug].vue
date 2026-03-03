@@ -1,6 +1,8 @@
 <template>
   <main class="pb-20">
-    <CaseStudyCsHero v-if="study?.meta" :meta="study.meta" />
+    <AnimatedContent v-if="study?.meta" :delay="0" :threshold="0.2">
+      <CaseStudyCsHero :meta="study.meta" />
+    </AnimatedContent>
 
     <CaseStudyCsNav
       v-if="study?.meta && sectionList.length"
@@ -9,46 +11,56 @@
     />
 
     <div v-if="study?.overview" id="overview" class="scroll-mt-24">
-      <CaseStudyCsOverview :overview="study.overview" />
+      <AnimatedContent :delay="0.05">
+        <CaseStudyCsOverview :overview="study.overview" />
+      </AnimatedContent>
     </div>
 
     <div v-if="study?.problem" id="problem" class="scroll-mt-24">
-      <CaseStudyCsProblem :problem="study.problem" />
+      <AnimatedContent :delay="0.05">
+        <CaseStudyCsProblem :problem="study.problem" />
+      </AnimatedContent>
     </div>
 
     <template v-if="study?.process">
       <div id="process" class="scroll-mt-24">
-        <CaseStudyCsPhaseHeader
-          v-if="study.process.phaseLabel || study.process.phaseTitle"
-          :label="study.process.phaseLabel"
-          :title="study.process.phaseTitle"
-          :bg-image="study.process.bgImage"
-        />
-        <CaseStudyCsProcess :process="study.process" />
+        <AnimatedContent :delay="0.05">
+          <CaseStudyCsPhaseHeader
+            v-if="study.process.phaseLabel || study.process.phaseTitle"
+            :label="study.process.phaseLabel"
+            :title="study.process.phaseTitle"
+            :bg-image="study.process.bgImage"
+          />
+          <CaseStudyCsProcess :process="study.process" />
+        </AnimatedContent>
       </div>
     </template>
 
     <template v-if="study?.solution">
       <div id="solution" class="scroll-mt-24">
-        <CaseStudyCsPhaseHeader
-          v-if="study.solution.phaseLabel || study.solution.phaseTitle"
-          :label="study.solution.phaseLabel"
-          :title="study.solution.phaseTitle"
-          :bg-image="study.solution.bgImage"
-        />
-        <CaseStudyCsSolution :solution="study.solution" />
+        <AnimatedContent :delay="0.05">
+          <CaseStudyCsPhaseHeader
+            v-if="study.solution.phaseLabel || study.solution.phaseTitle"
+            :label="study.solution.phaseLabel"
+            :title="study.solution.phaseTitle"
+            :bg-image="study.solution.bgImage"
+          />
+          <CaseStudyCsSolution :solution="study.solution" />
+        </AnimatedContent>
       </div>
     </template>
 
     <template v-if="study?.results">
       <div id="results" class="scroll-mt-24">
-        <CaseStudyCsPhaseHeader
-          v-if="study.results.phaseLabel || study.results.phaseTitle"
-          :label="study.results.phaseLabel"
-          :title="study.results.phaseTitle"
-          :bg-image="study.results.bgImage"
-        />
-        <CaseStudyCsResults :results="study.results" />
+        <AnimatedContent :delay="0.05">
+          <CaseStudyCsPhaseHeader
+            v-if="study.results.phaseLabel || study.results.phaseTitle"
+            :label="study.results.phaseLabel"
+            :title="study.results.phaseTitle"
+            :bg-image="study.results.bgImage"
+          />
+          <CaseStudyCsResults :results="study.results" />
+        </AnimatedContent>
       </div>
     </template>
   </main>

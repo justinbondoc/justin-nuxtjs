@@ -1,16 +1,16 @@
 <template>
   <main class="space-y-16 sm:space-y-20">
-    <section id="top" class="relative flex min-h-[500px] items-center py-12 sm:py-16">
+    <section id="top" class="relative flex min-h-[70vh] items-center pt-12 sm:pt-16">
       <div
         class="overflow-hidden"
       >
-          <div>
+          <div class="min-h-[70vh]">
             <Dither
-              :wave-speed="0.05"
+              :wave-speed="0.06"
               :wave-frequency="3"
               :wave-amplitude="0.3"
               :wave-color="[0.15, 0.15, 0.15]"
-              :color-num="3"
+              :color-num="2.8"
               :pixel-size="2"
               :disable-animation="false"
               :enable-mouse-interaction="true"
@@ -18,14 +18,25 @@
             />
           </div>
       </div>
-      <div class="z-10 mx-auto max-w-5xl px-4 sm:px-6">
-
+      <AnimatedContent
+        :distance="100"
+        direction="vertical"
+        :reverse="false"
+        :duration="0.8"
+        ease="power3.out"
+        :initial-opacity="0"
+        :animate-opacity="true"
+        :scale="1"
+        :threshold="0.1"
+        :delay="0"
+        class="z-10 mx-auto max-w-5xl px-4 sm:px-6"
+      >
         <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
           Justin Bondoc · Product Manager · Ontario, California
         </p>
         <h1 class="mb-3 text-7xl font-semibold tracking-tight">
           One PM. <GradientText>Discovery. Design. Delivery. Done.</GradientText>
-        </h1>   
+        </h1>
         <p class="mb-6 max-w-prose text-slate-300">
           10+ years in B2B SaaS - I lead discovery, design, delivery, and go-to-market. Let's get it done.
         </p>
@@ -48,6 +59,12 @@
           >
             View projects
           </a>
+          <a
+            href="#research"
+            class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          >
+            Research process
+          </a>
           <!-- <a
             href="#contact"
             class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800/80 hover:text-white"
@@ -55,19 +72,142 @@
             Get in touch
           </a> -->
         </div>
-      </div>
+      </AnimatedContent>
     </section>
-    <HorizontalScrollStrip />
 
-    <AboutSection />
-    <div class="border-y border-slate-700/70">
+    <AnimatedContent
+      :distance="100"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.8"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0.1"
+    >
+      <HorizontalScrollStrip />
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="60"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.6"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="100"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.8"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <AboutSection />
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="60"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.6"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <SectionSplitter />
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="100"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.8"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
       <ToolsSection />
-    </div>
+    </AnimatedContent>
 
+    <AnimatedContent
+      :distance="60"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.6"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <SectionSplitter />
+    </AnimatedContent>
 
+    <AnimatedContent
+      :distance="100"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.8"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <ResearchProcessSection />
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="60"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.6"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <SectionSplitter />
+    </AnimatedContent>
 
     <section id="projects" class="py-10 sm:py-14 scroll-mt-24">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <AnimatedContent
+        :distance="100"
+        direction="vertical"
+        :reverse="false"
+        :duration="0.8"
+        ease="power3.out"
+        :initial-opacity="0"
+        :animate-opacity="true"
+        :scale="1"
+        :threshold="0.1"
+        :delay="0"
+        class="mx-auto max-w-5xl px-4 sm:px-6"
+      >
         <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected <GradientText>Work</GradientText></h2>
         <p class="mb-4 text-slate-300">
           A sample of product and design work — strategy, prototyping, and delivery across B2B SaaS.
@@ -96,19 +236,59 @@
                 {{ s.meta?.oneLiner }}
               </p>
               <p v-if="s.meta?.role || s.meta?.tools?.length" class="mt-3 text-xs text-slate-400">
-                <span v-if="s.meta?.role">{{ s.meta.role }}</span>
+                <span v-if="s.meta?.role">{{ s.meta?.role }}</span>
                 <template v-if="s.meta?.role && s.meta?.tools?.length"> · </template>
                 <span v-if="s.meta?.tools?.length">{{ s.meta.tools.join(', ') }}</span>
               </p>
             </NuxtLink>
           </SpotlightCard>
         </div>
-      </div>
+      </AnimatedContent>
     </section>
 
-    <section id="contact" class="py-10 sm:py-14 scroll-mt-24">
-      <div class="mx-auto max-w-5xl px-4 mb-48 sm:px-6">
-        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Contact</h2>
+    <AnimatedContent
+      :distance="60"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.6"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <SectionSplitter />
+    </AnimatedContent>
+
+    <section id="contact" class="relative min-h-[600px] py-10 sm:py-14 scroll-mt-24 overflow-hidden">
+      <div class="absolute inset-0">
+        <Dither
+          :wave-speed="0.06"
+          :wave-frequency="3"
+          :wave-amplitude="0.3"
+          :wave-color="[0.15, 0.15, 0.15]"
+          :color-num="2.8"
+          :pixel-size="2"
+          :disable-animation="false"
+          :enable-mouse-interaction="true"
+          :mouse-radius="1"
+        />
+      </div>
+      <AnimatedContent
+        :distance="100"
+        direction="vertical"
+        :reverse="false"
+        :duration="0.8"
+        ease="power3.out"
+        :initial-opacity="0"
+        :animate-opacity="true"
+        :scale="1"
+        :threshold="0.1"
+        :delay="0"
+        class="relative z-10 mx-auto max-w-5xl px-4 mb-48 sm:px-6"
+      >
+        <h2 class="mb-4 text-7xl font-semibold tracking-tight"><GradientText>Contact</GradientText></h2>
         <p class="text-slate-300">
           Connect for product, design, or sales engineering opportunities.
         </p>
@@ -165,7 +345,7 @@
             Send
           </button>
         </form>
-      </div>
+      </AnimatedContent>
     </section>
 
   </main>
