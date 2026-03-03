@@ -72,13 +72,13 @@
 const logosRow1 = [
   { src: '/images/logos/ClaudeCode.svg', name: 'ClaudeCode', href: 'https://claude.com', variant: 'wordmark' as const },
   { src: '/images/logos/Tailwind.svg', name: 'Tailwind CSS', href: 'https://tailwindcss.com', variant: 'wordmark' as const },
+  { src: '/images/logos/Cursor.svg', name: 'Cursor', href: 'https://cursor.com', variant: 'wordmark' as const },
   { src: '/images/logos/Linear.svg', name: 'Linear', href: 'https://linear.app', variant: 'wordmark' as const },
   { src: '/images/logos/Jira.svg', name: 'Jira', href: 'https://atlassian.com/software/jira', variant: 'wordmark' as const },
   { src: '/images/logos/Confluence.svg', name: 'Confluence', href: 'https://atlassian.com/software/confluence', variant: 'wordmark' as const },
   { src: '/images/logos/Productboard.svg', name: 'Productboard', href: 'https://productboard.com', variant: 'wordmark' as const },
   { src: '/images/logos/PostHog.svg', name: 'PostHog', href: 'https://posthog.com', variant: 'wordmark' as const },
   { src: '/images/logos/webflow.svg', name: 'Webflow', href: 'https://webflow.com', variant: 'wordmark' as const },
-  { src: '/images/logos/Cursor.svg', name: 'Cursor', href: 'https://cursor.com', variant: 'wordmark' as const },
   { src: '/images/logos/nuxt.svg', name: 'Nuxt', href: 'https://nuxt.com', variant: 'wordmark' as const },
   { src: '/images/logos/Screen%20Studio.svg', name: 'Screen Studio', href: 'https://screen.studio', variant: 'wordmark' as const },
 ]
