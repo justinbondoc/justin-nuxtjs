@@ -5,7 +5,7 @@
         {{ process.researchApproach }}
       </p>
       <template v-if="process.challenges && (process.challenges.technoFunctional?.length || process.challenges.experiential?.length)">
-        <h3 class="mt-8 text-4xl font-semibold uppercase tracking-wider text-slate-400">
+        <h3 class="mt-8 font-semibold uppercase tracking-wider text-slate-400">
           Challenges
         </h3>
         <ul v-if="process.challenges.technoFunctional?.length" class="mt-2 list-inside list-disc space-y-1 text-sm text-slate-300">
@@ -20,8 +20,8 @@
         </ul>
       </template>
       <div v-if="process.keyDecisions?.length" class="mt-8 space-y-4">
-        <h3 class="text-4xl font-semibold uppercase tracking-wider text-slate-400">
-          <GradientText>Key decisions</GradientText>
+        <h3 class=" font-semibold uppercase tracking-wider text-slate-400">
+          Key decisions
         </h3>
         <div
           v-for="(kd, i) in process.keyDecisions"

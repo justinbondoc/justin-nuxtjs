@@ -17,6 +17,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@img-comparison-slider/vue": "^8.0.0",
+    "gsap": "^3.14.2",
     "lucide-vue-next": "^0.575.0",
     "motion-v": "^2.0.0",
     "ogl": "^1.0.11"
