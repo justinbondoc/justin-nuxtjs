@@ -101,9 +101,15 @@
           </article>
         </div>
 
-        <p class="mt-6 text-sm text-slate-400">
-          Portfolio case studies coming soon. Selected projects and detailed work samples available
-          upon request.
+        <p class="mt-6 text-sm text-slate-400">Portfolio case studies
+          <a
+            href="https://github.com/justinbondoc/justin-nuxtjs/tree/vnext"
+            target="_blank"
+            rel="noopener noreferrer"
+            class=" text-lime-400 underline decoration-lime-500/50 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400"
+          >
+            coming soon.
+          </a>
         </p>
       </div>
     </section>
