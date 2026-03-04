@@ -242,6 +242,14 @@
               </p>
             </NuxtLink>
           </SpotlightCard>
+          <SpotlightCard
+            class="bg-neutral-900/50 border border-dotted rounded-lg border-neutral-700"
+            :spotlight-color="'rgba(148, 163, 184, 0.12)'"
+          >
+            <div class="flex flex-col my-auto h-full items-center justify-center text-center">
+              <p class="text-sm font-medium text-slate-800">More soon...</p>
+            </div>
+          </SpotlightCard>
         </div>
       </AnimatedContent>
     </section>
@@ -264,15 +272,15 @@
     <section id="contact" class="relative min-h-[600px] py-10 sm:py-14 scroll-mt-24 overflow-hidden">
       <div class="absolute inset-0">
         <Dither
-        :wave-speed="0.05"
-      :wave-frequency="3"
-      :wave-amplitude="0.3"
-      :wave-color="[0.15, 0.15, 0.15]"
-      :color-num="4"
-      :pixel-size="2"
-      :disable-animation="false"
-      :enable-mouse-interaction="true"
-      :mouse-radius="1"
+        :wave-speed="0.06"
+              :wave-frequency="3"
+              :wave-amplitude="0.3"
+              :wave-color="[0.15, 0.15, 0.15]"
+              :color-num="2.8"
+              :pixel-size="2"
+              :disable-animation="false"
+              :enable-mouse-interaction="true"
+              :mouse-radius="1"
         />
       </div>
       <AnimatedContent
@@ -312,7 +320,7 @@
               type="text"
               name="name"
               placeholder="Your name"
-              class="mt-1 rounded-lg border border-slate-700 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
+              class="mt-1 rounded-lg border border-white/50 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
             />
           </label>
 
@@ -323,7 +331,7 @@
               type="email"
               name="email"
               placeholder="you@example.com"
-              class="mt-1 rounded-lg border border-slate-700 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
+              class="mt-1 rounded-lg border border-white/50 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
             />
           </label>
 
@@ -334,7 +342,7 @@
               name="message"
               rows="4"
               placeholder="Write a short message"
-              class="mt-1 rounded-lg border border-slate-700 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
+              class="mt-1 rounded-lg border border-white/50 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
             ></textarea>
           </label>
 
