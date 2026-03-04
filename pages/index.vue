@@ -210,7 +210,7 @@
       >
         <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected <GradientText>Work</GradientText></h2>
         <p class="mb-4 text-slate-300">
-          A sample of product and design work — strategy, prototyping, and delivery across B2B SaaS.
+          A sample of product and design work
         </p>
 
         <div class="mt-6 grid gap-4 sm:grid-cols-2">
@@ -360,6 +360,8 @@
 </template>
 
 <script setup lang="ts">
+import { getCaseStudiesList } from '~/composables/useCaseStudy'
+
 type CaseStudyMeta = {
   title?: string
   oneLiner?: string
@@ -369,7 +371,7 @@ type CaseStudyMeta = {
   [key: string]: unknown
 }
 type CaseStudyListItem = { slug: string; meta: CaseStudyMeta }
-const { data } = await useAsyncData<CaseStudyListItem[]>('case-studies-list', () => $fetch<CaseStudyListItem[]>('/api/case-studies'))
+const { data } = await useAsyncData<CaseStudyListItem[]>('case-studies-list', () => Promise.resolve(getCaseStudiesList()))
 const studies = computed(() => data.value ?? [])
 
 const contactName = ref('')
