@@ -338,7 +338,7 @@ function tagClass(tag: PhaseTag) {
     return 'border-sky-500/40 bg-sky-500/10 text-sky-200'
   }
   if (tag === 'External') {
-    return 'border-indigo-500/40 bg-indigo-500/10 text-indigo-200'
+    return 'border-green-500/40 bg-green-500/10 text-green-200'
   }
   if (tag === 'Design') {
     return 'border-fuchsia-500/40 bg-fuchsia-500/10 text-fuchsia-200'

@@ -54,10 +54,10 @@
             View resume
           </NuxtLink>
           <a
-            href="#projects"
+            href="#portfolio"
             class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
           >
-            View projects
+            View portfolio
           </a>
           <a
             href="#research"
@@ -194,7 +194,7 @@
       <SectionSplitter />
     </AnimatedContent>
 
-    <section id="projects" class="py-10 sm:py-14 scroll-mt-24">
+    <section id="portfolio" class="py-10 sm:py-14 scroll-mt-24">
       <AnimatedContent
         :distance="100"
         direction="vertical"
