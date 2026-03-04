@@ -32,12 +32,23 @@
           <h3 v-if="feat.title" class="text-2xl font-semibold text-white">
             {{ feat.title }}
           </h3>
+          <p v-if="feat.shortDescription" class="mt-1 text-sm text-slate-300">
+            {{ feat.shortDescription }}
+          </p>
           <p v-if="feat.problem" class="mt-2 text-sm text-slate-400">
             {{ feat.problem }}
           </p>
           <p v-if="feat.solution" class="mt-2 text-slate-300">
             {{ feat.solution }}
           </p>
+          <NuxtLink
+            v-if="feat.skillPage"
+            :to="feat.skillPage"
+            class="mt-3 inline-flex items-center gap-1.5 text-sm text-green-400 hover:text-green-300 transition-colors"
+          >
+            View skill source
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </NuxtLink>
           <div v-if="feat.media && (feat.media.src || (feat.media.type === 'comparison' && feat.media.before?.src && feat.media.after?.src))" class="mt-4">
             <ImgComparisonSlider
               v-if="feat.media.type === 'comparison' && feat.media.before?.src && feat.media.after?.src"

@@ -17,6 +17,9 @@ importers:
       lucide-vue-next:
         specifier: ^0.575.0
         version: 0.575.0(vue@3.5.29)
+      marked:
+        specifier: ^17.0.4
+        version: 17.0.4
       motion-v:
         specifier: ^2.0.0
         version: 2.0.0(@vueuse/core@14.2.1(vue@3.5.29))(vue@3.5.29)
@@ -2506,6 +2509,11 @@ packages:
 
   magicast@0.5.2:
     resolution: {integrity: sha512-E3ZJh4J3S9KfwdjZhe2afj6R9lGIN5Pher1pF39UGrXRqq/VDaGVIGN13BjHd2u8B61hArAGOnso7nBOouW3TQ==}
+
+  marked@17.0.4:
+    resolution: {integrity: sha512-NOmVMM+KAokHMvjWmC5N/ZOvgmSWuqJB8FoYI019j4ogb/PeRMKoKIjReZ2w3376kkA8dSJIP8uD993Kxc0iRQ==}
+    engines: {node: '>= 20'}
+    hasBin: true
 
   mdn-data@2.0.28:
     resolution: {integrity: sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==}
@@ -6225,6 +6233,8 @@ snapshots:
       '@babel/parser': 7.29.0
       '@babel/types': 7.29.0
       source-map-js: 1.2.1
+
+  marked@17.0.4: {}
 
   mdn-data@2.0.28: {}
 

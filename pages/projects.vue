@@ -1,9 +1,9 @@
 <template>
   <section class="py-10 sm:py-14">
     <div class="mx-auto max-w-2xl px-4 sm:px-6">
-      <h1 class="mb-4 text-2xl font-semibold tracking-tight">Projects</h1>
+      <h1 class="mb-4 text-2xl font-semibold tracking-tight">Portfolio</h1>
       <p class="mb-4 text-slate-300">
-        Here are a few placeholder projects. Swap these out with your own work.
+        Here are a few selected pieces. Swap these out with your own work.
       </p>
 
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
