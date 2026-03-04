@@ -37,16 +37,21 @@
               I started my career as a Sales Engineer where I fell in love with improving user experience. That curiosity pulled me into product management, where I've worn multiple hats across design, product, marketing, and sales.
             </p>
             <p class="leading-relaxed">
-              I don't just manage products from a distance. I plan and prioritize work, design interfaces, record and publish product videos, and write the code to ship and communicate with users.
+              <NuxtLink
+                to="#research"
+                class="font-bold underline decoration-dotted underline-offset-2 hover:decoration-lime-400 transition-colors inline-block"
+              >
+                <GradientText>AI has fundamentally changed how I work.</GradientText>
+              </NuxtLink> I no longer manage products from a distance. I plan and prioritize work, design interfaces, record and publish product videos, and write code to ship and communicate with users.
             </p>
             <p class="leading-relaxed">
               That technical range means I can move fast and speak the language of every team in the room.
             </p>
             <p class="leading-relaxed">
-              I have a restless drive to learn, whether it's a new AI tool, a new framework, or a new way of solving an old problem.
+              I have a restless drive to learn, whether it's how to best leverage AI, a new framework, or a new way of solving an old problem.
             </p>
             <p class="leading-relaxed">
-              Outside of work, I love fitness and hanging with my kiddos.
+              Outside of work, I live by the three R's - running, reading, and rock climbing. Apparently that's a 30s thing. I'll take it. 💪            
             </p>
           </div>
         </div>

@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@img-comparison-slider/vue':
+        specifier: ^8.0.0
+        version: 8.0.0
+      gsap:
+        specifier: ^3.14.2
+        version: 3.14.2
       lucide-vue-next:
         specifier: ^0.575.0
         version: 0.575.0(vue@3.5.29)
@@ -377,6 +383,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@img-comparison-slider/vue@8.0.0':
+    resolution: {integrity: sha512-1gir2JlS8ZQLK2lzk4gIp6fuNvOR8UFXaPiHnBrF6fEwIXdMiI5veobi479FV6Tekj8CIhK+pLUPs+NvcOHd5g==}
 
   '@ioredis/commands@1.5.1':
     resolution: {integrity: sha512-JH8ZL/ywcJyR9MmJ5BNqZllXNZQqQbnVZOqpPQqE1vHiFgAw4NHbvE0FOduNU8IX9babitBT46571OnPTT0Zcw==}
@@ -2148,6 +2157,9 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
+  gsap@3.14.2:
+    resolution: {integrity: sha512-P8/mMxVLU7o4+55+1TCnQrPmgjPKnwkzkXOK1asnR9Jg2lna4tEY5qBJjMmAaOBDDZWtlRjBXjLa0w53G/uBLA==}
+
   gzip-size@7.0.0:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -2204,6 +2216,9 @@ packages:
 
   image-meta@0.2.2:
     resolution: {integrity: sha512-3MOLanc3sb3LNGWQl1RlQlNWURE5g32aUphrDyFeCsxBTk08iE3VNe4CwsUZ0Qs1X+EfX0+r29Sxdpza4B+yRA==}
+
+  img-comparison-slider@8.0.7:
+    resolution: {integrity: sha512-BALViPtL2FgcCa9K8KkrmhWuyeDkVu6XVwBoRm9pU8Y6P1rjw31zujuEMBWTz2w6W30zzdQZNTccvg7J9Gf/LQ==}
 
   impound@1.0.0:
     resolution: {integrity: sha512-8lAJ+1Arw2sMaZ9HE2ZmL5zOcMnt18s6+7Xqgq2aUVy4P1nlzAyPtzCDxsk51KVFwHEEdc6OWvUyqwHwhRYaug==}
@@ -4022,6 +4037,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.3':
     optional: true
+
+  '@img-comparison-slider/vue@8.0.0':
+    dependencies:
+      img-comparison-slider: 8.0.7
 
   '@ioredis/commands@1.5.1': {}
 
@@ -5881,6 +5900,8 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
+  gsap@3.14.2: {}
+
   gzip-size@7.0.0:
     dependencies:
       duplexer: 0.1.2
@@ -5939,6 +5960,8 @@ snapshots:
   ignore@7.0.5: {}
 
   image-meta@0.2.2: {}
+
+  img-comparison-slider@8.0.7: {}
 
   impound@1.0.0:
     dependencies:

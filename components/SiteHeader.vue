@@ -1,38 +1,50 @@
 <template>
-  <header class="sticky top-0 z-50 bg-black/50 backdrop-blur-xl">
+  <header class="site-chrome-header sticky top-0 z-50 bg-black/50 backdrop-blur-xl">
     <div
-      class="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3 text-sm text-slate-200 sm:px-6"
+      class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 text-sm text-slate-200 sm:px-6"
     >
-      <a href="#top" class="text-xs font-semibold tracking-[0.16em] text-slate-100 uppercase">
+      <NuxtLink to="/" class="text-xs font-semibold tracking-[0.16em] text-slate-100 uppercase">
         Justin Bondoc
-      </a>
+      </NuxtLink>
 
       <!-- Desktop nav: visible from md up -->
       <nav class="hidden flex-wrap items-center gap-2 sm:gap-3 md:flex">
-        <a
-          href="#top"
+        <NuxtLink
+          to="/#top"
           class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
           Home
-        </a>
-        <a
-          href="#about"
+        </NuxtLink>
+        <NuxtLink
+          to="/#about"
           class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
           About
-        </a>
-        <a
-          href="#projects"
+        </NuxtLink>
+        <NuxtLink
+        to="/#research"
+        class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+        >
+        Research+AI
+      </NuxtLink>
+      <NuxtLink
+        to="/#projects"
+        class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+      >
+        Projects
+      </NuxtLink>
+      <NuxtLink
+          to="/resume"
           class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
-          Projects
-        </a>
-        <a
-          href="#contact"
+          Resume
+        </NuxtLink>
+        <NuxtLink
+          to="/#contact"
           class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
           Contact
-        </a>
+        </NuxtLink>
       </nav>
 
       <!-- Mobile: hamburger button -->
@@ -96,34 +108,48 @@
         class="absolute left-0 right-0 top-full z-50 flex flex-col gap-1 border-t border-slate-800/80 bg-black/95 px-4 py-3 backdrop-blur-xl md:hidden"
         aria-label="Mobile navigation"
       >
-        <a
-          href="#top"
+        <NuxtLink
+          to="/#top"
           class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
           @click="menuOpen = false"
         >
           Home
-        </a>
-        <a
-          href="#about"
+        </NuxtLink>
+        <NuxtLink
+          to="/#about"
           class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
           @click="menuOpen = false"
         >
           About
-        </a>
-        <a
-          href="#projects"
+        </NuxtLink>
+        <NuxtLink
+          to="/#projects"
           class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
           @click="menuOpen = false"
         >
           Projects
-        </a>
-        <a
-          href="#contact"
+        </NuxtLink>
+        <NuxtLink
+          to="/#research"
+          class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+          @click="menuOpen = false"
+        >
+          Research+AI
+        </NuxtLink>
+        <NuxtLink
+          to="/resume"
+          class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+          @click="menuOpen = false"
+        >
+          Resume
+        </NuxtLink>
+        <NuxtLink
+          to="/#contact"
           class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
           @click="menuOpen = false"
         >
           Contact
-        </a>
+        </NuxtLink>
       </nav>
     </Transition>
   </header>

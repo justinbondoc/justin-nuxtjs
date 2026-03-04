@@ -15,3 +15,20 @@
   }
 }
 
+@media print {
+  @page {
+    margin: 0.75in;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .site-chrome-header {
+    display: none !important;
+  }
+}
+
+

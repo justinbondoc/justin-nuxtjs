@@ -1,0 +1,66 @@
+<template>
+  <section v-if="solution" class="cs-solution pt-10 pb-6 sm:pt-14 sm:pb-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <p v-if="solution.overview" class="text-slate-300">
+        {{ solution.overview }}
+      </p>
+      <div v-if="solution.baselineImages?.length" class="mt-8 space-y-6">
+        <ImgComparisonSlider
+          v-if="solution.baselineImages.length === 2"
+          :before-src="solution.baselineImages[0].src"
+          :after-src="solution.baselineImages[1].src"
+          :before-alt="solution.baselineImages[0].caption ?? 'Before'"
+          :after-alt="solution.baselineImages[1].caption ?? 'After'"
+          :caption="undefined"
+        />
+        <template v-else>
+          <CaseStudyCsMediaBlock
+            v-for="(img, i) in solution.baselineImages"
+            :key="i"
+            type="image"
+            :src="img.src"
+            :caption="img.caption"
+          />
+        </template>
+      </div>
+      <div v-if="solution.features?.length" class="mt-10 space-y-10">
+        <article
+          v-for="(feat, i) in solution.features"
+          :key="i"
+          class="border-t border-neutral-700/70 pt-8 first:border-t-0 first:pt-0"
+        >
+          <h3 v-if="feat.title" class="text-2xl font-semibold text-white">
+            {{ feat.title }}
+          </h3>
+          <p v-if="feat.problem" class="mt-2 text-sm text-slate-400">
+            {{ feat.problem }}
+          </p>
+          <p v-if="feat.solution" class="mt-2 text-slate-300">
+            {{ feat.solution }}
+          </p>
+          <div v-if="feat.media && (feat.media.src || (feat.media.type === 'comparison' && feat.media.before?.src && feat.media.after?.src))" class="mt-4">
+            <ImgComparisonSlider
+              v-if="feat.media.type === 'comparison' && feat.media.before?.src && feat.media.after?.src"
+              :before-src="feat.media.before.src"
+              :after-src="feat.media.after.src"
+              :before-alt="feat.media.before.caption ?? 'Before'"
+              :after-alt="feat.media.after.caption ?? 'After'"
+              :caption="feat.media.caption"
+            />
+            <CaseStudyCsMediaBlock
+              v-else-if="feat.media.src"
+              :type="feat.media.type || 'image'"
+              :src="feat.media.src"
+            />
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+defineProps({
+  solution: { type: Object, default: null },
+})
+</script>
