@@ -100,7 +100,7 @@ const logosRow1: LogoItem[] = [
   { src: '/images/logos/Confluence.svg', name: 'Confluence', href: 'https://atlassian.com/software/confluence', variant: 'wordmark' as const, tooltip: 'I keep specs, runbooks, and decisions in one place.' },
   { src: '/images/logos/Productboard.svg', name: 'Productboard', href: 'https://productboard.com', variant: 'wordmark' as const, tooltip: 'I use it to manage feature requests and prioritize product-level work.' },
   { src: '/images/logos/PostHog.svg', name: 'PostHog', href: 'https://posthog.com', variant: 'wordmark' as const, tooltip: 'I measure product usage and analyze user behavior.' },
-  { src: '/images/logos/webflow.svg', name: 'Webflow', href: 'https://webflow.com', variant: 'wordmark' as const, tooltip: 'I build marketing sites and prototypes without touching code.' },
+  // { src: '/images/logos/webflow.svg', name: 'Webflow', href: 'https://webflow.com', variant: 'wordmark' as const, tooltip: 'I build marketing sites and prototypes without touching code.' },
   { src: '/images/logos/nuxt.svg', name: 'Nuxt', href: 'https://nuxt.com', variant: 'wordmark' as const, tooltip: 'I use it to build this site and axure.com.' },
   { src: '/images/logos/Screen%20Studio.svg', name: 'Screen Studio', href: 'https://screen.studio', variant: 'wordmark' as const, tooltip: 'I record product demos and how-tos with smooth cursors.' },
   { src: '/images/logos/Jitter.svg', name: 'Jitter', href: 'https://jitter.video', variant: 'wordmark' as const, tooltip: 'I make short motion graphics and Loom-style intros.' },
