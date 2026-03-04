@@ -1,5 +1,5 @@
 <template>
-  <section v-if="results" class="cs-results py-10 sm:py-14">
+  <section v-if="results" class="cs-results pt-10 pb-6 sm:pt-14 sm:pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <!-- 3 big numbers with descriptors -->
       <div

@@ -67,6 +67,13 @@ defineProps({
   --handle-position-start: 50%;
 }
 
+/* Green focus ring when dragging (override browser default blue) */
+.img-comparison-slider-wrapper :deep(img-comparison-slider.img-comparison-slider:focus),
+.img-comparison-slider-wrapper :deep(img-comparison-slider.img-comparison-slider:focus-visible) {
+  outline: 2px solid rgb(34, 197, 94);
+  outline-offset: 2px;
+}
+
 /* Custom handle (replaces default when slot="handle" is used) */
 .comparison-handle {
   position: absolute;

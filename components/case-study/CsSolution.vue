@@ -1,5 +1,5 @@
 <template>
-  <section v-if="solution" class="cs-solution py-10 sm:py-14">
+  <section v-if="solution" class="cs-solution pt-10 pb-6 sm:pt-14 sm:pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <p v-if="solution.overview" class="text-slate-300">
         {{ solution.overview }}

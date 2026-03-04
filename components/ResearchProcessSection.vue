@@ -7,7 +7,7 @@
       </p>
       <h2 class="mb-4 text-4xl font-semibold tracking-tight text-center text-white sm:text-5xl lg:text-6xl">
         How I research before I build<br>
-        <GradientText>and how AI helps</GradientText>
+        <GradientText>and how AI makes it faster</GradientText>
       </h2>
       <p class="margin-auto text-center text-slate-300">
         I keep a steady stream of product signals coming in and run a clear research loop for each

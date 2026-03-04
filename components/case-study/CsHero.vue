@@ -1,5 +1,5 @@
 <template>
-  <section v-if="meta" class="cs-hero py-10 sm:py-14">
+  <section v-if="meta" class="cs-hero pt-10 pb-6 sm:pt-14 sm:pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <h1 v-if="meta.title" class="text-4xl font-semibold tracking-tight">
         <GradientText>{{ meta.title }}</GradientText>

@@ -264,15 +264,15 @@
     <section id="contact" class="relative min-h-[600px] py-10 sm:py-14 scroll-mt-24 overflow-hidden">
       <div class="absolute inset-0">
         <Dither
-          :wave-speed="0.06"
-          :wave-frequency="3"
-          :wave-amplitude="0.3"
-          :wave-color="[0.15, 0.15, 0.15]"
-          :color-num="2.8"
-          :pixel-size="2"
-          :disable-animation="false"
-          :enable-mouse-interaction="true"
-          :mouse-radius="1"
+        :wave-speed="0.05"
+      :wave-frequency="3"
+      :wave-amplitude="0.3"
+      :wave-color="[0.15, 0.15, 0.15]"
+      :color-num="4"
+      :pixel-size="2"
+      :disable-animation="false"
+      :enable-mouse-interaction="true"
+      :mouse-radius="1"
         />
       </div>
       <AnimatedContent

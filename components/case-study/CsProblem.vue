@@ -1,5 +1,5 @@
 <template>
-  <section v-if="problem" class="cs-problem py-10 sm:py-14">
+  <section v-if="problem" class="cs-problem pt-10 pb-6 sm:pt-14 sm:pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <h2 class="mb-4 text-4xl font-semibold tracking-tight">
         <GradientText>Problem</GradientText>

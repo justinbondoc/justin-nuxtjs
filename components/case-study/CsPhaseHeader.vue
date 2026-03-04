@@ -1,5 +1,5 @@
 <template>
-  <header v-if="label || title" class="cs-phase-header py-8 sm:py-12">
+  <header v-if="label || title" class="cs-phase-header pt-8 pb-4 sm:pt-12 sm:pb-6">
     <div
       v-if="bgImage"
       class="absolute inset-0 -z-10 bg-cover bg-center opacity-30"

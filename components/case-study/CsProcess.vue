@@ -1,5 +1,5 @@
 <template>
-  <section v-if="process" class="cs-process py-10 sm:py-14">
+  <section v-if="process" class="cs-process pt-10 pb-6 sm:pt-14 sm:pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <p v-if="typeof process.researchApproach === 'string'" class="text-slate-300">
         {{ process.researchApproach }}

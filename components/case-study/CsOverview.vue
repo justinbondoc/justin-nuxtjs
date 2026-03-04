@@ -1,5 +1,5 @@
 <template>
-  <section v-if="overview" class="cs-overview py-10 sm:py-14">
+  <section v-if="overview" class="cs-overview pt-10 pb-6 sm:pt-14 sm:pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <div v-if="overview.companyContext">
         <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400">

@@ -1,12 +1,9 @@
 <template>
-  <div
-    ref="containerRef"
-    class="dither-container absolute inset-0 min-h-[200px] w-full h-full"
-  />
+  <div ref="containerRef" class="w-full h-full absolute top-0 left-0" />
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, watch, ref, nextTick } from 'vue';
+import { onMounted, onUnmounted, watch, useTemplateRef } from 'vue';
 import { Renderer, Program, Mesh, Triangle, Color } from 'ogl';
 import type { OGLRenderingContext } from 'ogl';
 
@@ -34,14 +31,13 @@ const props = withDefaults(defineProps<DitherProps>(), {
   mouseRadius: 1
 });
 
-const containerRef = ref<HTMLDivElement | null>(null);
+const containerRef = useTemplateRef<HTMLDivElement>('containerRef');
 
 let renderer: Renderer | null = null;
 let gl: OGLRenderingContext | null = null;
 let program: Program | null = null;
 let mesh: Mesh | null = null;
 let animationId: number | null = null;
-let resizeObserver: ResizeObserver | null = null;
 let currentMouse = [0, 0];
 let targetMouse = [0, 0];
 
@@ -238,9 +234,8 @@ const resize = () => {
   if (!containerRef.value || !renderer || !program) return;
 
   const container = containerRef.value;
-  const clientWidth = container.clientWidth || 1;
-  const clientHeight = container.clientHeight || 1;
-  renderer.setSize(Math.max(1, clientWidth), Math.max(1, clientHeight));
+  const { clientWidth, clientHeight } = container;
+  renderer.setSize(clientWidth, clientHeight);
   program.uniforms.resolution.value[0] = clientWidth;
   program.uniforms.resolution.value[1] = clientHeight;
 };
@@ -304,22 +299,15 @@ const initializeScene = () => {
 
   cleanup();
 
-  try {
-    const container = containerRef.value;
-    const w = Math.max(1, container.clientWidth || 300);
-    const h = Math.max(1, container.clientHeight || 150);
-    renderer = new Renderer({ alpha: true, width: w, height: h });
-    gl = renderer.gl;
-    if (!gl) {
-      console.error('[Dither] WebGL context not available');
-      return;
-    }
-    gl.clearColor(0, 0, 0, 0);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  const container = containerRef.value;
+  renderer = new Renderer({ alpha: true });
+  gl = renderer.gl;
+  gl.clearColor(0, 0, 0, 0);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
-    const geometry = new Triangle(gl);
-    program = new Program(gl, {
+  const geometry = new Triangle(gl);
+  program = new Program(gl, {
     vertex: vertexShader,
     fragment: fragmentShader,
     uniforms: {
@@ -340,11 +328,9 @@ const initializeScene = () => {
   mesh = new Mesh(gl, { geometry, program });
 
   const canvas = gl.canvas as HTMLCanvasElement;
-  canvas.style.display = 'block';
-  canvas.style.position = 'absolute';
-  canvas.style.inset = '0';
   canvas.style.width = '100%';
   canvas.style.height = '100%';
+  canvas.style.display = 'block';
 
   container.appendChild(canvas);
 
@@ -354,12 +340,8 @@ const initializeScene = () => {
     container.addEventListener('mouseleave', handleMouseLeave);
   }
 
-    resize();
-    animationId = requestAnimationFrame(update);
-  } catch (err) {
-    console.error('[Dither] Failed to initialize:', err);
-    cleanup();
-  }
+  resize();
+  animationId = requestAnimationFrame(update);
 };
 
 const cleanup = () => {
@@ -367,8 +349,6 @@ const cleanup = () => {
     cancelAnimationFrame(animationId);
     animationId = null;
   }
-  resizeObserver?.disconnect();
-  resizeObserver = null;
 
   window.removeEventListener('resize', resize);
 
@@ -394,31 +374,8 @@ const cleanup = () => {
   targetMouse = [0, 0];
 };
 
-const tryInit = () => {
-  if (!containerRef.value) return;
-  const { clientWidth, clientHeight } = containerRef.value;
-  if (clientWidth > 0 && clientHeight > 0) {
-    initializeScene();
-    return true;
-  }
-  return false;
-};
-
 onMounted(() => {
-  nextTick(() => {
-    requestAnimationFrame(() => {
-      if (tryInit()) return;
-      resizeObserver = new ResizeObserver(() => {
-        if (tryInit()) {
-          resizeObserver?.disconnect();
-          resizeObserver = null;
-        }
-      });
-      if (containerRef.value) {
-        resizeObserver.observe(containerRef.value);
-      }
-    });
-  });
+  initializeScene();
 });
 
 onUnmounted(() => {
