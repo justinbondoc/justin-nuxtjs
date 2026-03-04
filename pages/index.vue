@@ -360,6 +360,8 @@
 </template>
 
 <script setup lang="ts">
+import { getCaseStudiesList } from '~/composables/useCaseStudy'
+
 type CaseStudyMeta = {
   title?: string
   oneLiner?: string
@@ -369,7 +371,7 @@ type CaseStudyMeta = {
   [key: string]: unknown
 }
 type CaseStudyListItem = { slug: string; meta: CaseStudyMeta }
-const { data } = await useAsyncData<CaseStudyListItem[]>('case-studies-list', () => $fetch<CaseStudyListItem[]>('/api/case-studies'))
+const { data } = await useAsyncData<CaseStudyListItem[]>('case-studies-list', () => Promise.resolve(getCaseStudiesList()))
 const studies = computed(() => data.value ?? [])
 
 const contactName = ref('')
