@@ -210,7 +210,7 @@
       >
         <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected <GradientText>Work</GradientText></h2>
         <p class="mb-4 text-slate-300">
-          A sample of product and design work — strategy, prototyping, and delivery across B2B SaaS.
+          A sample of product and design work
         </p>
 
         <div class="mt-6 grid gap-4 sm:grid-cols-2">

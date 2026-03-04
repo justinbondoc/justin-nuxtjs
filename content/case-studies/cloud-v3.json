@@ -16,7 +16,7 @@
   },
   "overview": {
     "companyContext": "Axure Cloud is where teams share Axure RP prototypes, specs, and design files. Product managers, designers, and business analysts use it to review work together. Axure runs a small product team, so PMs own discovery, prioritization, and design together, there is no handoff between PM and designer because they are the same person. The app had grown on an older multi-page stack and the UI was feeling dated and slow as usage increased. We decided to move Cloud to a modern Vue 3 single-page app and refresh the design so it was ready for the beta release of Axure Whiteboards and Documents. I led the project as both Product Manager and Product Designer, from research and prioritization through design, migration planning, and launch.",
-    "mandate": "One mandate was to turn Cloud from a place people would publish and share files—like Dropbox—into a place they could create files and be productive in, like Notion. The other was to ship a major update that rewrites the front end as a Vue 3 SPA, modernizes the visual design, and makes navigation feel fast, with a focused set of features that make files, workspaces, and settings easier to find and manage, without breaking existing projects or integrations.",
+    "mandate": "One mandate was to turn Cloud from a place people would publish and share files - like Dropbox - into a place they could create files and be productive in, like Notion. The other was to ship a major update that rewrites the front end as a Vue 3 SPA, modernizes the visual design, and makes navigation feel fast, with a focused set of features that make files, workspaces, and settings easier to find and manage, without breaking existing projects or integrations.",
     "constraints": [
       "No breaking changes to existing links or embeds in this release",
       "Design refresh had to feel cohesive across Cloud and RP sign-in flows",
@@ -177,7 +177,7 @@
       },
       {
         "decision": "Make the sidebar the anchor of the refresh, with Whiteboards in mind.",
-        "rationale": "Whiteboards was coming as a full-screen canvas experience, so the sidebar would become the primary way users navigate and return to files without losing context. We prioritized a revamped sidebar—collapsible for focus, with quick search (Cmd+K) and workspace-scoped recent files—so it could support the Whiteboards workflow and feel like the reliable home base for the rest of Cloud."
+        "rationale": "Whiteboards was coming as a full-screen canvas experience, so the sidebar would become the primary way users navigate and return to files without losing context. We prioritized a revamped sidebar - collapsible for focus, with quick search (Cmd+K) and workspace-scoped recent files - so it could support the Whiteboards workflow and feel like the reliable home base for the rest of Cloud."
       },
       {
         "decision": "Ship the Vue 3 SPA and the feature work together.",
@@ -185,7 +185,7 @@
       },
       {
         "decision": "Replace dialogs with popovers wherever possible.",
-        "rationale": "In line with the speed mandate, we audited every modal dialog in Cloud and converted inline actions—changing workspace ownership, moving files, renaming—to popovers. Dialogs halt the user's flow and feel heavy for small tasks. Popovers keep users in context and make common actions feel instant, which reinforced the overall goal of making Cloud feel like a fast, modern app."
+        "rationale": "In line with the speed mandate, we audited every modal dialog in Cloud and converted inline actions - changing workspace ownership, moving files, renaming - to popovers. Dialogs halt the user's flow and feel heavy for small tasks. Popovers keep users in context and make common actions feel instant, which reinforced the overall goal of making Cloud feel like a fast, modern app."
       },
       {
         "decision": "Cut the Notifications Inbox from scope.",
