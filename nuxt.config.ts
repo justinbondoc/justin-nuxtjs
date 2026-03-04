@@ -5,6 +5,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-03-03',
   devtools: { enabled: true },
 
+  experimental: {
+    appManifest: false,
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
