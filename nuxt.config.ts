@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
+        { rel: 'icon', type: 'image/png', href: '/images/favicon.png' },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap',
