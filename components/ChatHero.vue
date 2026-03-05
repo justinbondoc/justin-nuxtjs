@@ -43,7 +43,7 @@
           <textarea
             v-model="query"
             rows="4"
-            placeholder="Hi! 👋 Ask me anything about my experience, projects, or how I think..."
+            placeholder="Hi! 👋 Ask me anything about my experience, case-studies, hobbies, or how I think..."
             class="chat-font min-h-[120px] w-full resize-y rounded-2xl border border-lime-700 bg-black/70 px-4 py-3 pr-12 pb-10 text-sm text-slate-50 placeholder:text-slate-500 focus:border-lime-500/50 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950 sm:min-h-[100px]"
             autocomplete="off"
             @keydown="onKeydown"
