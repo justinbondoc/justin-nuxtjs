@@ -5,8 +5,24 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-03-03',
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap',
+        },
+      ],
+    },
+  },
+
   experimental: {
     appManifest: false,
+  },
+
+  runtimeConfig: {
+    anthropicApiKey: '',
+    databaseUrl: '', // Neon connection string (optional). Set NUXT_DATABASE_URL in .env to log chat submissions.
   },
 
   vite: {
