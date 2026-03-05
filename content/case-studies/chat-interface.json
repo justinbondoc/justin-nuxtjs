@@ -1,0 +1,148 @@
+{
+  "slug": "chat-interface",
+  "meta": {
+    "title": "Building an AI-powered chat to help you know me",
+    "oneLiner": "I added a ChatGPT-style assistant to my portfolio so visitors could ask about me. $5 to start, markdown for context, Neon to track usage. A way to stand out and keep building while job searching.",
+    "role": "Solo builder / PM",
+    "timeline": "Day 6 after layoff news (March 2025)",
+    "industry": "Personal portfolio / B2B SaaS",
+    "tools": ["Anthropic API", "Cursor", "Nuxt 3", "Vercel AI SDK", "Neon", "Tailwind"],
+    "heroMedia": {
+      "type": "image",
+      "src": "/images/case-studies/chat-showcase.png",
+      "aspectRatio": "16/9"
+    },
+    "coverImage": "/images/case-studies/chat-showcase.png"
+  },
+  "overview": {
+    "companyContext": "I found out I was getting laid off from Axure six days ago. I started this website the day I found out. I had always wanted to build my own website. Now I had a reason and a deadline: stand out while looking for the next role. I had a lot of ideas. One felt both relevant and a little bold: what if my site had its own way to \"talk to me\"? Not a contact form. A chatbot that knew about me and could point people to my work. Would it be super useful? Probably not. Would it be novel and would I learn a ton? Yes. So I built the chat interface today.",
+    "mandate": "I wanted the chatbot to help get me a job. Really. I wanted it to refer visitors to the right case studies and resources so that the time I put into those pieces actually got seen. If the bot could redirect people to the work I care about, it would have done its job. I also wanted to keep building on top of the job search. Creating and shipping something would keep me sane.",
+    "constraints": [
+      "I was about to not have a job. I was hesitant to spend money on a \"feature\" that might not result in anything. I almost gave up. In the end: $5 to create an Anthropic API key at console.anthropic.com. I capped spend at $1 so I wouldn't blow the budget.",
+      "I had to move fast. I used Cursor to get the starting pieces working with a sample page, then tweaked from there.",
+      "I needed the LLM to know about me without over-engineering. I'd heard of RAG but didn't really know how it worked or how to implement it. I wanted to keep things simple. So I used a single markdown context file the API reads from. Later I wired it to point people at case studies and surface information from there."
+    ],
+    "myContributions": [
+      {
+        "title": "Chat API and context",
+        "body": "Backend: Nuxt server route that streams from Claude (Sonnet 4.5). System prompt tells the model it's my assistant, to keep answers short, to stick to the context file, and to suggest case studies. Context is one markdown file (about me, resume, tools, case study summaries). I kept it simple instead of reaching for something like RAG that I'd have had to learn from scratch."
+      },
+      {
+        "title": "Hero and chat UI",
+        "body": "Homepage hero with a textarea and send button that routes to /chat?q=... . Chat page: back link, message list (user bubbles and plain assistant responses), and an input with send button. Styled to match the rest of the site. Enter to send, Shift+Enter for newline."
+      },
+      {
+        "title": "Rate limiting and cost guardrails",
+        "body": "In-memory rate limit per IP (e.g. 20 requests per minute) so one user can't blow up the Anthropic bill. Returns 429 with a message when over limit."
+      },
+      {
+        "title": "Storing submissions in Neon",
+        "body": "I wanted to know if anyone ever used it. Optional Neon Postgres: when NUXT_DATABASE_URL is set, each user message (and optionally the assistant response) is written to a chat_submissions table. No auth, just a log so I can see what people ask."
+      }
+    ]
+  },
+  "problem": {
+    "userProblem": "As a candidate, I needed a way to stand out. A static portfolio was fine. A portfolio where you could actually ask me questions and get pointed to the right case study or resource felt different. I also needed to keep creating. Job searching can be draining. Building something real kept me in \"do\" mode.",
+    "businessProblem": "I didn't know if a chat feature would be worth the cost or the time. I was literally about to be unemployed. Spending money on an API felt risky. I had to decide: ship something that might not \"result in anything\" or play it safe. I decided $5 was survivable. Anthropic's own limits let me cap spend at $1 so I could try it without fear.",
+    "whyNow": "The layoff made the website urgent. It also made the \"should I spend money on this?\" question real. Doing it anyway and capping spend was the compromise. And I wanted to prove to myself I could still ship: curiosity and being a do-er are what I pride myself on.",
+    "workflowImage": {
+      "src": "/images/case-studies/before-website.png",
+      "caption": "Before: a static site. After: ask a question on the hero, get an answer that points you to case studies and resources."
+    }
+  },
+  "process": {
+    "phaseLabel": "01",
+    "phaseTitle": "Deciding what to build and how to pay for it",
+    "researchApproach": "I didn't do formal research. I had a constraint (stand out, learn, stay sane) and an idea (chat that knows about me). I validated the cost in my head: $5 to start, $1 cap. I validated the learning: Cursor + Anthropic + streaming + Neon would teach me the full stack of a modern AI feature.",
+    "challenges": {
+      "technoFunctional": [
+        "Getting the first stream working: correct model ID, API key in runtime config, and Vercel AI SDK's toUIMessageStreamResponse so the Vue chat component could consume the stream.",
+        "Choosing context strategy: I didn't know exactly how RAG worked. I wanted to keep things simple. A single markdown file that the server reads and injects into the system prompt was enough and stayed editable.",
+        "Storing submissions without slowing the response: insert the user message (and later the assistant response) without blocking the stream. Rate limiting had to run before any LLM call so abuse didn't burn budget."
+      ],
+      "experiential": [
+        "The mental block around spending money. I had to tell myself: it's $5, I'll survive. Once the cap was set at $1, I could stop worrying and focus on building.",
+        "Deciding what the bot was for: not just \"answer questions\" but \"get me a job\" by routing people to the right work. That shaped the system prompt and the tone."
+      ]
+    },
+    "keyDecisions": [
+      {
+"decision": "Use a single markdown context file instead of something like RAG.",
+      "rationale": "I didn't know how to implement RAG and wanted to keep things simple. One file (about me, resume, tools, case study blurbs) is easy to update and enough for the model to stay on script."
+      },
+      {
+        "decision": "Cap Anthropic spend at $1 and add in-app rate limiting.",
+        "rationale": "So I could ship without fear of a runaway bill. Rate limiting per IP keeps a single user from exhausting the cap."
+      },
+      {
+        "decision": "Store submissions in Neon when DATABASE_URL is set.",
+        "rationale": "I wanted to see if anyone used it. Optional Neon means the feature works with or without it; when configured, I get a simple log of questions (and optionally answers)."
+      },
+      {
+        "decision": "Design the bot to refer people to case studies and direct contact.",
+        "rationale": "The goal was to get me a job. The bot's job is to surface the right work and suggest next steps (case studies, resume, contact), not to be a generic FAQ."
+      }
+    ],
+    "pivots": "I'd heard RAG was how you feed docs to an LLM but didn't know the details. I went with a single context file instead: scope was just my own content, and I wanted to ship without learning a whole new stack. Later I added pointers to case studies so the bot could recommend specific pieces.",
+    "images": [
+      {
+        "src": "/images/case-studies/chat-context.png",
+        "caption": "The chat system uses a markdown file (chat-context.md)"
+      }
+    ]
+  },
+  "solution": {
+    "phaseLabel": "02",
+    "phaseTitle": "What I shipped",
+    "overview": "A chat interface on my Nuxt site: hero CTA that goes to /chat with the question, a chat page with back link and message list, and a server route that streams from Claude using a markdown context file. Rate limiting and optional Neon logging round it out.",
+    "baselineImages": [
+      {
+        "src": "/images/case-studies/chat-showcase.png",
+        "caption": "Hero: one question box, one send. Chat page: conversation plus input."
+      }
+    ],
+    "features": [
+      {
+        "title": "Chat API with context and streaming",
+        "shortDescription": "POST /api/chat streams Claude (Sonnet 4.5) with a system prompt and a single markdown context file.",
+        "problem": "I needed the model to know about me without building something complex I'd have to learn from scratch.",
+        "solution": "Server reads content/chat-context.md and injects it into the system prompt. Messages are converted and sent to the API. Response is streamed back via Vercel AI SDK so the UI updates in real time.",
+        "media": { "type": "image", "src": "/images/case-studies/chat-context.png" }
+      },
+      {
+        "title": "Rate limiting and cost guardrails",
+        "shortDescription": "Per-IP rate limit (e.g. 20/min) and Anthropic spend cap so the feature can't blow the budget.",
+        "problem": "One user or bot could send a lot of requests and burn through the API budget.",
+        "solution": "In-memory rate limit before calling the LLM; 429 when over limit. Anthropic console spend cap set to $1.",
+        "media": { "type": "image", "src": "/images/case-studies/spending-limits.png" }
+      },
+      {
+        "title": "Optional Neon logging",
+        "shortDescription": "When NUXT_DATABASE_URL is set, each user message (and optionally the response) is stored in Postgres.",
+        "problem": "I wanted to know if anyone used the chat and what they asked.",
+        "solution": "chat_submissions table: user_message, ip, created_at (and response if we store it). Insert runs when the request is handled; no auth, just a log.",
+        "media": { "type": "image", "src": "/images/case-studies/neon.png" }
+      }
+    ]
+  },
+  "results": {
+    "phaseLabel": "03",
+    "phaseTitle": "What I got out of it",
+    "stats": [
+      { "value": "$5", "label": "To get started (Anthropic API key)" },
+      { "value": "$1", "label": "Spend cap so I could ship without worry" },
+      { "value": "1 day", "label": "Time to ship" }
+    ],
+    "quantitative": [
+      "The chat is live. Visitors can ask about me from the hero or the chat page and get streamed answers that point to case studies and contact.",
+      "Submissions are logged in Neon when configured, so I can see usage and questions over time.",
+      "Rate limiting is in place so a single IP can't exhaust the budget."
+    ],
+    "qualitative": [
+      "I proved I could ship something end-to-end during a layoff: API, streaming, context, rate limiting, and optional persistence.",
+      "I got over the \"should I spend money on this?\" hump. $5 and a $1 cap made the decision small enough to act.",
+      "The bot is explicitly designed to get me a job by routing people to the right work. That clarity shaped the prompt and the product."
+    ],
+    "retrospective": "As I go through the motions of a layoff and think about who I am and what I want to do, the thing I pride myself on is curiosity and being able to figure it out. This project was a way to stand out, to learn, and to show that I'm someone with real curiosity who gets things done. It was $5, a few Cursor chats, and a decision to build instead of wait."
+  }
+}

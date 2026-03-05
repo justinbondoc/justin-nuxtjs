@@ -15,6 +15,11 @@
   }
 }
 
+/* IBM Plex Mono for AI chat UI */
+.chat-font {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
 @media print {
   @page {
     margin: 0.75in;
