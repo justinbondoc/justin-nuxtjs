@@ -20,12 +20,12 @@
     "constraints": [
       "I was about to not have a job. I was hesitant to spend money on a \"feature\" that might not result in anything. I almost gave up. In the end: $5 to create an Anthropic API key at console.anthropic.com. I capped spend at $1 so I wouldn't blow the budget.",
       "I had to move fast. I used Cursor to get the starting pieces working with a sample page, then tweaked from there.",
-      "I needed the LLM to know about me without over-engineering. I'd heard of RAG but didn't really know how it worked or how to implement it. I wanted to keep things simple. So I used a single markdown context file the API reads from. Later I wired it to point people at case studies and surface information from there."
+      "I needed the LLM to know about me without over-engineering. I wanted to keep things simple. So I used a single markdown context file the API reads from. Later I wired it to point people at case studies and surface information from there."
     ],
     "myContributions": [
       {
         "title": "Chat API and context",
-        "body": "Backend: Nuxt server route that streams from Claude (Sonnet 4.5). System prompt tells the model it's my assistant, to keep answers short, to stick to the context file, and to suggest case studies. Context is one markdown file (about me, resume, tools, case study summaries). I kept it simple instead of reaching for something like RAG that I'd have had to learn from scratch."
+        "body": "Backend: Nuxt server route that streams from Claude (Sonnet 4.5). System prompt tells the model it's my assistant, to keep answers short, to stick to the context file, and to suggest case studies. Context is one markdown file (about me, resume, tools, case study summaries). I kept it simple so I could ship without adding a whole new stack."
       },
       {
         "title": "Hero and chat UI",
@@ -57,7 +57,7 @@
     "challenges": {
       "technoFunctional": [
         "Getting the first stream working: correct model ID, API key in runtime config, and Vercel AI SDK's toUIMessageStreamResponse so the Vue chat component could consume the stream.",
-        "Choosing context strategy: I didn't know exactly how RAG worked. I wanted to keep things simple. A single markdown file that the server reads and injects into the system prompt was enough and stayed editable.",
+        "Choosing context strategy: I wanted to keep things simple. I was tempted to go deeper into topics like RAG but it seemed overkill. So a single markdown file that the server reads and injects into the system prompt, with summaries and pointers to case studies so the bot can recommend the right pieces.",
         "Storing submissions without slowing the response: insert the user message (and later the assistant response) without blocking the stream. Rate limiting had to run before any LLM call so abuse didn't burn budget."
       ],
       "experiential": [
@@ -67,8 +67,8 @@
     },
     "keyDecisions": [
       {
-"decision": "Use a single markdown context file instead of something like RAG.",
-      "rationale": "I didn't know how to implement RAG and wanted to keep things simple. One file (about me, resume, tools, case study blurbs) is easy to update and enough for the model to stay on script."
+"decision": "Use a single markdown context file for context.",
+      "rationale": "I wanted to keep things simple. One file (about me, resume, tools, case study blurbs) is easy to update and enough for the model to stay on script and point people to the right case studies."
       },
       {
         "decision": "Cap Anthropic spend at $1 and add in-app rate limiting.",
@@ -83,7 +83,7 @@
         "rationale": "The goal was to get me a job. The bot's job is to surface the right work and suggest next steps (case studies, resume, contact), not to be a generic FAQ."
       }
     ],
-    "pivots": "I'd heard RAG was how you feed docs to an LLM but didn't know the details. I went with a single context file instead: scope was just my own content, and I wanted to ship without learning a whole new stack. Later I added pointers to case studies so the bot could recommend specific pieces.",
+    "pivots": "I went with a single context file: scope was just my own content, and I wanted to ship without over-engineering. I added summaries and pointers to case studies so the bot could recommend specific pieces.",
     "images": [
       {
         "src": "/images/case-studies/chat-context.png",
@@ -107,7 +107,7 @@
         "shortDescription": "POST /api/chat streams Claude (Sonnet 4.5) with a system prompt and a single markdown context file.",
         "problem": "I needed the model to know about me without building something complex I'd have to learn from scratch.",
         "solution": "Server reads content/chat-context.md and injects it into the system prompt. Messages are converted and sent to the API. Response is streamed back via Vercel AI SDK so the UI updates in real time.",
-        "media": { "type": "image", "src": "/images/case-studies/chat-context.png" }
+        "media": { "type": "image", "src": "/images/case-studies/chat-stream.png" }
       },
       {
         "title": "Rate limiting and cost guardrails",
