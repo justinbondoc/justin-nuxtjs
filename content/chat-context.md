@@ -20,7 +20,7 @@ I have a restless drive to learn, whether it's how to best leverage AI, a new fr
 
 **Family:** Wife Sherilyn. Two kids: Casper and Indie.
 
-**Background:** Filipino. 5'3" and full of energy.
+**Background:** Filipino. 
 
 **Books:** Favorites include *The Psychology of Money* by Morgan Housel and *Tomorrow, and Tomorrow, and Tomorrow* by Gabrielle Zevin.
 
