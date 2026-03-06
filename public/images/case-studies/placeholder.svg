@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#1e293b"/>
-  <text x="400" y="230" font-family="system-ui,sans-serif" font-size="18" fill="#64748b" text-anchor="middle">Placeholder image</text>
-</svg>
+<svg height="450" viewBox="0 0 800 450" width="800" xmlns="http://www.w3.org/2000/svg"><path d="m0 0h800v450h-800z" fill="#1e293b"/><text fill="#64748b" font-family="system-ui,sans-serif" font-size="18" text-anchor="middle" x="400" y="230">Placeholder image</text></svg>
