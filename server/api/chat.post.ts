@@ -3,12 +3,6 @@ import type { UIMessage } from 'ai';
 import { createAnthropic } from '@ai-sdk/anthropic';
 import { getRequestIP } from 'h3';
 import { logChatSubmission } from '../utils/db';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const projectRoot = path.resolve(__dirname, '../..');
 
 const CHAT_RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
 const CHAT_RATE_LIMIT_MAX_REQUESTS = 20; // per window per IP
@@ -47,10 +41,18 @@ function checkChatRateLimit(ip: string): void {
   }
 }
 
-function loadChatContext(): string {
-  const filePath = path.join(projectRoot, 'content', 'chat-context.md');
+function bufferToString(value: unknown): string {
+  if (value == null) return '';
+  if (typeof value === 'string') return value;
+  if (Buffer.isBuffer(value)) return value.toString('utf-8');
+  return String(value);
+}
+
+async function loadChatContext(): Promise<string> {
   try {
-    return fs.readFileSync(filePath, 'utf-8');
+    const storage = useStorage('assets:content');
+    const raw = await storage.getItem('chat-context.md');
+    return bufferToString(raw);
   } catch {
     return '';
   }
@@ -64,18 +66,19 @@ type CaseStudyMeta = {
 };
 type CaseStudyDoc = { slug?: string; meta?: CaseStudyMeta };
 
-function loadCaseStudiesContext(): string {
-  const dir = path.join(projectRoot, 'content', 'case-studies');
+async function loadCaseStudiesContext(): Promise<string> {
   try {
-    const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json') && !f.includes('.hidden'));
-    if (files.length === 0) return '';
+    const storage = useStorage('assets:content');
+    const keys = await storage.getKeys('case-studies');
+    const jsonKeys = keys.filter((k) => k.endsWith('.json') && !k.includes('.hidden'));
+    if (jsonKeys.length === 0) return '';
     const lines: string[] = ['## Portfolio / Case studies', ''];
-    for (const file of files) {
-      const filePath = path.join(dir, file);
-      const raw = fs.readFileSync(filePath, 'utf-8');
+    for (const key of jsonKeys) {
+      const raw = await storage.getItem(key);
+      const text = bufferToString(raw);
       let doc: CaseStudyDoc;
       try {
-        doc = JSON.parse(raw) as CaseStudyDoc;
+        doc = JSON.parse(text) as CaseStudyDoc;
       } catch {
         continue;
       }
@@ -117,8 +120,8 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const context = loadChatContext();
-  const caseStudiesContext = loadCaseStudiesContext();
+  const context = await loadChatContext();
+  const caseStudiesContext = await loadCaseStudiesContext();
   const fullContext = [context, caseStudiesContext].filter(Boolean).join('\n\n');
   const system =
     "You are Justin's assistant. Your task is to help him answer questions about him and get him a job. Keep your answers short and concise.  Answer questions about him based only on the information below but don't just copy/paste. Don't make up information. Suggest they visit his case studies. If asking about projects refer to case studies. Give direct links to case studies or resume as appropriate. You want to help the person get to the next thing, not stay in the chat.If asked something not covered here, say you don't know and suggest reaching out directly.\n\n" +

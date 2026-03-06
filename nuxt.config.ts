@@ -37,4 +37,10 @@ export default defineNuxtConfig({
     '/': { prerender: true },
   },
 
+  nitro: {
+    // Bundle content/ so chat context and case studies exist in production (e.g. Vercel)
+    serverAssets: [
+      { baseName: 'content', dir: '../content' },
+    ],
+  },
 });
