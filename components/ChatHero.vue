@@ -31,7 +31,7 @@
       <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
         Justin Bondoc · Product Manager · Ontario, California
       </p>
-      <h1 class="mb-3 text-7xl font-semibold tracking-tight">
+      <h1 class="mb-3 text-2xl font-semibold tracking-tight sm:text-7xl">
         One PM. <GradientText>Discovery. Design. Delivery. Done.</GradientText>
       </h1>
       <p class="mx-auto mb-6 max-w-prose text-slate-300">
