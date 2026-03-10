@@ -55,37 +55,27 @@
       </div>
 
       <form @submit.prevent="onSubmit" class="sticky bottom-0 bg-black pb-4 pt-2">
-        <ElectricBorder
-          :color="'#28FF85'"
-          :speed="1"
-          :chaos="isFocused ? 0.08 : 0.3"
-          :thickness="4"
-          :style="{ borderRadius: '16px' }"
-        >
-          <div class="relative">
-            <input
-              v-model="input"
-              type="text"
-              placeholder="Ask about Justin..."
-              class="input w-full rounded-2xl border-0 bg-black/70 py-3 pl-4 pr-12 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none"
-              autocomplete="off"
-              @focus="isFocused = true"
-              @blur="isFocused = false"
-              @keydown="onKeydown"
-            />
-            <button
-              type="submit"
-              aria-label="Send"
-              :disabled="chat.status === 'streaming' || chat.status === 'submitted'"
-              class="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-green-600 text-white transition-colors hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 19V5" />
-                <path d="M5 12l7-7 7 7" />
-              </svg>
-            </button>
-          </div>
-        </ElectricBorder>
+        <div class="relative">
+          <input
+            v-model="input"
+            type="text"
+            placeholder="Ask about Justin..."
+            class="input w-full rounded-2xl border border-lime-700 bg-black/70 py-3 pl-4 pr-12 text-sm text-slate-50 placeholder:text-slate-500 focus:border-lime-500/50 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-black"
+            autocomplete="off"
+            @keydown="onKeydown"
+          />
+          <button
+            type="submit"
+            aria-label="Send"
+            :disabled="chat.status === 'streaming' || chat.status === 'submitted'"
+            class="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-green-600 text-white transition-colors hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 19V5" />
+              <path d="M5 12l7-7 7 7" />
+            </svg>
+          </button>
+        </div>
       </form>
       <p class="text-center text-sm text-slate-500">
         This might get things wrong.
@@ -111,7 +101,6 @@ const GLYPH_INTERVAL_MS = 80;
 
 const route = useRoute();
 const input = ref('');
-const isFocused = ref(false);
 const chat = new Chat({
   api: '/api/chat',
   onError: (err) => console.error(err),
