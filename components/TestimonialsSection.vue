@@ -15,10 +15,10 @@
           What others say
         </p>
         <h2 class="mb-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          <GradientText>References</GradientText> & testimonials
+          <GradientText>References</GradientText> and testimonials
         </h2>
         <p class="mb-10 max-w-2xl text-slate-300">
-          Words from people I've worked with: role, relationship, and what they had to say.
+          Words from people I've worked with
         </p>
       </AnimatedContent>
     </div>
