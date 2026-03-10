@@ -2,7 +2,7 @@
   <main class="pb-20">
     <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
       <NuxtLink
-        to="/case-studies/ai-product-workflow"
+        to="/case-studies/three-claude-skills"
         class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors mb-10"
       >
         <ArrowLeft :size="14" />

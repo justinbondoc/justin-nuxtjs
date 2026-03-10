@@ -21,7 +21,7 @@
           <div v-for="(part, i) in m.parts" :key="i" class="w-full max-w-[85%] sm:max-w-[80%]">
             <div
               v-if="part.type === 'text' && m.role === 'user'"
-              class="user-bubble rounded-2xl border border-neutral-700 bg-neutral-800/80 px-4 py-3 text-slate-200"
+              class="user-bubble rounded-2xl bg-neutral-800/80 px-4 py-3 text-slate-200"
             >
               <span class="user-text whitespace-pre-wrap">{{ part.text }}</span>
             </div>
@@ -31,7 +31,21 @@
             >
               <span v-html="renderMarkdown(part.text)" />
               <span
-                v-if="index === chat.messages.length - 1 && chat.status === 'streaming'"
+                v-if="index === chat.messages.length - 1 && (chat.status === 'streaming' || chat.status === 'submitted')"
+                class="streaming-glyphs"
+                aria-label="Thinking"
+              >{{ cyclingGlyphs }}</span>
+            </div>
+          </div>
+        </div>
+        <!-- Loading glyph when waiting for first assistant response (no assistant message yet) -->
+        <div
+          v-if="isWaitingForResponse"
+          class="message flex flex-col gap-1 items-start"
+        >
+          <div class="w-full max-w-[85%] sm:max-w-[80%]">
+            <div class="chat-response">
+              <span
                 class="streaming-glyphs"
                 aria-label="Thinking"
               >{{ cyclingGlyphs }}</span>
@@ -41,30 +55,47 @@
       </div>
 
       <form @submit.prevent="onSubmit" class="sticky bottom-0 bg-black pb-4 pt-2">
-        <div class="relative">
-          <input
-            v-model="input"
-            type="text"
-            placeholder="Ask about Justin..."
-            class="input w-full rounded-2xl border border-neutral-700 bg-black/70 py-3 pl-4 pr-12 text-sm text-slate-50 placeholder:text-slate-500 focus:border-lime-500/50 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-black"
-            autocomplete="off"
-            @keydown="onKeydown"
-          />
-          <button
-            type="submit"
-            aria-label="Send"
-            :disabled="chat.status === 'streaming'"
-            class="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-green-600 text-white transition-colors hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 19V5" />
-              <path d="M5 12l7-7 7 7" />
-            </svg>
-          </button>
-        </div>
+        <ElectricBorder
+          :color="'#28FF85'"
+          :speed="1"
+          :chaos="isFocused ? 0.08 : 0.3"
+          :thickness="4"
+          :style="{ borderRadius: '16px' }"
+        >
+          <div class="relative">
+            <input
+              v-model="input"
+              type="text"
+              placeholder="Ask about Justin..."
+              class="input w-full rounded-2xl border-0 bg-black/70 py-3 pl-4 pr-12 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none"
+              autocomplete="off"
+              @focus="isFocused = true"
+              @blur="isFocused = false"
+              @keydown="onKeydown"
+            />
+            <button
+              type="submit"
+              aria-label="Send"
+              :disabled="chat.status === 'streaming' || chat.status === 'submitted'"
+              class="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-green-600 text-white transition-colors hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 19V5" />
+                <path d="M5 12l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+        </ElectricBorder>
       </form>
       <p class="text-center text-sm text-slate-500">
-        This might get things wrong. Ask me directly if you'd like to know more!
+        This might get things wrong.
+        <a
+          href="https://calendly.com/jstnbondoc/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 underline underline-offset-2 hover:text-slate-200"
+        >Ask me directly</a>
+        if you'd like to know more!
       </p>
     </div>
   </div>
@@ -80,6 +111,7 @@ const GLYPH_INTERVAL_MS = 80;
 
 const route = useRoute();
 const input = ref('');
+const isFocused = ref(false);
 const chat = new Chat({
   api: '/api/chat',
   onError: (err) => console.error(err),
@@ -92,6 +124,13 @@ const cyclingGlyphs = computed(
   () => STREAMING_GLYPHS.map((_, i) => STREAMING_GLYPHS[(streamingPhase.value + i) % 5]).join('')
 );
 
+const isWaitingForResponse = computed(
+  () =>
+    (chat.status === 'streaming' || chat.status === 'submitted') &&
+    chat.messages.length > 0 &&
+    chat.messages[chat.messages.length - 1].role === 'user'
+);
+
 watch(
   () => chat.status,
   (status) => {
@@ -99,7 +138,7 @@ watch(
       clearInterval(streamingInterval);
       streamingInterval = null;
     }
-    if (status === 'streaming') {
+    if (status === 'streaming' || status === 'submitted') {
       streamingPhase.value = 0;
       streamingInterval = setInterval(() => {
         streamingPhase.value = (streamingPhase.value + 1) % 5;
@@ -140,15 +179,19 @@ function onSubmit() {
 </script>
 
 <style scoped>
-/* Markdown in assistant bubbles */
+/* Markdown in assistant bubbles – green tint, links stand out */
+.chat-response {
+  color: rgb(56, 235, 112); /* green-200 */
+}
 .chat-response :deep(ul) { list-style: disc; margin: 0.5rem 0 0.5rem 1.25rem; }
 .chat-response :deep(ol) { list-style: decimal; margin: 0.5rem 0 0.5rem 1.25rem; }
 .chat-response :deep(li) { margin: 0.25rem 0; }
-.chat-response :deep(pre) { background: rgb(30 41 59); padding: 0.75rem 1rem; border-radius: 0.375rem; overflow-x: auto; margin: 0.5rem 0; }
-.chat-response :deep(code) { background: rgb(30 41 59); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875em; }
+.chat-response :deep(pre) { background: rgb(30 41 59); padding: 0.75rem 1rem; border-radius: 0.375rem; overflow-x: auto; margin: 0.5rem 0; color: rgb(187 247 208); }
+.chat-response :deep(code) { background: rgb(30 41 59); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875em; color: rgb(187 247 208); }
 .chat-response :deep(p) { margin: 0.5rem 0; }
 .chat-response :deep(p:first-child) { margin-top: 0; }
-.chat-response :deep(a) { color: rgb(134 239 172); text-decoration: underline; }
+.chat-response :deep(a) { color: rgb(255 255 255); text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
+.chat-response :deep(a:hover) { color: rgb(134 239 172); }
 .chat-response :deep(strong) { font-weight: 600; }
 
 .streaming-glyphs {

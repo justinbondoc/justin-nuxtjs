@@ -166,27 +166,6 @@
         </div>
       </div>
 
-      <!-- Footer -->
-      <footer
-        class="mt-8 flex flex-col items-start gap-3 border-t border-slate-800 pt-4 text-[0.7rem] text-slate-400 sm:flex-row sm:items-center sm:justify-between"
-      >
-        <p>
-          Customer sessions come from inbound customer feedback and PostHog usage data.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <div
-            v-for="tool in tools"
-            :key="tool.name"
-            class="inline-flex items-center gap-1 text-[0.7rem] text-slate-300"
-          >
-            <span
-              class="h-1.5 w-1.5 rounded-full"
-              :class="toolDotClass(tool.name)"
-            />
-            <span>{{ tool.name }}</span>
-          </div>
-        </div>
-      </footer>
     </div>
   </section>
 </template>
@@ -212,10 +191,6 @@ type SignalSource = {
   name: string
   type: string
   items: string[]
-}
-
-type ToolLegend = {
-  name: ToolName
 }
 
 const signalSources: SignalSource[] = [
@@ -322,12 +297,6 @@ const phases: Phase[] = [
         'Use Claude to summarize feedback from each session and Cursor to make small product changes between calls so later customers see an improved version.',
     },
   },
-]
-
-const tools: ToolLegend[] = [
-  { name: 'Claude' },
-  { name: 'Cursor' },
-  { name: 'Claude + Cursor' },
 ]
 
 function tagClass(tag: PhaseTag) {

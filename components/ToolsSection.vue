@@ -6,8 +6,8 @@
       >
         {{ subheading }}
       </p>
-      <h2 class="mb-6 text-7xl font-bold tracking-tight text-white">
-        Mastery in <GradientText>Industry-Leading Tools</GradientText>
+      <h2 class="mb-6 text-7xl font-medium tracking-tight text-white">
+        Tools I use in a <GradientText>release cycle</GradientText>
       </h2>
       <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-slate-300">
         {{ description }}
@@ -100,7 +100,7 @@ const logosRow1: LogoItem[] = [
   { src: '/images/logos/Confluence.svg', name: 'Confluence', href: 'https://atlassian.com/software/confluence', variant: 'wordmark' as const, tooltip: 'I keep specs, runbooks, and decisions in one place.' },
   { src: '/images/logos/Productboard.svg', name: 'Productboard', href: 'https://productboard.com', variant: 'wordmark' as const, tooltip: 'I use it to manage feature requests and prioritize product-level work.' },
   { src: '/images/logos/PostHog.svg', name: 'PostHog', href: 'https://posthog.com', variant: 'wordmark' as const, tooltip: 'I measure product usage and analyze user behavior.' },
-  { src: '/images/logos/webflow.svg', name: 'Webflow', href: 'https://webflow.com', variant: 'wordmark' as const, tooltip: 'I build marketing sites and prototypes without touching code.' },
+  // { src: '/images/logos/webflow.svg', name: 'Webflow', href: 'https://webflow.com', variant: 'wordmark' as const, tooltip: 'I build marketing sites and prototypes without touching code.' },
   { src: '/images/logos/nuxt.svg', name: 'Nuxt', href: 'https://nuxt.com', variant: 'wordmark' as const, tooltip: 'I use it to build this site and axure.com.' },
   { src: '/images/logos/Screen%20Studio.svg', name: 'Screen Studio', href: 'https://screen.studio', variant: 'wordmark' as const, tooltip: 'I record product demos and how-tos with smooth cursors.' },
   { src: '/images/logos/Jitter.svg', name: 'Jitter', href: 'https://jitter.video', variant: 'wordmark' as const, tooltip: 'I make short motion graphics and Loom-style intros.' },
@@ -121,10 +121,10 @@ withDefaults(
     description?: string
   }>(),
   {
-    subheading: 'EMPOWERING DIGITAL EXCELLENCE THROUGH TOP-TIER TOOLS',
-    title: 'Mastery in Industry-Leading Tools',
+    subheading: 'Discovery, design, and shipping',
+    title: 'Tools I use every release cycle',
     description:
-      'Using the right tools in the AI-powered world is crucial. My proficiency across top-tier platforms ensures efficient, high-quality, and data-driven solutions. From design to analytics, to code, to marketing channels these tools are leveraged to boost your digital solutions.',
+      'I use these for product discovery, design, analytics, and building. From Figma and PostHog to Cursor and Nuxt, they keep me close to the work and able to ship quickly.',
   }
 )
 </script>

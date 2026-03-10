@@ -1,5 +1,5 @@
 {
-  "slug": "ai-product-workflow",
+  "slug": "three-claude-skills",
   "meta": {
     "title": "How I used Claude Code to do my work in Product, Marketing, and Documentation faster than ever",
     "oneLiner": "I built three Claude Code skills that helped at different stages: prototype for stakeholder review, help docs from the codebase, and changelog from git. All from the terminal.",
@@ -9,10 +9,10 @@
     "tools": ["Claude Code", "Git", "Nuxt 3", "Docusaurus v3"],
     "heroMedia": {
       "type": "image",
-      "src": "/images/case-studies/placeholder.svg",
+      "src": "/images/case-studies/three-claude-skills-cover.png",
       "aspectRatio": "16/9"
     },
-    "coverImage": "/images/case-studies/placeholder.svg"
+    "coverImage": "/images/case-studies/three-claude-skills-cover.png"
   },
   "overview": {
     "companyContext": "Axure makes prototyping and collaboration tools for product teams. We're a smaller team, so marketing and help docs often fell through the cracks. I kept thinking: what if we could use AI to cover the work that used to sit on one person's plate? Ship and communicate without hiring. The catch: as a PM, shipping a feature still meant jumping between five or six tools. Axure and Figma for concepts, a doc editor for specs, Jira for tickets, then I'd manually write help docs and a changelog at the end. Every switch was a chance to lose context or quality.",
@@ -40,11 +40,7 @@
   "problem": {
     "userProblem": "Every feature meant bouncing between six or more tools. Wireframe here, share concepts there, specs in a doc editor, Jira for tickets, then I'd write help docs from memory and hand-roll a changelog from git or engineer notes. Every jump was a place where quality slipped and time disappeared.",
     "businessProblem": "Help docs showed up late, often after launch, and sometimes didn't match what we actually shipped. Changelogs were vague or we skipped them. Customers didn't understand what they could do. That meant more support tickets and missed moments. Before the skills, help docs needed a meeting with the technical writer, devs, and me. Once we tied the help-docs repo to the Cloud source, the writer and dev could produce the doc without that full loop. For marketing, we used to build a Jira filter, sift for spotlight items, then publish. The changelog skill does the sifting: it reads Git history, includes the right changes, ignores the noise, and drafts. What used to take days now takes minutes.",
-    "whyNow": "Claude Code's skill system let me turn repeatable PM workflows into structured prompts that read live source, configs, and git history. For the first time I could build tooling that was actually wired to the codebase. Not just templates. Real, context-aware tools.",
-    "workflowImage": {
-      "src": "/images/case-studies/placeholder.svg",
-      "caption": "The old workflow: idea to shipped required six context switches across five tools."
-    }
+    "whyNow": "Claude Code's skill system let me turn repeatable PM workflows into structured prompts that read live source, configs, and git history. For the first time I could build tooling that was actually wired to the codebase. Not just templates. Real, context-aware tools."
   },
   "process": {
     "phaseLabel": "01",
@@ -81,24 +77,12 @@
         "rationale": "HTML was easy to share locally. No need to run the project. Just open the file. Our devs already knew the component structure. We could have had Claude add implementation guidance but never needed it."
       }
     ],
-    "pivots": "The prototype skill started with one direction. After a few uses I saw the problem: one direction locked the team on one approach too early. Discussions turned into critiques instead of choices. I switched to three directions (conservative, structural, experimental). That changed the dynamic completely.",
-    "images": [
-      {
-        "src": "/images/case-studies/placeholder.svg",
-        "caption": "Skill architecture: doc and changelog read live context (source code, git history); prototype plans three directions from the prompt then builds."
-      }
-    ]
+    "pivots": "The prototype skill started with one direction. After a few uses I saw the problem: one direction locked the team on one approach too early. Discussions turned into critiques instead of choices. I switched to three directions (conservative, structural, experimental). That changed the dynamic completely."
   },
   "solution": {
     "phaseLabel": "02",
     "phaseTitle": "Three skills, different stages",
     "overview": "Three skills that helped at different stages. /prototype turns a UI ask into three interactive HTML directions in minutes for stakeholder review. /write-help-doc reads the finished codebase and spits out a formatted help article. /changelog reads git since the last entry and drafts the announcement. All from the terminal.",
-    "baselineImages": [
-      {
-        "src": "/images/case-studies/placeholder.svg",
-        "caption": "Before: six tools, six context switches, quality all over the place."
-      }
-    ],
     "features": [
       {
         "title": "/prototype - three interactive directions from one prompt",
@@ -106,7 +90,7 @@
         "problem": "Exploring UI directions meant wireframing in Axure RP or Figma for hours. Static images. Hard to interact with or iterate on in a discussion.",
         "solution": "The skill has a structured planning step before any code: the model defines three directions (name, core idea, trade-off) with a spread of familiar, structural, and experimental. Then it generates each as a standalone HTML file using Vue and Tailwind via CDN. No build step. Real content. Meaningful UI states wired up. Output includes a comparison table and one-line open commands for each direction.",
         "skillPage": "/skills/prototype",
-        "media": { "type": "image", "src": "/images/case-studies/placeholder.svg" }
+        "media": { "type": "image", "src": "/images/case-studies/prototype-skill.png" }
       },
       {
         "title": "/write-help-doc - documentation from the source, not memory",
@@ -114,7 +98,7 @@
         "problem": "Help docs were written late, from memory, and often didn't match what we shipped. Blank page every time meant inconsistent structure, missed edge cases, and review cycles that added days.",
         "solution": "The skill walks the Cloud source: controllers for API shape, services for logic, UI components for what users see. It synthesizes what a feature actually does into a formatted help article. Follows our help site conventions: frontmatter, callouts, numbered steps, screenshot placeholders with capture notes. It also updates the sidebar nav file automatically.",
         "skillPage": "/skills/write-help-doc",
-        "media": { "type": "image", "src": "/images/case-studies/placeholder.svg" }
+        "media": { "type": "image", "src": "/images/case-studies/help-docs-skill.png" }
       },
       {
         "title": "/changelog - git log to finished draft, automatically",
@@ -122,7 +106,7 @@
         "problem": "Changelog entries meant reading git history, turning ticket IDs and engineer-speak into product language, grouping related changes, matching tone and structure. All manual. Every two weeks.",
         "solution": "The skill reads the two most recent changelog files to get format and voice, pulls commits since the last entry's date, filters noise (dependabot, build fixes, CI), buckets changes as features, improvements, or bug fixes, and drafts a full entry. Headline features get full paragraphs. Improvements and fixes go in collapsible sections. You get something to review and edit, not something to throw away.",
         "skillPage": "/skills/changelog",
-        "media": { "type": "image", "src": "/images/case-studies/placeholder.svg" }
+        "media": { "type": "image", "src": "/images/case-studies/changelog-skill.png" }
       }
     ]
   },

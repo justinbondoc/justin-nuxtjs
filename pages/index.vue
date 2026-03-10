@@ -121,6 +121,37 @@
       <SectionSplitter />
     </AnimatedContent>
 
+    <AnimatedContent
+      :distance="100"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.8"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <TestimonialsSection />
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="60"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.6"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <SectionSplitter />
+    </AnimatedContent>
+
+
     <section id="portfolio" class="py-10 sm:py-14 scroll-mt-24">
       <AnimatedContent
         :distance="100"
@@ -135,9 +166,9 @@
         :delay="0"
         class="mx-auto max-w-5xl px-4 sm:px-6"
       >
-        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected <GradientText>Work</GradientText></h2>
+        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected <GradientText>work</GradientText></h2>
         <p class="mb-4 text-slate-300">
-          A sample of product and design work
+          Product and design work from discovery to launch.
         </p>
 
         <div class="mt-6 grid gap-4 sm:grid-cols-2">
@@ -196,7 +227,7 @@
       <SectionSplitter />
     </AnimatedContent>
 
-    <section id="contact" class="relative min-h-[600px] py-10 sm:py-14 scroll-mt-24 overflow-hidden">
+    <section id="contact" class="relative min-h-[800px] py-10 sm:py-14 scroll-mt-24 overflow-hidden">
       <div class="absolute inset-0">
         <Dither
         :wave-speed="0.06"
@@ -239,47 +270,13 @@
           </a>
         </p>
 
-        <form class="mt-6 grid gap-4" @submit.prevent="openMailto">
-          <label class="grid gap-1 text-sm text-slate-200">
-            Name
-            <input
-              v-model="contactName"
-              type="text"
-              name="name"
-              placeholder="Your name"
-              class="mt-1 rounded-lg border border-white/50 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
-            />
-          </label>
-
-          <label class="grid gap-1 text-sm text-slate-200">
-            Email
-            <input
-              v-model="contactEmail"
-              type="email"
-              name="email"
-              placeholder="you@example.com"
-              class="mt-1 rounded-lg border border-white/50 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
-            />
-          </label>
-
-          <label class="grid gap-1 text-sm text-slate-200">
-            Message
-            <textarea
-              v-model="contactMessage"
-              name="message"
-              rows="4"
-              placeholder="Write a short message"
-              class="mt-1 rounded-lg border border-white/50 bg-black/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950"
-            ></textarea>
-          </label>
-
-          <button
-            type="submit"
-            class="inline-flex w-fit items-center justify-center rounded-full border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-slate-50 shadow-sm transition-colors hover:bg-lime-500 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            Send
-          </button>
-        </form>
+        <div class="mt-8 mx-auto rounded-xl overflow-hidden min-w-[320px] w-full max-w-2xl">
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/jstnbondoc?hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=27ff64"
+            style="min-width:320px;height:700px;"
+          />
+        </div>
       </AnimatedContent>
     </section>
 
@@ -288,6 +285,15 @@
 
 <script setup lang="ts">
 import { getCaseStudiesList } from '~/composables/useCaseStudy'
+
+useHead({
+  script: [
+    {
+      src: 'https://assets.calendly.com/assets/external/widget.js',
+      async: true
+    }
+  ]
+})
 
 type CaseStudyMeta = {
   title?: string
@@ -300,20 +306,5 @@ type CaseStudyMeta = {
 type CaseStudyListItem = { slug: string; meta: CaseStudyMeta }
 const { data } = await useAsyncData<CaseStudyListItem[]>('case-studies-list', () => Promise.resolve(getCaseStudiesList()))
 const studies = computed(() => data.value ?? [])
-
-const contactName = ref('')
-const contactEmail = ref('')
-const contactMessage = ref('')
-
-function openMailto() {
-  const to = 'jstnbondoc@gmail.com'
-  const parts = [`mailto:${to}`]
-  const params = new URLSearchParams()
-  if (contactName.value) params.set('subject', `Message from ${contactName.value}`)
-  if (contactMessage.value) params.set('body', contactMessage.value)
-  const query = params.toString()
-  const url = query ? `${parts[0]}?${query}` : parts[0]
-  window.location.href = url
-}
 </script>
 

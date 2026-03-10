@@ -1,8 +1,13 @@
 ---
-description: Explores Axure Cloud source code, writes an end-user help topic in the correct location, and updates the docs sidebar.
+name: write-help-doc
+description: >
+  Crawls Axure Cloud source code (controllers, services, UI components) and writes a formatted end-user help topic in the correct docs location, then updates the sidebar nav automatically. Use when the user says "write help docs for [feature]", "create documentation for [feature]", "document [feature]", "write a help article about [feature]", or "add a help topic for [feature]". Do NOT use for internal developer docs, API references, or projects outside Axure.
+allowed-tools: Read, Glob, Grep, Write
 ---
 
 The user wants to create a help documentation topic for the following feature:
+
+$ARGUMENTS
 
 ---
 
@@ -10,11 +15,11 @@ The user wants to create a help documentation topic for the following feature:
 
 Search the Axure Cloud project to understand how this feature works. Look in these locations:
 
-**Backend** (`<cloud-repo>/Controllers/` and `<cloud-repo>/Services/`):
+**Backend** (`{cloud-repo}/Controllers/` and `{cloud-repo}/Services/`):
 - `Controllers/` — Find API endpoints related to the feature
 - `Services/` — Find business logic and service implementations
 
-**Frontend** (`<cloud-repo>/src/v3/`):
+**Frontend** (`{cloud-repo}/src/v3/`):
 - `pages/` — Page-level views
 - `features/` — Feature modules with components and composables
 - `components/` — Reusable UI components
@@ -130,3 +135,11 @@ After creating the file and updating the sidebar, tell the user:
 - The full path of the file that was created
 - Which category it was added to in `sidebars.json`
 - A list of all `screenshot-placeholder` divs in the doc, so the user knows what screenshots still need to be taken
+
+---
+
+## Troubleshooting
+
+- **Can't find `{cloud-repo}`**: Ask the user for the path to the Axure Cloud source repo. It should be a sibling directory to the help-docs repo.
+- **Feature not found in source**: Search more broadly — run Glob and Grep across controllers, services, and components using the feature name and common synonyms. If still not found, ask the user which part of the app implements this feature.
+- **`sidebars.json` entry unclear**: Read two or three existing entries in the same section to understand the exact pattern before adding the new one.

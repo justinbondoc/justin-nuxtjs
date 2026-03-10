@@ -25,7 +25,7 @@
         to="/#research"
         class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
-        Research+AI
+        Research process
       </NuxtLink>
       <NuxtLink
         to="/#portfolio"
@@ -134,7 +134,7 @@
           class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
           @click="menuOpen = false"
         >
-          Research+AI
+          Research process
         </NuxtLink>
         <NuxtLink
           to="/resume"
