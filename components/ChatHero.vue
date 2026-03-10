@@ -38,26 +38,36 @@
         10+ years in B2B SaaS. I run discovery, design solutions, and work with engineers to launch products.
       </p>
       <form class="mx-auto mb-6 w-full max-w-2xl" @submit.prevent="onSubmit">
-        <div class="relative flex-1 min-w-0">
-          <textarea
-            v-model="query"
-            rows="4"
-            placeholder="Hi! 👋 Ask me anything about my experience, case-studies, hobbies, or how I think..."
-            class="chat-font min-h-[120px] w-full resize-y rounded-2xl border border-lime-700 bg-black/70 px-4 py-3 pr-12 pb-10 text-base sm:text-sm text-slate-50 placeholder:text-slate-500 focus:border-lime-500/50 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950 sm:min-h-[100px]"
-            autocomplete="off"
-            @keydown="onKeydown"
-          />
-          <button
-            type="submit"
-            aria-label="Ask"
-            class="absolute bottom-3 right-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-transparent bg-green-600 text-white shadow-sm transition-colors hover:bg-green-500"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 19V5" />
-              <path d="M5 12l7-7 7 7" />
-            </svg>
-          </button>
-        </div>
+        <ElectricBorder
+          :color="'#28FF85'"
+          :speed="1"
+          :chaos="isFocused ? 0.08 : 0.3"
+          :thickness="4"
+          :style="{ borderRadius: '16px' }"
+        >
+          <div class="relative flex-1 min-w-0">
+            <textarea
+              v-model="query"
+              rows="4"
+              placeholder="Hi! 👋 Ask me anything about my experience, case-studies, hobbies, or how I think..."
+              class="chat-font min-h-[120px] w-full resize-y rounded-2xl border-0 bg-black/70 px-4 py-3 pr-12 pb-10 text-base sm:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none sm:min-h-[100px]"
+              autocomplete="off"
+              @focus="isFocused = true"
+              @blur="isFocused = false"
+              @keydown="onKeydown"
+            />
+            <button
+              type="submit"
+              aria-label="Ask"
+              class="absolute bottom-3 right-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-transparent bg-green-600 text-white shadow-sm transition-colors hover:bg-green-500"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 19V5" />
+                <path d="M5 12l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+        </ElectricBorder>
       </form>
 
       <div class="flex flex-wrap justify-center gap-3">
@@ -92,6 +102,7 @@
 
 <script setup lang="ts">
 const query = ref('');
+const isFocused = ref(false);
 
 function onKeydown(e: KeyboardEvent) {
   if (e.key === 'Enter' && !e.shiftKey) {
