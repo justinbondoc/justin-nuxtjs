@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, useTemplateRef, watch, type CSSProperties } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, useTemplateRef, watch, type CSSProperties } from 'vue';
 
 type ElectricBorderProps = {
   color?: string;
@@ -105,6 +105,9 @@ onMounted(() => {
   ro = new ResizeObserver(() => updateAnim());
   ro.observe(rootRef.value);
   updateAnim();
+  nextTick(() => {
+    requestAnimationFrame(() => updateAnim());
+  });
 });
 
 onBeforeUnmount(() => {
@@ -164,8 +167,8 @@ const bgGlowStyle = computed<CSSProperties>(() => ({
   <div ref="rootRef" :class="['relative isolate', className]" :style="style">
     <svg
       ref="svgRef"
-      class="fixed opacity-0 w-0 h-0 pointer-events-none"
-      style="position: absolute; top: -9999px; left: -9999px"
+      class="pointer-events-none"
+      style="position: absolute; width: 1px; height: 1px; left: -9999px; top: 0; overflow: hidden"
       aria-hidden="true"
       focusable="false"
     >
