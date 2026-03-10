@@ -1,5 +1,7 @@
 ---
-description: Draft the next biweekly Axure Cloud changelog entry by analyzing recent commits in the repo
+name: changelog
+description: >
+  Drafts the next biweekly Axure Cloud changelog entry by reading recent git commits since the last entry, filtering noise (dependabot, build fixes, CI), grouping changes by type, and matching the tone and structure of existing changelog entries on axure.com/changelog. Use when the user says "draft the changelog", "write the next changelog entry", "create a changelog", "write up what changed", "generate the release notes", or "it's time for the changelog". Do NOT use for other projects, individual feature announcements, or internal release notes.
 allowed-tools: Bash, Read, Glob
 ---
 
@@ -11,12 +13,15 @@ You are an expert technical writer and product manager for Axure Cloud — a col
 Read the two most recent files from the changelog directory, sorted by date.
 
 ### Last changelog date
-Determine the date of the most recent changelog entry from the filenames (format: `YYYY-MM-DD.md`).
+Determine the date of the most recent changelog entry from the filenames (format: `YYYY-MM-DD.md`). Store this as `LAST_DATE`.
 
 ### Recent commits in the repo (since last changelog)
+
+Run this command, replacing `LAST_DATE` with the date from the most recent changelog filename (e.g., `2025-03-01`):
+
 ```bash
 git log --oneline --format="%h %ad %s" --date=short \
-  --since="<last-changelog-date>" \
+  --since="LAST_DATE" \
   | grep -v -E "(dependabot|upgrade |fix build|Fix build|eslint|Docker|enable-nullable|knip|yarn|Aspire|TreatWarnings|wixproj|ImplicitUsings)" \
   | head -60
 ```
@@ -85,3 +90,12 @@ Description...
    - If you're unsure about the exact UX details of a feature, note it with [REVIEW: ...]
 
 6. **Output the draft** as the full markdown content ready to be saved as a new file in the changelog directory. Suggest the filename based on the target publish date (approximately 2 weeks after the last entry). After presenting the draft, ask if the user would like to save it.
+
+---
+
+## Troubleshooting
+
+- **No commits found since last date**: Double-check `LAST_DATE` against the changelog filename and confirm you're running `git log` from the correct repo directory. Try widening the date range by a few days.
+- **Too many unrelated commits**: Extend the grep filter to also exclude prefixes like `chore:`, `test:`, `ci:`, or `refactor:` if they dominate the output.
+- **Unclear what a commit does**: Look up the related PR or ticket number in the commit message. If still unclear, mark it `[REVIEW: ...]` in the draft and move on.
+- **Changelog structure doesn't match existing entries**: Re-read the two most recent files carefully. Match their frontmatter fields, heading levels, and `<details>` block formatting exactly before drafting.

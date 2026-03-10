@@ -6,8 +6,8 @@
       >
         {{ subheading }}
       </p>
-      <h2 class="mb-6 text-7xl font-bold tracking-tight text-white">
-        Mastery in <GradientText>Industry-Leading Tools</GradientText>
+      <h2 class="mb-6 text-7xl font-medium tracking-tight text-white">
+        Tools I use in a <GradientText>release cycle</GradientText>
       </h2>
       <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-slate-300">
         {{ description }}
@@ -121,10 +121,10 @@ withDefaults(
     description?: string
   }>(),
   {
-    subheading: 'EMPOWERING DIGITAL EXCELLENCE THROUGH TOP-TIER TOOLS',
-    title: 'Mastery in Industry-Leading Tools',
+    subheading: 'Discovery, design, and shipping',
+    title: 'Tools I use every release cycle',
     description:
-      'Using the right tools in the AI-powered world is crucial. My proficiency across top-tier platforms ensures efficient, high-quality, and data-driven solutions. From design to analytics, to code, to marketing channels these tools are leveraged to boost your digital solutions.',
+      'I use these for product discovery, design, analytics, and building. From Figma and PostHog to Cursor and Nuxt, they keep me close to the work and able to ship quickly.',
   }
 )
 </script>

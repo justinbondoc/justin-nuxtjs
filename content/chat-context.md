@@ -1,18 +1,18 @@
 # Hero / positioning
 
-One PM. Discovery. Design. Delivery. Done. Justin has 10+ years in B2B SaaS and leads discovery, design, delivery, and go-to-market. Visitors can ask about his experience, projects, or how he thinks.
+Product manager who ships. Justin has 10+ years in B2B SaaS. He runs discovery, design solutions, and works with engineers to launch products. Recently he has been building AI-powered tools and prototypes himself. Visitors can explore the projects on the site or ask the AI assistant about his work.
 
 ---
 
 # About Justin (general website)
 
-Product Manager. Designer. Leader. Meet Justin: Your Partner in Digital Success.
+Product Manager. Designer. Leader. Builder-style PM who ships.
 
 I'm Justin and I'm a full-stack product manager based in Ontario, California (not Canada). I started my career as a Sales Engineer where I fell in love with improving user experience. That curiosity pulled me into product management, where I've worn multiple hats across design, product, marketing, and sales.
 
 AI has fundamentally changed how I work. I no longer manage products from a distance. I plan and prioritize work, design interfaces, record and publish product videos, and write code to ship and communicate with users. That technical range means I can move fast and speak the language of every team in the room.
 
-I have a restless drive to learn, whether it's how to best leverage AI, a new framework, or a new way of solving an old problem. Outside of work, I live by the three R's: running, reading, and rock climbing.
+I have a restless drive to learn, whether it's using AI to prototype and ship faster, a new framework, or a new way of solving an old problem. Outside of work, I live by the three R's: running, reading, and rock climbing.
 
 ---
 
@@ -41,14 +41,14 @@ How he thinks:
 
 # Tools
 
-Using the right tools in the AI-powered world is crucial. Justin's proficiency across top-tier platforms ensures efficient, high-quality, and data-driven solutions. From design to analytics, to code, to marketing channels these tools are leveraged to boost digital solutions.
+Justin uses these tools for product discovery, design, analytics, and building. From Figma and PostHog to Cursor and Nuxt, they keep him close to the work and able to ship quickly.
 
 - Claude / ClaudeCode: Research, code, prototyping, writing, and reasoning on complex tasks.
 - Cursor: Code daily and prep for stakeholder meetings.
 - Tailwind CSS: Style frontend UIs with utility classes.
 - Figma: Design systems, UI, icons, and graphics.
 - Sketch: High-fidelity mockups and icon sets on Mac.
-- Vue / Nuxt: Build UIs and features using Nuxt and Pinia. This site and axure.com are built with this stack.
+- Vue / Nuxt: Build UIs and features using Nuxt. This site and axure.com are built with this stack.
 - Linear: Track issues and ship in cycles with the help-docs team.
 - Jira: Run sprints and manage backlogs where software projects live.
 - Confluence: Specs, runbooks, and decisions in one place.
@@ -84,73 +84,11 @@ Research loop for each initiative:
 
 ---
 
-# Chat Feedback Collection
+# Chat Feedback
 
-The chatbot occasionally asks short feedback questions to improve the site.
+Ask at most one short feedback question per conversation, after the user has engaged a bit or as they wrap up. Keep it casual; if they skip it, move on.
 
-Rules:
-- Only ask once per conversation.
-- Ask after meaningful engagement with the user.
-- Keep the tone casual and optional.
-- If the user ignores the question, continue the conversation normally.
-
-Possible questions the chatbot can ask:
-
-Confusion detector  
-"quick question that helps improve the site: is anything about my work or this site confusing so far?"
-
-If the user indicates confusion, follow up with:  
-"what part feels unclear?"
-
-Positioning signal  
-"based on what you've seen so far, what role do you think justin is strongest in?"
-
-Suggested answers:
-- product manager
-- product designer
-- product-minded engineer
-- founder / builder
-- not sure yet
-
-Hiring signal  
-"honest question: based on this site, would you consider interviewing justin?"
-
-Suggested answers:
-- yes
-- maybe
-- probably not
-
-Missing info  
-"what's the biggest unanswered question you still have about justin?"
-
----
-
-# Chat Feedback Triggers
-
-The chatbot decides when to ask feedback questions using behavioral signals.
-
-Trigger conditions:
-
-Engagement trigger  
-The user has asked two or three questions during the conversation.
-
-Exit trigger  
-The conversation appears to be ending. Examples include messages like:
-- thanks
-- that's helpful
-- got it
-- goodbye
-- no more questions
-
-Deep-interest trigger  
-The user asks detailed questions about Justin's experience, projects, product thinking, or tools.
-
-Additional rules:
-- Ask only one feedback question per conversation.
-- Choose one feedback question randomly.
-- Keep the message short and conversational.
-- Frame it as helping improve the site.
-- If the user does not respond, continue the conversation normally.
+Examples: "Anything about my work or this site confusing so far?", "Would you consider interviewing justin?" (yes / maybe / probably not) "What's the biggest question you still have about justin?"
 
 ---
 
@@ -162,7 +100,10 @@ https://linkedin.com/in/justin-bondoc
 Email  
 jstnbondoc@gmail.com
 
-For references or detailed questions, visitors can reach out directly.
+Schedule a 30-minute call  
+https://calendly.com/jstnbondoc/30min
+
+For references or detailed questions, visitors can reach out directly. When it makes sense, suggest they schedule a call.
 
 ---
 

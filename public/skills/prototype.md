@@ -1,9 +1,7 @@
 ---
 name: prototype
 description: >
-  Used when the user wants to "create a prototype", "build a UI mockup", "prototype a feature",
-  "design a new screen", "draft a new interface", "sketch out a UI", or "mock up a component".
-  Generates three distinct interactive HTML prototypes from a single prompt — no config or setup required.
+  Generates three distinct, interactive HTML prototype directions from a single prompt — no build step or config required. Each direction uses a different layout metaphor, interaction model, or information hierarchy. Use when the user says "create a prototype", "build a UI mockup", "prototype a feature", "design a new screen", "draft a new interface", "sketch out a UI", "mock up a component", "explore UI directions", or "show me options for [feature]". Do NOT use for production code, backend APIs, or non-UI tasks.
 allowed-tools: Write
 ---
 
@@ -25,7 +23,7 @@ For each direction:
 
 Aim for a spread: one familiar/safe direction, one structural change, one inventive or experimental take.
 
-Choose a kebab-case base name for the set (e.g., `member-invite`, `file-browser`). Files will be `<base>-a.html`, `<base>-b.html`, `<base>-c.html`.
+Choose a kebab-case base name for the set (e.g., `member-invite`, `file-browser`). Files will be named `{base}-a.html`, `{base}-b.html`, `{base}-c.html`.
 
 ---
 
@@ -55,15 +53,24 @@ All three should be equally complete — don't stub a direction just because it'
 Write to:
 
 ```
-prototypes/<base>-a.html
-prototypes/<base>-b.html
-prototypes/<base>-c.html
+prototypes/{base}-a.html
+prototypes/{base}-b.html
+prototypes/{base}-c.html
 ```
 
 Then output a comparison table:
 
 | | Direction | Core idea | Open |
 |---|-----------|-----------|------|
-| A | `<name>` | `<one sentence>` | `open prototypes/<base>-a.html` |
-| B | `<name>` | `<one sentence>` | `open prototypes/<base>-b.html` |
-| C | `<name>` | `<one sentence>` | `open prototypes/<base>-c.html` |
+| A | `{name}` | `{one sentence}` | `open prototypes/{base}-a.html` |
+| B | `{name}` | `{one sentence}` | `open prototypes/{base}-b.html` |
+| C | `{name}` | `{one sentence}` | `open prototypes/{base}-c.html` |
+
+---
+
+## Troubleshooting
+
+- **Directions feel too similar**: Each direction must use a fundamentally different interaction model — not just visual variations. Revisit Step 1 and ensure one direction is safe/familiar, one is a structural change, and one is experimental.
+- **File won't open in browser**: Verify the CDN links are correct and `Vue.createApp()` is called at the bottom of the script block. All dependencies load via CDN — no build step or local install is needed.
+- **Missing UI states**: Every prototype must include empty, loading, error, and filled states toggled via Vue refs. Add a small dev-toggle button if a state isn't naturally reachable in the flow.
+- **Lorem ipsum content**: Replace all placeholder text with realistic names, dates, and copy. Realistic content is required for meaningful stakeholder alignment.

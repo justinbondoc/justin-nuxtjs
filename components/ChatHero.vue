@@ -32,19 +32,18 @@
         Justin Bondoc · Product Manager · Ontario, California
       </p>
       <h1 class="mb-3 text-2xl font-semibold tracking-tight sm:text-7xl">
-        One PM. <GradientText>Discovery. Design. Delivery. Done.</GradientText>
+        Product manager who <GradientText>discovers</GradientText>, <GradientText>designs</GradientText>, and <GradientText>delivers</GradientText>.
       </h1>
-      <p class="mx-auto mb-6 max-w-prose text-slate-300">
-        10+ years in B2B SaaS. Lead discovery, design, delivery, and go-to-market. Ask me anything below.
+      <p class="mx-auto mb-2 max-w-prose text-slate-300">
+        10+ years in B2B SaaS. I run discovery, design solutions, and work with engineers to launch products.
       </p>
-
       <form class="mx-auto mb-6 w-full max-w-2xl" @submit.prevent="onSubmit">
         <div class="relative flex-1 min-w-0">
           <textarea
             v-model="query"
             rows="4"
             placeholder="Hi! 👋 Ask me anything about my experience, case-studies, hobbies, or how I think..."
-            class="chat-font min-h-[120px] w-full resize-y rounded-2xl border border-lime-700 bg-black/70 px-4 py-3 pr-12 pb-10 text-sm text-slate-50 placeholder:text-slate-500 focus:border-lime-500/50 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950 sm:min-h-[100px]"
+            class="chat-font min-h-[120px] w-full resize-y rounded-2xl border border-lime-700 bg-black/70 px-4 py-3 pr-12 pb-10 text-base sm:text-sm text-slate-50 placeholder:text-slate-500 focus:border-lime-500/50 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-slate-950 sm:min-h-[100px]"
             autocomplete="off"
             @keydown="onKeydown"
           />
@@ -64,25 +63,25 @@
       <div class="flex flex-wrap justify-center gap-3">
         <a
           href="#about"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
         >
           About me
         </a>
         <NuxtLink
           to="/resume"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
         >
           View resume
         </NuxtLink>
         <a
           href="#portfolio"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
         >
           View portfolio
         </a>
         <a
           href="#research"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
         >
           Research process
         </a>

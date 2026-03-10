@@ -78,7 +78,14 @@
         </div>
       </form>
       <p class="text-center text-sm text-slate-500">
-        This might get things wrong. Ask me directly if you'd like to know more!
+        This might get things wrong.
+        <a
+          href="https://calendly.com/jstnbondoc/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 underline underline-offset-2 hover:text-slate-200"
+        >Ask me directly</a>
+        if you'd like to know more!
       </p>
     </div>
   </div>

@@ -77,7 +77,7 @@ const sectionList = computed(() => {
   if (study.value?.problem) list.push({ id: 'problem', label: 'Problem' })
   if (study.value?.process) list.push({ id: 'process', label: 'Process' })
   if (study.value?.solution) list.push({ id: 'solution', label: 'Solution' })
-  if (study.value?.results) list.push({ id: 'results', label: 'Results' })
+  if (study.value?.results) list.push({ id: 'results', label: 'Impact' })
   return list
 })
 
