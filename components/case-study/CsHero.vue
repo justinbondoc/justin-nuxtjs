@@ -18,6 +18,7 @@
         :type="meta.heroMedia.type || 'image'"
         :src="meta.heroMedia.src"
         :aspect-ratio="meta.heroMedia.aspectRatio"
+        :caption="meta.heroMedia.caption"
         class="mt-8"
       />
     </div>

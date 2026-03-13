@@ -90,7 +90,7 @@
         "problem": "Exploring UI directions meant wireframing in Axure RP or Figma for hours. Static images. Hard to interact with or iterate on in a discussion.",
         "solution": "The skill has a structured planning step before any code: the model defines three directions (name, core idea, trade-off) with a spread of familiar, structural, and experimental. Then it generates each as a standalone HTML file using Vue and Tailwind via CDN. No build step. Real content. Meaningful UI states wired up. Output includes a comparison table and one-line open commands for each direction.",
         "skillPage": "/skills/prototype",
-        "media": { "type": "image", "src": "/images/case-studies/prototype-skill.png" }
+        "media": { "type": "video", "src": "/images/case-studies/prototype-skill.mp4" }
       },
       {
         "title": "/write-help-doc - documentation from the source, not memory",
@@ -98,7 +98,7 @@
         "problem": "Help docs were written late, from memory, and often didn't match what we shipped. Blank page every time meant inconsistent structure, missed edge cases, and review cycles that added days.",
         "solution": "The skill walks the Cloud source: controllers for API shape, services for logic, UI components for what users see. It synthesizes what a feature actually does into a formatted help article. Follows our help site conventions: frontmatter, callouts, numbered steps, screenshot placeholders with capture notes. It also updates the sidebar nav file automatically.",
         "skillPage": "/skills/write-help-doc",
-        "media": { "type": "image", "src": "/images/case-studies/help-docs-skill.png" }
+        "media": { "type": "video", "src": "/images/case-studies/help-docs-skill.mp4" }
       },
       {
         "title": "/changelog - git log to finished draft, automatically",
@@ -106,7 +106,7 @@
         "problem": "Changelog entries meant reading git history, turning ticket IDs and engineer-speak into product language, grouping related changes, matching tone and structure. All manual. Every two weeks.",
         "solution": "The skill reads the two most recent changelog files to get format and voice, pulls commits since the last entry's date, filters noise (dependabot, build fixes, CI), buckets changes as features, improvements, or bug fixes, and drafts a full entry. Headline features get full paragraphs. Improvements and fixes go in collapsible sections. You get something to review and edit, not something to throw away.",
         "skillPage": "/skills/changelog",
-        "media": { "type": "image", "src": "/images/case-studies/changelog-skill.png" }
+        "media": { "type": "video", "src": "/images/case-studies/changelog-skill.mp4" }
       }
     ]
   },

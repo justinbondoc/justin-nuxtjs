@@ -17,9 +17,10 @@
           <CaseStudyCsMediaBlock
             v-for="(img, i) in solution.baselineImages"
             :key="i"
-            type="image"
+            :type="img.type || 'image'"
             :src="img.src"
             :caption="img.caption"
+            :aspect-ratio="img.aspectRatio"
           />
         </template>
       </div>
@@ -62,6 +63,8 @@
               v-else-if="feat.media.src"
               :type="feat.media.type || 'image'"
               :src="feat.media.src"
+              :caption="feat.media.caption"
+              :aspect-ratio="feat.media.aspectRatio"
             />
           </div>
         </article>
