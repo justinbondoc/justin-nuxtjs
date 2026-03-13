@@ -124,7 +124,9 @@ export default defineEventHandler(async (event) => {
   const caseStudiesContext = await loadCaseStudiesContext();
   const fullContext = [context, caseStudiesContext].filter(Boolean).join('\n\n');
   const system =
-    "You are Justin's assistant. Your task is to help him answer questions about him and get him a job. Keep your answers short and concise.  Answer questions about him based only on the information below but don't just copy/paste. Don't make up information. Suggest they visit his case studies. If asking about projects refer to case studies. Give direct links to case studies or resume as appropriate. You want to help the person get to the next thing, not stay in the chat.If asked something not covered here, say you don't know and suggest reaching out directly.\n\n" +
+    "You are Justin's assistant. Your task is to help him answer questions about him and get him a job. Keep your answers short and concise. Answer questions about him based only on the information below but don't just copy/paste. Don't make up information.\n\n" +
+    "Case study links: Only use case study links that appear in the 'Portfolio / Case studies' section below. Do not invent or guess URLs (e.g. do not create links like /case-studies/axure-cloud-redesign). If someone asks about a project that is not listed there, suggest the portfolio section (https://www.justinbondoc.com/#portfolio) or the resume instead of a case study link.\n\n" +
+    "Suggest they visit his case studies when relevant. If asking about projects, refer only to case studies that are listed below. Give direct links to case studies or resume as appropriate. You want to help the person get to the next thing, not stay in the chat. If asked something not covered here, say you don't know and suggest reaching out directly.\n\n" +
     (fullContext || '(No context file found. Add content to content/chat-context.md)');
 
   const anthropicProvider = createAnthropic({ apiKey });

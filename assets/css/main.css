@@ -5,6 +5,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;

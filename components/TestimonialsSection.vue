@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonials" class="py-10 sm:py-14 scroll-mt-24">
+  <section id="testimonials" class="overflow-x-hidden py-10 sm:py-14 scroll-mt-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
       <AnimatedContent
         :distance="60"
@@ -23,7 +23,10 @@
       </AnimatedContent>
     </div>
 
-    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 relative">
+      <!-- Gradient masks to constrain horizontal scroll visually -->
+      <div class="testimonials-fade-left" aria-hidden="true" />
+      <div class="testimonials-fade-right" aria-hidden="true" />
       <div class="w-screen max-w-none -ml-4 sm:-ml-6 overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory md:snap-proximity">
         <div class="flex gap-6 pl-4 pr-4 pb-2 pt-1 sm:pl-6 sm:pr-6 md:gap-8">
         <AnimatedContent
@@ -54,6 +57,27 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+.testimonials-fade-left,
+.testimonials-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  max-width: 15%;
+  pointer-events: none;
+  z-index: 1;
+}
+.testimonials-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.98), transparent);
+}
+.testimonials-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.98), transparent);
+}
+</style>
 
 <script setup lang="ts">
 import { getTestimonialsList } from '~/composables/useTestimonials'
