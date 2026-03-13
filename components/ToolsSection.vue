@@ -1,15 +1,15 @@
 <template>
-  <section class="bg-black py-16 sm:py-20">
+  <section class="border-t border-zed py-16 sm:py-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 text-center">
       <p
-        class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-400"
+        class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-zed-muted"
       >
         {{ subheading }}
       </p>
-      <h2 class="mb-6 text-7xl font-medium tracking-tight text-white">
+      <h2 class="font-zed-serif mb-6 text-7xl font-medium tracking-tight text-zed">
         Tools I use in a <GradientText>release cycle</GradientText>
       </h2>
-      <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-slate-300">
+      <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-zed-muted">
         {{ description }}
       </p>
 
@@ -42,7 +42,7 @@
               </a>
               <span
                 v-if="logo.tooltip"
-                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-slate-200 bg-slate-800 rounded border border-slate-600 opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-zed bg-[var(--color-zed-white)] rounded-[var(--radius-zed)] border border-zed shadow-[var(--shadow-zed-drop)] opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
               >
                 {{ logo.tooltip }}
               </span>
@@ -76,7 +76,7 @@
               </a>
               <span
                 v-if="logo.tooltip"
-                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-slate-200 bg-slate-800 rounded border border-slate-600 opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-zed bg-[var(--color-zed-white)] rounded-[var(--radius-zed)] border border-zed shadow-[var(--shadow-zed-drop)] opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
               >
                 {{ logo.tooltip }}
               </span>

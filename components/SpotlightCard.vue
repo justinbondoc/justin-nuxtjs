@@ -33,8 +33,7 @@ interface SpotlightCardProps {
   spotlightColor?: string;
 }
 
-// Match GradientText.vue default colors: #27FF64, #A0FFBC
-const { className = '', spotlightColor = 'rgba(39, 255, 100, 0.28)' } = defineProps<SpotlightCardProps>();
+const { className = '', spotlightColor = 'rgba(0, 95, 204, 0.08)' } = defineProps<SpotlightCardProps>();
 
 const divRef = useTemplateRef<HTMLDivElement>('divRef');
 const isFocused = ref<boolean>(false);

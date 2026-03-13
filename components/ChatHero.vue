@@ -1,19 +1,18 @@
 <template>
-  <section id="top" class="relative flex min-h-[70vh] items-center pt-12 sm:pt-16">
-    <div class="overflow-hidden">
-      <div class="min-h-[70vh]">
-        <Dither
-          :wave-speed="0.06"
-          :wave-frequency="3"
-          :wave-amplitude="0.3"
-          :wave-color="[0.15, 0.15, 0.15]"
-          :color-num="2.8"
-          :pixel-size="2"
-          :disable-animation="false"
-          :enable-mouse-interaction="true"
-          :mouse-radius="1"
-        />
-      </div>
+  <section id="top" class="relative flex min-h-[70vh] items-center border-b border-zed pt-12 sm:pt-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <Dither
+        :wave-speed="0.06"
+        :wave-frequency="3"
+        :wave-amplitude="0.3"
+        :base-color="[0.98, 0.98, 1]"
+        :wave-color="[0.90, 0.90, 0.99]"
+        :color-num="4"
+        :pixel-size="1"
+        :disable-animation="false"
+        :enable-mouse-interaction="true"
+        :mouse-radius="1"
+      />
     </div>
     <AnimatedContent
       :distance="100"
@@ -28,26 +27,26 @@
       :delay="0"
       class="z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center"
     >
-      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-zed-muted">
         Justin Bondoc · Product Manager · Ontario, California
       </p>
-      <h1 class="mb-3 text-2xl font-semibold tracking-tight sm:text-7xl">
+      <h1 class="mb-3 font-zed-serif text-2xl font-semibold tracking-tight text-zed sm:text-7xl">
         Product manager who <GradientText>discovers</GradientText>, <GradientText>designs</GradientText>, and <GradientText>delivers</GradientText>.
       </h1>
-      <p class="mx-auto mb-2 max-w-prose text-slate-300">
+      <p class="mx-auto mb-2 max-w-prose text-zed-muted">
         10+ years in B2B SaaS. I run discovery, design solutions, and work with engineers to launch products.
       </p>
       <form class="mx-auto mb-6 w-full max-w-2xl" @submit.prevent="onSubmit">
         <div
-          class="relative flex-1 min-w-0 rounded-2xl border border-[#39ff14] bg-black/70 transition-shadow duration-300"
-          :style="isFocused ? {} : { boxShadow: '0 0 16px rgba(57, 255, 20, 0.5), 0 0 32px rgba(57, 255, 20, 0.25)' }"
+          class="relative flex-1 min-w-0 rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-white)] transition-shadow duration-300"
+          :style="isFocused ? {} : { boxShadow: '0 0 0 1px var(--color-zed-border)' }"
         >
-          <div class="relative rounded-2xl">
+          <div class="relative rounded-[var(--radius-zed)]">
             <textarea
               v-model="query"
               rows="4"
               placeholder="Hi! 👋 Ask me anything about my experience, case-studies, hobbies, or how I think..."
-              class="chat-font min-h-[120px] w-full resize-y rounded-2xl border-0 bg-transparent px-4 py-3 pr-12 pb-10 text-base sm:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none sm:min-h-[100px]"
+              class="chat-font min-h-[120px] w-full resize-y rounded-[var(--radius-zed)] border-0 bg-transparent px-4 py-3 pr-12 pb-10 text-base text-zed placeholder:text-zed-muted focus:outline-none sm:min-h-[100px] sm:text-sm"
               autocomplete="off"
               @focus="isFocused = true"
               @blur="isFocused = false"
@@ -56,7 +55,7 @@
             <button
               type="submit"
               aria-label="Ask"
-              class="absolute bottom-3 right-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-transparent bg-green-600 text-white shadow-sm transition-colors hover:bg-green-500"
+              class="absolute bottom-3 right-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-primary)] text-[var(--color-zed-text-on-primary)] shadow-[var(--shadow-zed-button)] transition-colors hover:bg-[var(--color-zed-primary-hover)]"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 19V5" />
@@ -70,25 +69,25 @@
       <div class="flex flex-wrap justify-center gap-3">
         <a
           href="#about"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           About me
         </a>
         <NuxtLink
           to="/resume"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           View resume
         </NuxtLink>
         <a
           href="#portfolio"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           View portfolio
         </a>
         <a
           href="#research"
-          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           Research process
         </a>

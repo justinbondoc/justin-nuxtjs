@@ -166,8 +166,8 @@
         :delay="0"
         class="mx-auto max-w-5xl px-4 sm:px-6"
       >
-        <h2 class="mb-4 text-7xl font-semibold tracking-tight">Selected <GradientText>work</GradientText></h2>
-        <p class="mb-4 text-slate-300">
+        <h2 class="font-zed-serif mb-4 text-7xl font-semibold tracking-tight text-zed">Selected <GradientText>work</GradientText></h2>
+        <p class="mb-4 text-zed-muted">
           Product and design work from discovery to launch.
         </p>
 
@@ -175,7 +175,7 @@
           <SpotlightCard
             v-for="s in studies"
             :key="s.slug"
-            class="bg-neutral-900/50"
+            class="rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-white)]"
           >
             <NuxtLink
               :to="`/case-studies/${s.slug}`"
@@ -185,15 +185,15 @@
                 v-if="s.meta?.coverImage"
                 :src="s.meta.coverImage"
                 :alt="s.meta?.title ?? ''"
-                class="mb-3 aspect-video w-full rounded-lg object-cover"
+                class="mb-3 aspect-video w-full rounded-[var(--radius-zed)] object-cover"
               >
-              <h3 class="text-lg font-semibold text-white">
+              <h3 class="font-zed-serif text-lg font-semibold text-zed">
                 {{ s.meta?.title }}
               </h3>
-              <p class="mt-1 text-sm text-slate-300">
+              <p class="mt-1 text-sm text-zed-muted">
                 {{ s.meta?.oneLiner }}
               </p>
-              <p v-if="s.meta?.role || s.meta?.tools?.length" class="mt-3 text-xs text-slate-400">
+              <p v-if="s.meta?.role || s.meta?.tools?.length" class="mt-3 text-xs text-zed-muted">
                 <span v-if="s.meta?.role">{{ s.meta?.role }}</span>
                 <template v-if="s.meta?.role && s.meta?.tools?.length"> · </template>
                 <span v-if="s.meta?.tools?.length">{{ s.meta.tools.join(', ') }}</span>
@@ -201,11 +201,11 @@
             </NuxtLink>
           </SpotlightCard>
           <SpotlightCard
-            class="bg-neutral-900/50 border border-dotted rounded-lg border-neutral-700"
-            :spotlight-color="'rgba(148, 163, 184, 0.12)'"
+            class="rounded-[var(--radius-zed)] border border-dashed border-zed bg-[var(--color-zed-white)]"
+            :spotlight-color="'rgba(0, 95, 204, 0.04)'"
           >
             <div class="flex flex-col my-auto h-full items-center justify-center text-center">
-              <p class="text-sm font-medium text-slate-800">More soon...</p>
+              <p class="text-sm font-medium text-zed-muted">More soon...</p>
             </div>
           </SpotlightCard>
         </div>
@@ -227,18 +227,19 @@
       <SectionSplitter />
     </AnimatedContent>
 
-    <section id="contact" class="relative min-h-[800px] py-10 sm:py-14 scroll-mt-24 overflow-hidden">
+    <section id="contact" class="relative min-h-[800px] border-t border-zed py-10 sm:py-14 scroll-mt-24 overflow-hidden">
       <div class="absolute inset-0">
         <Dither
-        :wave-speed="0.06"
-              :wave-frequency="3"
-              :wave-amplitude="0.3"
-              :wave-color="[0.15, 0.15, 0.15]"
-              :color-num="2.8"
-              :pixel-size="2"
-              :disable-animation="false"
-              :enable-mouse-interaction="true"
-              :mouse-radius="1"
+          :wave-speed="0.06"
+          :wave-frequency="3"
+          :wave-amplitude="0.3"
+          :base-color="[1, 1, 1]"
+          :wave-color="[0.96, 0.97, 1]"
+          :color-num="2.8"
+          :pixel-size="2"
+          :disable-animation="false"
+          :enable-mouse-interaction="true"
+          :mouse-radius="1"
         />
       </div>
       <AnimatedContent
@@ -254,17 +255,17 @@
         :delay="0"
         class="relative z-10 mx-auto max-w-5xl px-4 mb-48 sm:px-6"
       >
-        <h2 class="mb-4 text-7xl font-semibold tracking-tight"><GradientText>Contact</GradientText></h2>
-        <p class="text-slate-300">
+        <h2 class="font-zed-serif mb-4 text-7xl font-semibold tracking-tight text-zed"><GradientText>Contact</GradientText></h2>
+        <p class="text-zed-muted">
           Connect for product, design, or sales engineering opportunities.
         </p>
-        <p class="mt-2 text-sm text-slate-400">
+        <p class="mt-2 text-sm text-zed-muted">
           LinkedIn:
           <a
             href="https://linkedin.com/in/justin-bondoc"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-lime-400 underline decoration-lime-500/50 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400"
+            class="text-[var(--color-zed-primary)] underline underline-offset-2 decoration-[var(--color-zed-primary)]/30 hover:decoration-[var(--color-zed-primary)]"
           >
             linkedin.com/in/justin-bondoc
           </a>
@@ -273,7 +274,7 @@
         <div class="mt-8 mx-auto rounded-xl overflow-hidden min-w-[320px] w-full max-w-2xl">
           <div
             class="calendly-inline-widget"
-            data-url="https://calendly.com/jstnbondoc?hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=27ff64"
+            data-url="https://calendly.com/jstnbondoc?hide_gdpr_banner=1&background_color=ffffff&text_color=1a1a1a&primary_color=005fcc"
             style="min-width:320px;height:700px;"
           />
         </div>

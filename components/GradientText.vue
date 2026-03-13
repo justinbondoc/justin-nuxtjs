@@ -14,7 +14,7 @@ interface GradientTextProps {
 
 const props = withDefaults(defineProps<GradientTextProps>(), {
   className: '',
-  colors: () => ['#27FF64', '#27FF64', '#A0FFBC'],
+  colors: () => ['#74ade8', '#005fcc', '#6eb4bf'],
   animationSpeed: 8,
   showBorder: false,
   direction: 'horizontal',
@@ -114,7 +114,7 @@ const gradientStyle = computed(() => ({
       :style="{ ...gradientStyle, backgroundPosition }"
     >
       <div
-        class="z-[-1] absolute bg-black rounded-[1.25rem]"
+        class="z-[-1] absolute bg-[var(--color-zed-white)] rounded-[1.25rem]"
         :style="{
           width: 'calc(100% - 2px)',
           height: 'calc(100% - 2px)',

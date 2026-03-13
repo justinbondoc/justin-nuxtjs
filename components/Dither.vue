@@ -12,6 +12,8 @@ interface DitherProps {
   waveFrequency?: number;
   waveAmplitude?: number;
   waveColor?: [number, number, number];
+  /** When set, the pattern mixes from this color (e.g. [1,1,1] for light) to waveColor. Otherwise mixes from black. */
+  baseColor?: [number, number, number];
   colorNum?: number;
   pixelSize?: number;
   disableAnimation?: boolean;
@@ -24,6 +26,7 @@ const props = withDefaults(defineProps<DitherProps>(), {
   waveFrequency: 3,
   waveAmplitude: 0.3,
   waveColor: () => [0.5, 0.5, 0.5] as [number, number, number],
+  baseColor: undefined,
   colorNum: 4,
   pixelSize: 2,
   disableAnimation: false,
@@ -60,6 +63,7 @@ uniform float waveSpeed;
 uniform float waveFrequency;
 uniform float waveAmplitude;
 uniform vec3 waveColor;
+uniform vec3 baseColor;
 uniform vec2 mousePos;
 uniform int enableMouseInteraction;
 uniform float mouseRadius;
@@ -223,7 +227,8 @@ void main() {
     f -= 0.5 * effect;
   }
   
-  vec3 col = mix(vec3(0.0), waveColor, f);
+  vec3 fromColor = baseColor;
+  vec3 col = mix(fromColor, waveColor, f);
   col = dither(uv, col);
   
   gl_FragColor = vec4(col, 1.0);
@@ -285,6 +290,10 @@ const update = (t: number) => {
   program.uniforms.waveColor.value.r = props.waveColor[0];
   program.uniforms.waveColor.value.g = props.waveColor[1];
   program.uniforms.waveColor.value.b = props.waveColor[2];
+  const base = props.baseColor ?? [0, 0, 0];
+  program.uniforms.baseColor.value.r = base[0];
+  program.uniforms.baseColor.value.g = base[1];
+  program.uniforms.baseColor.value.b = base[2];
   program.uniforms.enableMouseInteraction.value = props.enableMouseInteraction ? 1 : 0;
   program.uniforms.mouseRadius.value = props.mouseRadius;
   program.uniforms.colorNum.value = props.colorNum;
@@ -317,6 +326,7 @@ const initializeScene = () => {
       waveFrequency: { value: props.waveFrequency },
       waveAmplitude: { value: props.waveAmplitude },
       waveColor: { value: new Color(...props.waveColor) },
+      baseColor: { value: new Color(...(props.baseColor ?? [0, 0, 0])) },
       mousePos: { value: new Float32Array([gl.canvas.width / 2, gl.canvas.height / 2]) },
       enableMouseInteraction: { value: props.enableMouseInteraction ? 1 : 0 },
       mouseRadius: { value: props.mouseRadius },

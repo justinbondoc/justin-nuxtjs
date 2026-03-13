@@ -3,45 +3,45 @@
     <div class="mx-auto max-w-3xl px-4 sm:px-6 print:max-w-none print:px-0">
       <!-- Header / contact -->
       <AnimatedContent :delay="0" class="print:opacity-100">
-      <header class="mb-8 border-b border-slate-800 pb-6 print:border-b-0">
+      <header class="mb-8 border-b border-neutral-200 pb-6 print:border-b-0">
         <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">
           <GradientText class="text-4xl sm:text-5xl">Justin Bondoc</GradientText>
         </h1>
-        <p class="mt-1 text-sm font-medium text-slate-400 print:text-black">
+        <p class="mt-1 text-sm font-medium text-neutral-600 print:text-black">
           Product Manager
         </p>
-        <p class="mt-3 text-sm text-slate-300 print:text-black flex flex-wrap gap-x-2 gap-y-1">
+        <p class="mt-3 text-sm text-neutral-700 print:text-black flex flex-wrap gap-x-2 gap-y-1">
           <span>(925) 818-1418</span>
-          <span class="text-slate-600">|</span>
+          <span class="text-neutral-400">|</span>
           <a
             href="mailto:bondocjustin@yahoo.com"
-            class="underline decoration-slate-500/60 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400 print:text-black print:no-underline"
+            class="underline decoration-neutral-400 underline-offset-2 hover:text-zed-primary hover:decoration-zed-primary print:text-black print:no-underline"
           >
             bondocjustin@yahoo.com
           </a>
-          <span class="text-slate-600">|</span>
+          <span class="text-neutral-400">|</span>
           <a
             href="https://www.linkedin.com/in/justin-bondoc"
             target="_blank"
             rel="noopener noreferrer"
-            class="underline decoration-slate-500/60 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400 print:text-black print:no-underline"
+            class="underline decoration-neutral-400 underline-offset-2 hover:text-zed-primary hover:decoration-zed-primary print:text-black print:no-underline"
           >
             linkedin.com/in/justin-bondoc
           </a>
-          <span class="text-slate-600">|</span>
+          <span class="text-neutral-400">|</span>
           <a
             href="https://justinbondoc.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="underline decoration-slate-500/60 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400 print:text-black print:no-underline"
+            class="underline decoration-neutral-400 underline-offset-2 hover:text-zed-primary hover:decoration-zed-primary print:text-black print:no-underline"
           >
             justinbondoc.com
           </a>
-          <span class="text-slate-600">|</span>
+          <span class="text-neutral-400">|</span>
           <span>Ontario, California 🇺🇸</span>
         </p>
 
-        <p class="mt-4 text-sm text-slate-200 leading-relaxed print:text-black">
+        <p class="mt-4 text-sm text-neutral-700 leading-relaxed print:text-black">
           Product Manager with 10+ years in B2B SaaS, including 4 years leading product at Axure. Known for
           delivering under constraints, making tough prioritization calls, and aligning teams through ambiguity.
           Blends Product, UX, Front-End, and Sales Engineering to build customer-grounded solutions.
@@ -50,7 +50,7 @@
         <div class="mt-6 flex flex-wrap gap-3 print:hidden">
           <NuxtLink
             to="/"
-            class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+            class="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-transparent px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
           >
             Back to home
           </NuxtLink>
@@ -61,20 +61,20 @@
       <!-- Experience -->
       <AnimatedContent :delay="0.1" class="print:opacity-100">
       <section class="mb-8 break-inside-avoid">
-        <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
+        <h2 class="mb-3 text-xl font-semibold tracking-tight text-neutral-900 print:text-black">
           Work Experience
         </h2>
 
         <article class="mb-5">
           <header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-            <h3 class="text-sm font-semibold print:text-black">
+            <h3 class="text-sm font-semibold text-neutral-900 print:text-black">
               <GradientText class="text-sm">Product Manager II | Axure Software Solutions</GradientText>
             </h3>
-            <p class="text-xs text-slate-400 print:text-black">
+            <p class="text-xs text-neutral-600 print:text-black">
               San Diego, CA | Jul 2023 – Mar 2026
             </p>
           </header>
-          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
+          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-neutral-700 print:text-black">
             <li>
               Defined the strategy for <strong>Axure Cloud 3.0</strong> and led the project from start to finish,
               transforming a single-user product into a team-based solution with a new subscription model, laying
@@ -109,14 +109,14 @@
 
         <article class="mb-5">
           <header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-            <h3 class="text-sm font-semibold print:text-black">
+            <h3 class="text-sm font-semibold text-neutral-900 print:text-black">
               <GradientText class="text-sm">Product Manager I | Axure Software Solutions</GradientText>
             </h3>
-            <p class="text-xs text-slate-400 print:text-black">
+            <p class="text-xs text-neutral-600 print:text-black">
               San Diego, CA | Jul 2021 – Jul 2023
             </p>
           </header>
-          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
+          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-neutral-700 print:text-black">
             <li>
               Drove <strong>Axure RP 11</strong> adoption through user research, identifying key migration blockers
               and prototyping an upgrade workflow solution; defined success metrics and collaborated cross-functionally
@@ -135,14 +135,14 @@
 
         <article class="mb-5">
           <header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-            <h3 class="text-sm font-semibold print:text-black">
+            <h3 class="text-sm font-semibold text-neutral-900 print:text-black">
               <GradientText class="text-sm">Sales Engineer | Axure Software Solutions</GradientText>
             </h3>
-            <p class="text-xs text-slate-400 print:text-black">
+            <p class="text-xs text-neutral-600 print:text-black">
               San Diego, CA | Aug 2018 – Jul 2021
             </p>
           </header>
-          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
+          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-neutral-700 print:text-black">
             <li>
               Led enterprise on-premises implementations of <strong>Axure Cloud for Business</strong>, managing
               complex technical deployments for large accounts.
@@ -164,14 +164,14 @@
 
         <article>
           <header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-            <h3 class="text-sm font-semibold print:text-black">
+            <h3 class="text-sm font-semibold text-neutral-900 print:text-black">
               <GradientText class="text-sm">Sales Engineer | MadCap Software</GradientText>
             </h3>
-            <p class="text-xs text-slate-400 print:text-black">
+            <p class="text-xs text-neutral-600 print:text-black">
               San Diego, CA | Jan 2016 – Aug 2018
             </p>
           </header>
-          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
+          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-neutral-700 print:text-black">
             <li>
               Consistently hit <strong>100%+ of quota</strong> by making complex technical software accessible
               and compelling to non-technical buyers.
@@ -190,10 +190,10 @@
       <!-- Education -->
       <AnimatedContent :delay="0.15" class="print:opacity-100">
       <section class="mb-8 break-inside-avoid">
-        <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
+        <h2 class="mb-3 text-xl font-semibold tracking-tight text-neutral-900 print:text-black">
           Education
         </h2>
-        <ul class="list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
+        <ul class="list-disc list-outside pl-6 space-y-1.5 text-sm text-neutral-700 print:text-black">
           <li>
             B.A. Visual Arts: Media Computing, Class of 2014 | UC San Diego
           </li>
@@ -204,10 +204,10 @@
       <!-- Certificates -->
       <AnimatedContent :delay="0.2" class="print:opacity-100">
       <section class="mb-8 break-inside-avoid">
-        <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
+        <h2 class="mb-3 text-xl font-semibold tracking-tight text-neutral-900 print:text-black">
           Certificates
         </h2>
-        <ul class="list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
+        <ul class="list-disc list-outside pl-6 space-y-1.5 text-sm text-neutral-700 print:text-black">
           <li>
             Certified Associate in Project Management (CAPM) | Project Management Institute
           </li>
@@ -218,10 +218,10 @@
       <!-- References -->
       <AnimatedContent :delay="0.25" class="print:opacity-100">
       <section class="break-inside-avoid">
-        <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
+        <h2 class="mb-3 text-xl font-semibold tracking-tight text-neutral-900 print:text-black">
           References
         </h2>
-        <p class="text-sm text-slate-200 print:text-black">
+        <p class="text-sm text-neutral-700 print:text-black">
           Available upon request, including references from Axure's CEO and CTO.
         </p>
       </section>

@@ -2,14 +2,14 @@
   <section id="research" class="py-10 sm:py-14 scroll-mt-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
       <!-- Header -->
-      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-center text-slate-400">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-center text-zed-muted">
         Research and AI
       </p>
-      <h2 class="mb-4 text-4xl font-semibold tracking-tight text-center text-white sm:text-5xl lg:text-6xl">
+      <h2 class="font-zed-serif mb-4 text-4xl font-semibold tracking-tight text-center text-zed sm:text-5xl lg:text-6xl">
         How I research before I build<br>
         <GradientText>and how AI makes it faster</GradientText>
       </h2>
-      <p class="margin-auto text-center text-slate-300">
+      <p class="margin-auto text-center text-zed-muted">
         I keep a steady stream of product signals coming in and run a clear research loop for each
         project.
       </p>
@@ -17,21 +17,21 @@
 
       <!-- Always-on signal sources -->
       <div class="mt-8">
-        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-zed-muted">
           Ongoing sources I watch
         </p>
         <div class="grid gap-4 sm:grid-cols-2">
           <article
             v-for="source in signalSources"
             :key="source.name"
-            class="rounded-lg border border-slate-800 bg-black/60 p-4"
+            class="rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-white)] p-4"
           >
             <header class="mb-3 flex items-center justify-between gap-3">
-              <h3 class="text-base font-medium text-slate-100">
+              <h3 class="text-base font-medium text-zed">
                 {{ source.name }}
               </h3>
               <span
-                class="inline-flex items-center rounded-full border border-slate-700 bg-slate-900/70 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                class="inline-flex items-center rounded-full border border-zed bg-[var(--color-zed-border)]/30 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zed-muted"
               >
                 {{ source.type }}
               </span>
@@ -40,7 +40,7 @@
               <span
                 v-for="item in source.items"
                 :key="item"
-                class="rounded-full bg-slate-900/80 px-2 py-0.5 text-xs text-slate-300"
+                class="rounded-full bg-[var(--color-zed-border)]/40 px-2 py-0.5 text-xs text-zed-muted"
               >
                 {{ item }}
               </span>
@@ -51,36 +51,36 @@
 
       <!-- Slack bridge -->
       <div class="mt-8 flex items-center gap-3">
-        <div class="hidden h-px flex-1 bg-linear-to-r from-transparent via-slate-700 to-slate-700 sm:block" />
+        <div class="hidden h-px flex-1 bg-linear-to-r from-transparent via-[var(--color-zed-border)] to-[var(--color-zed-border)] sm:block" />
         <div
-          class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-black/80 px-3 py-1.5 text-[0.7rem] text-slate-200"
+          class="inline-flex items-center gap-2 rounded-full border border-zed bg-[var(--color-zed-panel)]/50 px-3 py-1.5 text-[0.7rem] text-zed"
         >
-          <span class="h-2 w-2 rounded-full bg-lime-400" />
-          <span class="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-300">Slack</span>
-          <span class="text-[0.75rem] text-slate-400">
+          <span class="h-2 w-2 rounded-full bg-[var(--color-zed-primary)]" />
+          <span class="font-zed-mono text-[0.65rem] uppercase tracking-[0.16em] text-zed-muted">Slack</span>
+          <span class="text-[0.75rem] text-zed-muted">
             Slack sends these events into one place so I can see important signals quickly
           </span>
         </div>
-        <div class="hidden h-px flex-1 bg-linear-to-l from-transparent via-slate-700 to-slate-700 sm:block" />
+        <div class="hidden h-px flex-1 bg-linear-to-l from-transparent via-[var(--color-zed-border)] to-[var(--color-zed-border)] sm:block" />
       </div>
 
       <!-- Down arrow -->
       <div class="mt-4 flex items-center justify-center">
         <div class="flex h-8 flex-col items-center justify-between">
-          <div class="h-4 w-px bg-slate-800" />
-          <span class="text-xs text-slate-500">↓</span>
+          <div class="h-4 w-px bg-zed" />
+          <span class="text-xs text-zed-muted">↓</span>
         </div>
       </div>
 
       <!-- Column headers -->
       <div
-        class="mt-4 grid gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-slate-500 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
+        class="mt-4 grid gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-zed-muted sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
       >
         <div class="pl-7 sm:pl-8">
           Research step
         </div>
         <div class="flex items-center gap-2 pl-1">
-          <span class="h-1.5 w-1.5 rounded-full bg-lime-300" />
+          <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-zed-primary)]" />
           <span>How AI helps</span>
         </div>
       </div>
@@ -97,20 +97,20 @@
             class="block"
           >
             <div
-              class="group grid gap-px overflow-hidden rounded-lg border border-slate-800 bg-black/40 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
+              class="group grid gap-px overflow-hidden rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-border)]/30 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
             >
             <!-- Left: research phase -->
             <div
-              class="flex items-start gap-3 bg-black/70 px-4 py-3 transition-colors group-hover:bg-black/90 sm:py-4"
+              class="flex items-start gap-3 bg-[var(--color-zed-white)] px-4 py-3 transition-colors group-hover:bg-[var(--color-zed-border)]/20 sm:py-4"
             >
-              <span class="mt-0.5 text-xs font-mono text-slate-500">
+              <span class="mt-0.5 font-zed-mono text-xs text-zed-muted">
                 {{ phase.number }}
               </span>
               <div class="space-y-1">
-                <p class="text-sm font-medium text-slate-100">
+                <p class="text-sm font-medium text-zed">
                   {{ phase.label }}
                 </p>
-                <p class="text-sm text-slate-300">
+                <p class="text-sm text-zed-muted">
                   {{ phase.description }}
                 </p>
               </div>
@@ -124,34 +124,34 @@
 
             <!-- Right: AI augmentation -->
             <div
-              class="flex flex-col gap-1 bg-slate-900/50 px-4 py-3 transition-colors group-hover:bg-slate-900/80 sm:py-4"
+              class="flex flex-col gap-1 bg-[var(--color-zed-border)]/10 px-4 py-3 transition-colors group-hover:bg-[var(--color-zed-border)]/25 sm:py-4"
             >
               <div class="flex flex-wrap items-center justify-between gap-3">
-                <p class="text-sm font-medium text-slate-100">
+                <p class="text-sm font-medium text-zed">
                   {{ phase.ai.label }}
                 </p>
                 <div class="inline-flex flex-wrap items-center gap-2">
                   <span
-                    class="inline-flex items-center gap-1 rounded-full border border-slate-700 bg-slate-950/70 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em]"
+                    class="inline-flex items-center gap-1 rounded-full border border-zed bg-[var(--color-zed-border)]/40 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em]"
                   >
                     <span
                       class="h-1.5 w-1.5 rounded-full"
                       :class="toolDotClass(phase.ai.tool)"
                     />
-                    <span class="text-slate-200">
+                    <span class="text-zed">
                       {{ phase.ai.tool }}
                     </span>
                   </span>
                   <span
                     v-for="pill in phase.ai.extraPills"
                     :key="pill"
-                    class="inline-flex items-center gap-1 rounded-full border border-slate-600 bg-slate-800/70 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-slate-200"
+                    class="inline-flex items-center gap-1 rounded-full border border-zed bg-[var(--color-zed-border)]/30 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zed-muted"
                   >
                     {{ pill }}
                   </span>
                 </div>
               </div>
-              <p class="text-sm text-slate-300">
+              <p class="text-sm text-zed-muted">
                 {{ phase.ai.detail }}
               </p>
             </div>
@@ -160,7 +160,7 @@
           <!-- Connector line between rows -->
           <div
             v-if="index < phases.length - 1"
-            class="ml-8 h-4 border-l border-slate-800 sm:ml-9"
+            class="ml-8 h-4 border-l border-zed sm:ml-9"
           />
           </AnimatedContent>
 
@@ -168,7 +168,7 @@
       </div>
       <AnimatedContent>
 
-<p class="margin-auto mt-2 text-center text-sm text-slate-400 ">
+<p class="margin-auto mt-2 text-center text-sm text-zed-muted">
 Not every project gets this full loop. For smaller initiatives, experiments, or tight
 timelines I might run a lighter version or skip steps. This is the playbook for when
 the stakes justify it.
@@ -310,29 +310,28 @@ const phases: Phase[] = [
 
 function tagClass(tag: PhaseTag) {
   if (tag === 'Internal') {
-    return 'border-amber-500/40 bg-amber-500/10 text-amber-200'
+    return 'border-amber-500/50 bg-amber-500/15 text-amber-800'
   }
   if (tag === 'Sourcing') {
-    return 'border-sky-500/40 bg-sky-500/10 text-sky-200'
+    return 'border-sky-500/50 bg-sky-500/15 text-sky-800'
   }
   if (tag === 'External') {
-    return 'border-green-500/40 bg-green-500/10 text-green-200'
+    return 'border-green-600/50 bg-green-500/15 text-green-800'
   }
   if (tag === 'Design') {
-    return 'border-fuchsia-500/40 bg-fuchsia-500/10 text-fuchsia-200'
+    return 'border-fuchsia-500/50 bg-fuchsia-500/15 text-fuchsia-800'
   }
-  return 'border-slate-600 bg-slate-800 text-slate-200'
+  return 'border-zed bg-[var(--color-zed-border)]/40 text-zed-muted'
 }
 
 function toolDotClass(tool: ToolName) {
   if (tool === 'Claude') {
-    return 'bg-amber-300'
+    return 'bg-amber-500'
   }
   if (tool === 'Cursor') {
-    return 'bg-sky-300'
+    return 'bg-sky-500'
   }
-  // Claude + Cursor
-  return 'bg-violet-300'
+  return 'bg-violet-500'
 }
 </script>
 
