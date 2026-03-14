@@ -114,7 +114,7 @@ const gradientStyle = computed(() => ({
       :style="{ ...gradientStyle, backgroundPosition }"
     >
       <div
-        class="z-[-1] absolute bg-[var(--color-zed-white)] rounded-[1.25rem]"
+        class="z-[-1] absolute bg-[var(--color-paper-white)] rounded-[1.25rem]"
         :style="{
           width: 'calc(100% - 2px)',
           height: 'calc(100% - 2px)',

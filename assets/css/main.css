@@ -1,55 +1,55 @@
 @import "tailwindcss";
 
-/* zed.dev (Dembrandt) design tokens */
+/* paper (Dembrandt) design tokens */
 @theme {
   /* Typography: Plex Serif headings, Plex Sans body, Plex Mono code */
   --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'IBM Plex Serif', ui-serif, Georgia, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Colors from zed.dev extraction */
-  --color-zed-white: #ffffff;
-  --color-zed-black: #000000;
-  --color-zed-text: hsl(0, 0%, 10%);
-  --color-zed-text-on-primary: hsl(0, 0%, 100%);
-  --color-zed-text-muted: hsl(0, 0%, 40%);
-  --color-zed-border: #dadde2;
-  --color-zed-border-dark: #464b57;
-  --color-zed-panel: #3b414d;
-  --color-zed-panel-hover: #2e343e;
-  --color-zed-panel-text: #dce0e5;
-  --color-zed-primary: #005fcc;
-  --color-zed-primary-hover: #0640ac;
-  --color-zed-primary-muted: #74ade8;
-  --color-zed-accent: #6eb4bf;
-  --color-zed-muted: #acb2be;
-  --color-zed-muted-dark: #4e5a5f;
+  /* Colors from paper extraction */
+  --color-paper-white: #fafaf9;
+  --color-paper-black: #000000;
+  --color-paper-text: hsl(0, 0%, 10%);
+  --color-paper-text-on-primary: hsl(0, 0%, 100%);
+  --color-paper-text-muted: hsl(0, 0%, 40%);
+  --color-paper-border: #dadde2;
+  --color-paper-border-dark: #464b57;
+  --color-paper-panel: #3b414d;
+  --color-paper-panel-hover: #2e343e;
+  --color-paper-panel-text: #dce0e5;
+  --color-paper-primary: #005fcc;
+  --color-paper-primary-hover: #0640ac;
+  --color-paper-primary-muted: #74ade8;
+  --color-paper-accent: #6eb4bf;
+  --color-paper-muted: #acb2be;
+  --color-paper-muted-dark: #4e5a5f;
 
-  /* Spacing: 8px base (zed uses 1px, 2px, 4px, 6px, 8px, 10px, 12px, 14px, 16px, 24px, 32px, 36px, 40px, 48px) */
-  --spacing-zed-1: 1px;
-  --spacing-zed-2: 2px;
-  --spacing-zed-4: 4px;
-  --spacing-zed-6: 6px;
-  --spacing-zed-8: 8px;
-  --spacing-zed-10: 10px;
-  --spacing-zed-12: 12px;
-  --spacing-zed-14: 14px;
-  --spacing-zed-16: 16px;
-  --spacing-zed-24: 24px;
-  --spacing-zed-32: 32px;
-  --spacing-zed-36: 36px;
-  --spacing-zed-40: 40px;
-  --spacing-zed-48: 48px;
+  /* Spacing: 8px base (paper uses 1px, 2px, 4px, 6px, 8px, 10px, 12px, 14px, 16px, 24px, 32px, 36px, 40px, 48px) */
+  --spacing-paper-1: 1px;
+  --spacing-paper-2: 2px;
+  --spacing-paper-4: 4px;
+  --spacing-paper-6: 6px;
+  --spacing-paper-8: 8px;
+  --spacing-paper-10: 10px;
+  --spacing-paper-12: 12px;
+  --spacing-paper-14: 14px;
+  --spacing-paper-16: 16px;
+  --spacing-paper-24: 24px;
+  --spacing-paper-32: 32px;
+  --spacing-paper-36: 36px;
+  --spacing-paper-40: 40px;
+  --spacing-paper-48: 48px;
 
-  /* Border radius: 2px, 4px (zed) */
-  --radius-zed-sm: 2px;
-  --radius-zed: 4px;
+  /* Border radius: 2px, 4px (paper) */
+  --radius-paper-sm: 2px;
+  --radius-paper: 4px;
 
-  /* Shadows (zed-style subtle) */
-  --shadow-zed-inset: 0 -2px 0 0 rgba(111, 123, 144, 0.05) inset;
-  --shadow-zed-inset-strong: 0 -2px 0 0 rgba(111, 123, 144, 0.1) inset;
-  --shadow-zed-drop: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-zed-button: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  /* Shadows (paper-style subtle) */
+  --shadow-paper-inset: 0 -2px 0 0 rgba(111, 123, 144, 0.05) inset;
+  --shadow-paper-inset-strong: 0 -2px 0 0 rgba(111, 123, 144, 0.1) inset;
+  --shadow-paper-drop: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-paper-button: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
 
 @layer base {
@@ -60,8 +60,8 @@
   html,
   body {
     font-family: var(--font-sans);
-    background-color: var(--color-zed-white);
-    color: var(--color-zed-text);
+    background-color: var(--color-paper-white);
+    color: var(--color-paper-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
@@ -79,10 +79,10 @@
   }
 
   a[href]:hover {
-    color: var(--color-zed-primary);
+    color: var(--color-paper-primary);
   }
 
-  /* Headings: Plex Serif, zed-style weights/sizes */
+  /* Headings: Plex Serif, paper-style weights/sizes */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     font-weight: 320;
@@ -91,56 +91,56 @@
   }
 }
 
-/* Utility classes for zed palette */
-.bg-zed-dark {
-  background-color: var(--color-zed-black);
+/* Utility classes for paper palette */
+.bg-paper-dark {
+  background-color: var(--color-paper-black);
 }
-.text-zed {
-  color: var(--color-zed-text);
+.text-paper {
+  color: var(--color-paper-text);
 }
-.text-zed-muted {
-  color: var(--color-zed-text-muted);
+.text-paper-muted {
+  color: var(--color-paper-text-muted);
 }
-.text-zed-on-primary {
-  color: var(--color-zed-text-on-primary);
+.text-paper-on-primary {
+  color: var(--color-paper-text-on-primary);
 }
-.border-zed {
-  border-color: var(--color-zed-border);
+.border-paper {
+  border-color: var(--color-paper-border);
 }
-.border-zed-dark {
-  border-color: var(--color-zed-border-dark);
+.border-paper-dark {
+  border-color: var(--color-paper-border-dark);
 }
-.font-zed-serif {
+.font-paper-serif {
   font-family: var(--font-serif);
 }
-.font-zed-mono {
+.font-paper-mono {
   font-family: var(--font-mono);
 }
 
-/* Zed-style primary button */
-.btn-zed-primary {
-  background-color: var(--color-zed-panel);
-  color: var(--color-zed-panel-text);
-  border: 1px solid var(--color-zed-border-dark);
-  border-radius: var(--radius-zed);
+/* Paper-style primary button */
+.btn-paper-primary {
+  background-color: var(--color-paper-panel);
+  color: var(--color-paper-panel-text);
+  border: 1px solid var(--color-paper-border-dark);
+  border-radius: var(--radius-paper);
   padding: 2px 8px;
   font-size: 0.75rem;
   line-height: 1.33;
-  box-shadow: var(--shadow-zed-button);
+  box-shadow: var(--shadow-paper-button);
 }
-.btn-zed-primary:hover {
-  background-color: var(--color-zed-panel-hover);
+.btn-paper-primary:hover {
+  background-color: var(--color-paper-panel-hover);
 }
 
-/* Zed-style secondary (transparent) button */
-.btn-zed-secondary {
+/* Paper-style secondary (transparent) button */
+.btn-paper-secondary {
   background: transparent;
-  color: var(--color-zed-text);
+  color: var(--color-paper-text);
   border: 1px solid transparent;
-  border-radius: var(--radius-zed);
+  border-radius: var(--radius-paper);
   padding: 0 10px 0 8px;
 }
-.btn-zed-secondary:hover {
+.btn-paper-secondary:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <section id="top" class="relative flex min-h-[70vh] items-center border-b border-zed pt-12 sm:pt-16 overflow-hidden">
+  <section id="top" class="relative flex min-h-[70vh] items-center border-b border-paper pt-12 sm:pt-16 overflow-hidden">
     <div class="absolute inset-0">
       <Dither
         :wave-speed="0.06"
@@ -27,26 +27,26 @@
       :delay="0"
       class="z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center"
     >
-      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-zed-muted">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-paper-muted">
         Justin Bondoc · Product Manager · Ontario, California
       </p>
-      <h1 class="mb-3 font-zed-serif text-2xl font-semibold tracking-tight text-zed sm:text-7xl">
+      <h1 class="mb-3 font-paper-serif text-2xl font-semibold tracking-tight text-paper sm:text-7xl">
         Product manager who <GradientText>discovers</GradientText>, <GradientText>designs</GradientText>, and <GradientText>delivers</GradientText>.
       </h1>
-      <p class="mx-auto mb-2 max-w-prose text-zed-muted">
+      <p class="mx-auto mb-2 max-w-prose text-paper-muted">
         10+ years in B2B SaaS. I run discovery, design solutions, and work with engineers to launch products.
       </p>
       <form class="mx-auto mb-6 w-full max-w-2xl" @submit.prevent="onSubmit">
         <div
-          class="relative flex-1 min-w-0 rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-white)] transition-shadow duration-300"
-          :style="isFocused ? {} : { boxShadow: '0 0 0 1px var(--color-zed-border)' }"
+          class="relative flex-1 min-w-0 rounded-[var(--radius-paper)] border border-paper bg-[var(--color-paper-white)] transition-shadow duration-300"
+          :style="isFocused ? {} : { boxShadow: '0 0 0 1px var(--color-paper-border)' }"
         >
-          <div class="relative rounded-[var(--radius-zed)]">
+          <div class="relative rounded-[var(--radius-paper)]">
             <textarea
               v-model="query"
               rows="4"
               placeholder="Hi! 👋 Ask me anything about my experience, case-studies, hobbies, or how I think..."
-              class="chat-font min-h-[120px] w-full resize-y rounded-[var(--radius-zed)] border-0 bg-transparent px-4 py-3 pr-12 pb-10 text-base text-zed placeholder:text-zed-muted focus:outline-none sm:min-h-[100px] sm:text-sm"
+              class="chat-font min-h-[120px] w-full resize-y rounded-[var(--radius-paper)] border-0 bg-transparent px-4 py-3 pr-12 pb-10 text-base text-paper placeholder:text-paper-muted focus:outline-none sm:min-h-[100px] sm:text-sm"
               autocomplete="off"
               @focus="isFocused = true"
               @blur="isFocused = false"
@@ -55,7 +55,7 @@
             <button
               type="submit"
               aria-label="Ask"
-              class="absolute bottom-3 right-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-primary)] text-[var(--color-zed-text-on-primary)] shadow-[var(--shadow-zed-button)] transition-colors hover:bg-[var(--color-zed-primary-hover)]"
+              class="absolute bottom-3 right-3 flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius-paper)] border border-paper bg-[var(--color-paper-primary)] text-[var(--color-paper-text-on-primary)] shadow-[var(--shadow-paper-button)] transition-colors hover:bg-[var(--color-paper-primary-hover)]"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 19V5" />
@@ -69,25 +69,25 @@
       <div class="flex flex-wrap justify-center gap-3">
         <a
           href="#about"
-          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
+          class="btn-paper-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           About me
         </a>
         <NuxtLink
           to="/resume"
-          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
+          class="btn-paper-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           View resume
         </NuxtLink>
         <a
           href="#portfolio"
-          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
+          class="btn-paper-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           View portfolio
         </a>
         <a
           href="#research"
-          class="btn-zed-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
+          class="btn-paper-primary inline-flex items-center justify-center px-4 py-2 text-sm font-medium"
         >
           Research process
         </a>

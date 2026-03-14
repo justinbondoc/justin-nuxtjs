@@ -1,5 +1,5 @@
 <template>
-  <section class="border-y border-zed py-8 sm:py-10 overflow-hidden" aria-label="Features">
+  <section class="border-y border-paper py-8 sm:py-10 overflow-hidden" aria-label="Features">
     <div class="marquee-track py-4">
       <div class="marquee-inner flex items-center gap-12 sm:gap-16 w-max">
         <div

@@ -4,7 +4,7 @@
     role="listitem"
   >
     <div
-      class="flex h-10 w-10 shrink-0 items-center justify-center text-zed"
+      class="flex h-10 w-10 shrink-0 items-center justify-center text-paper"
       aria-hidden
     >
       <component
@@ -14,7 +14,7 @@
       />
     </div>
     <span
-      class="whitespace-nowrap text-sm font-medium uppercase tracking-wider text-zed sm:text-base"
+      class="whitespace-nowrap text-sm font-medium uppercase tracking-wider text-paper sm:text-base"
     >
       {{ label }}
     </span>

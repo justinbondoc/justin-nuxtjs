@@ -14,7 +14,7 @@
       :threshold="0.1"
       :delay="0.1"
     >
-      <HorizontalScrollStrip />
+      <!-- <HorizontalScrollStrip /> -->
     </AnimatedContent>
 
     <AnimatedContent
@@ -166,8 +166,8 @@
         :delay="0"
         class="mx-auto max-w-5xl px-4 sm:px-6"
       >
-        <h2 class="font-zed-serif mb-4 text-7xl font-semibold tracking-tight text-zed">Selected <GradientText>work</GradientText></h2>
-        <p class="mb-4 text-zed-muted">
+        <h2 class="font-paper-serif mb-4 text-7xl font-semibold tracking-tight text-paper">Selected <GradientText>work</GradientText></h2>
+        <p class="mb-4 text-paper-muted">
           Product and design work from discovery to launch.
         </p>
 
@@ -175,7 +175,7 @@
           <SpotlightCard
             v-for="s in studies"
             :key="s.slug"
-            class="rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-white)]"
+            class="rounded-[var(--radius-paper)] border border-paper bg-[var(--color-paper-white)]"
           >
             <NuxtLink
               :to="`/case-studies/${s.slug}`"
@@ -185,15 +185,15 @@
                 v-if="s.meta?.coverImage"
                 :src="s.meta.coverImage"
                 :alt="s.meta?.title ?? ''"
-                class="mb-3 aspect-video w-full rounded-[var(--radius-zed)] object-cover"
+                class="mb-3 aspect-video w-full rounded-[var(--radius-paper)] object-cover"
               >
-              <h3 class="font-zed-serif text-lg font-semibold text-zed">
+              <h3 class="font-paper-serif text-lg font-semibold text-paper">
                 {{ s.meta?.title }}
               </h3>
-              <p class="mt-1 text-sm text-zed-muted">
+              <p class="mt-1 text-sm text-paper-muted">
                 {{ s.meta?.oneLiner }}
               </p>
-              <p v-if="s.meta?.role || s.meta?.tools?.length" class="mt-3 text-xs text-zed-muted">
+              <p v-if="s.meta?.role || s.meta?.tools?.length" class="mt-3 text-xs text-paper-muted">
                 <span v-if="s.meta?.role">{{ s.meta?.role }}</span>
                 <template v-if="s.meta?.role && s.meta?.tools?.length"> · </template>
                 <span v-if="s.meta?.tools?.length">{{ s.meta.tools.join(', ') }}</span>
@@ -201,11 +201,11 @@
             </NuxtLink>
           </SpotlightCard>
           <SpotlightCard
-            class="rounded-[var(--radius-zed)] border border-dashed border-zed bg-[var(--color-zed-white)]"
+            class="rounded-[var(--radius-paper)] border border-dashed border-paper bg-[var(--color-paper-white)]"
             :spotlight-color="'rgba(0, 95, 204, 0.04)'"
           >
             <div class="flex flex-col my-auto h-full items-center justify-center text-center">
-              <p class="text-sm font-medium text-zed-muted">More soon...</p>
+              <p class="text-sm font-medium text-paper-muted">More soon...</p>
             </div>
           </SpotlightCard>
         </div>
@@ -227,7 +227,7 @@
       <SectionSplitter />
     </AnimatedContent>
 
-    <section id="contact" class="relative min-h-[800px] border-t border-zed py-10 sm:py-14 scroll-mt-24 overflow-hidden">
+    <section id="contact" class="relative min-h-[800px] border-t border-paper py-10 sm:py-14 scroll-mt-24 overflow-hidden">
       <div class="absolute inset-0">
         <Dither
           :wave-speed="0.06"
@@ -255,17 +255,17 @@
         :delay="0"
         class="relative z-10 mx-auto max-w-5xl px-4 mb-48 sm:px-6"
       >
-        <h2 class="font-zed-serif mb-4 text-7xl font-semibold tracking-tight text-zed"><GradientText>Contact</GradientText></h2>
-        <p class="text-zed-muted">
+        <h2 class="font-paper-serif mb-4 text-7xl font-semibold tracking-tight text-paper"><GradientText>Contact</GradientText></h2>
+        <p class="text-paper-muted">
           Connect for product, design, or sales engineering opportunities.
         </p>
-        <p class="mt-2 text-sm text-zed-muted">
+        <p class="mt-2 text-sm text-paper-muted">
           LinkedIn:
           <a
             href="https://linkedin.com/in/justin-bondoc"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-[var(--color-zed-primary)] underline underline-offset-2 decoration-[var(--color-zed-primary)]/30 hover:decoration-[var(--color-zed-primary)]"
+            class="text-[var(--color-paper-primary)] underline underline-offset-2 decoration-[var(--color-paper-primary)]/30 hover:decoration-[var(--color-paper-primary)]"
           >
             linkedin.com/in/justin-bondoc
           </a>

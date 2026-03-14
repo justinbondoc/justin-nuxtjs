@@ -1,15 +1,15 @@
 <template>
-  <section class="border-t border-zed py-16 sm:py-20">
+  <section class="border-t border-paper py-16 sm:py-20">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 text-center">
       <p
-        class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-zed-muted"
+        class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-paper-muted"
       >
         {{ subheading }}
       </p>
-      <h2 class="font-zed-serif mb-6 text-7xl font-medium tracking-tight text-zed">
-        Tools I use in a <GradientText>release cycle</GradientText>
+      <h2 class="font-paper-serif mb-6 text-7xl font-medium tracking-tight text-paper">
+        Tools that let me <GradientText>discover, design, and ship</GradientText>
       </h2>
-      <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-zed-muted">
+      <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-paper-muted">
         {{ description }}
       </p>
 
@@ -42,7 +42,7 @@
               </a>
               <span
                 v-if="logo.tooltip"
-                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-zed bg-[var(--color-zed-white)] rounded-[var(--radius-zed)] border border-zed shadow-[var(--shadow-zed-drop)] opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-paper bg-[var(--color-paper-white)] rounded-[var(--radius-paper)] border border-paper shadow-[var(--shadow-paper-drop)] opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
               >
                 {{ logo.tooltip }}
               </span>
@@ -76,7 +76,7 @@
               </a>
               <span
                 v-if="logo.tooltip"
-                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-zed bg-[var(--color-zed-white)] rounded-[var(--radius-zed)] border border-zed shadow-[var(--shadow-zed-drop)] opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 text-xs text-paper bg-[var(--color-paper-white)] rounded-[var(--radius-paper)] border border-paper shadow-[var(--shadow-paper-drop)] opacity-0 pointer-events-none whitespace-nowrap transition-opacity duration-150 group-hover:opacity-100 z-10"
               >
                 {{ logo.tooltip }}
               </span>
@@ -122,9 +122,9 @@ withDefaults(
   }>(),
   {
     subheading: 'Discovery, design, and shipping',
-    title: 'Tools I use every release cycle',
+    title: "Tools that let me discover, design, and ship",
     description:
-      'I use these for product discovery, design, analytics, and building. From Figma and PostHog to Cursor and Nuxt, they keep me close to the work and able to ship quickly.',
+      "I work across this stack so I can stay close to the work and ship quickly. From discovery and design to analytics and code, these are the tools I use to deliver.",
   }
 )
 </script>

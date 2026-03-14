@@ -15,7 +15,7 @@
           <span class="text-neutral-400">|</span>
           <a
             href="mailto:bondocjustin@yahoo.com"
-            class="underline decoration-neutral-400 underline-offset-2 hover:text-zed-primary hover:decoration-zed-primary print:text-black print:no-underline"
+            class="underline decoration-neutral-400 underline-offset-2 hover:text-paper-primary hover:decoration-paper-primary print:text-black print:no-underline"
           >
             bondocjustin@yahoo.com
           </a>
@@ -24,7 +24,7 @@
             href="https://www.linkedin.com/in/justin-bondoc"
             target="_blank"
             rel="noopener noreferrer"
-            class="underline decoration-neutral-400 underline-offset-2 hover:text-zed-primary hover:decoration-zed-primary print:text-black print:no-underline"
+            class="underline decoration-neutral-400 underline-offset-2 hover:text-paper-primary hover:decoration-paper-primary print:text-black print:no-underline"
           >
             linkedin.com/in/justin-bondoc
           </a>
@@ -33,7 +33,7 @@
             href="https://justinbondoc.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="underline decoration-neutral-400 underline-offset-2 hover:text-zed-primary hover:decoration-zed-primary print:text-black print:no-underline"
+            class="underline decoration-neutral-400 underline-offset-2 hover:text-paper-primary hover:decoration-paper-primary print:text-black print:no-underline"
           >
             justinbondoc.com
           </a>

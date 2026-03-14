@@ -11,13 +11,13 @@
         :threshold="0.1"
         :delay="0"
       >
-        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-zed-muted">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-paper-muted">
           What others say
         </p>
-        <h2 class="font-zed-serif mb-4 text-4xl font-semibold tracking-tight text-zed sm:text-5xl lg:text-6xl">
+        <h2 class="font-paper-serif mb-4 text-4xl font-semibold tracking-tight text-paper sm:text-5xl lg:text-6xl">
           <GradientText>References</GradientText> and testimonials
         </h2>
-        <p class="mb-10 max-w-2xl text-zed-muted">
+        <p class="mb-10 max-w-2xl text-paper-muted">
           Words from people I've worked with
         </p>
       </AnimatedContent>
@@ -71,11 +71,11 @@
 }
 .testimonials-fade-left {
   left: 0;
-  background: linear-gradient(to right, var(--color-zed-white), transparent);
+  background: linear-gradient(to right, var(--color-paper-white), transparent);
 }
 .testimonials-fade-right {
   right: 0;
-  background: linear-gradient(to left, var(--color-zed-white), transparent);
+  background: linear-gradient(to left, var(--color-paper-white), transparent);
 }
 </style>
 

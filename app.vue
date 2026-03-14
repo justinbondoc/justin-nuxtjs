@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen text-zed bg-[var(--color-zed-white)]">
+  <div class="min-h-screen text-paper bg-[var(--color-paper-white)]">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

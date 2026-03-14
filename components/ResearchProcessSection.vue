@@ -2,14 +2,14 @@
   <section id="research" class="py-10 sm:py-14 scroll-mt-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
       <!-- Header -->
-      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-center text-zed-muted">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-center text-paper-muted">
         Research and AI
       </p>
-      <h2 class="font-zed-serif mb-4 text-4xl font-semibold tracking-tight text-center text-zed sm:text-5xl lg:text-6xl">
+      <h2 class="font-paper-serif mb-4 text-4xl font-semibold tracking-tight text-center text-paper sm:text-5xl lg:text-6xl">
         How I research before I build<br>
         <GradientText>and how AI makes it faster</GradientText>
       </h2>
-      <p class="margin-auto text-center text-zed-muted">
+      <p class="margin-auto text-center text-paper-muted">
         I keep a steady stream of product signals coming in and run a clear research loop for each
         project.
       </p>
@@ -17,21 +17,21 @@
 
       <!-- Always-on signal sources -->
       <div class="mt-8">
-        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-zed-muted">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-paper-muted">
           Ongoing sources I watch
         </p>
         <div class="grid gap-4 sm:grid-cols-2">
           <article
             v-for="source in signalSources"
             :key="source.name"
-            class="rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-white)] p-4"
+            class="rounded-[var(--radius-paper)] border border-paper bg-[var(--color-paper-white)] p-4"
           >
             <header class="mb-3 flex items-center justify-between gap-3">
-              <h3 class="text-base font-medium text-zed">
+              <h3 class="text-base font-medium text-paper">
                 {{ source.name }}
               </h3>
               <span
-                class="inline-flex items-center rounded-full border border-zed bg-[var(--color-zed-border)]/30 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zed-muted"
+                class="inline-flex items-center rounded-full border border-paper bg-[var(--color-paper-border)]/30 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-paper-muted"
               >
                 {{ source.type }}
               </span>
@@ -40,7 +40,7 @@
               <span
                 v-for="item in source.items"
                 :key="item"
-                class="rounded-full bg-[var(--color-zed-border)]/40 px-2 py-0.5 text-xs text-zed-muted"
+                class="rounded-full bg-[var(--color-paper-border)]/40 px-2 py-0.5 text-xs text-paper-muted"
               >
                 {{ item }}
               </span>
@@ -51,36 +51,36 @@
 
       <!-- Slack bridge -->
       <div class="mt-8 flex items-center gap-3">
-        <div class="hidden h-px flex-1 bg-linear-to-r from-transparent via-[var(--color-zed-border)] to-[var(--color-zed-border)] sm:block" />
+        <div class="hidden h-px flex-1 bg-linear-to-r from-transparent via-[var(--color-paper-border)] to-[var(--color-paper-border)] sm:block" />
         <div
-          class="inline-flex items-center gap-2 rounded-full border border-zed bg-[var(--color-zed-panel)]/50 px-3 py-1.5 text-[0.7rem] text-zed"
+          class="inline-flex items-center gap-2 rounded-full border border-paper bg-[var(--color-paper-panel)]/50 px-3 py-1.5 text-[0.7rem] text-paper"
         >
-          <span class="h-2 w-2 rounded-full bg-[var(--color-zed-primary)]" />
-          <span class="font-zed-mono text-[0.65rem] uppercase tracking-[0.16em] text-zed-muted">Slack</span>
-          <span class="text-[0.75rem] text-zed-muted">
+          <span class="h-2 w-2 rounded-full bg-[var(--color-paper-primary)]" />
+          <span class="font-paper-mono text-[0.65rem] uppercase tracking-[0.16em] text-paper-muted">Slack</span>
+          <span class="text-[0.75rem] text-paper-muted">
             Slack sends these events into one place so I can see important signals quickly
           </span>
         </div>
-        <div class="hidden h-px flex-1 bg-linear-to-l from-transparent via-[var(--color-zed-border)] to-[var(--color-zed-border)] sm:block" />
+        <div class="hidden h-px flex-1 bg-linear-to-l from-transparent via-[var(--color-paper-border)] to-[var(--color-paper-border)] sm:block" />
       </div>
 
       <!-- Down arrow -->
       <div class="mt-4 flex items-center justify-center">
         <div class="flex h-8 flex-col items-center justify-between">
-          <div class="h-4 w-px bg-zed" />
-          <span class="text-xs text-zed-muted">↓</span>
+          <div class="h-4 w-px bg-paper" />
+          <span class="text-xs text-paper-muted">↓</span>
         </div>
       </div>
 
       <!-- Column headers -->
       <div
-        class="mt-4 grid gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-zed-muted sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
+        class="mt-4 grid gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-paper-muted sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
       >
         <div class="pl-7 sm:pl-8">
           Research step
         </div>
         <div class="flex items-center gap-2 pl-1">
-          <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-zed-primary)]" />
+          <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-paper-primary)]" />
           <span>How AI helps</span>
         </div>
       </div>
@@ -97,20 +97,20 @@
             class="block"
           >
             <div
-              class="group grid gap-px overflow-hidden rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-border)]/30 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
+              class="group grid gap-px overflow-hidden rounded-[var(--radius-paper)] border border-paper bg-[var(--color-paper-border)]/30 sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]"
             >
             <!-- Left: research phase -->
             <div
-              class="flex items-start gap-3 bg-[var(--color-zed-white)] px-4 py-3 transition-colors group-hover:bg-[var(--color-zed-border)]/20 sm:py-4"
+              class="flex items-start gap-3 bg-[var(--color-paper-white)] px-4 py-3 transition-colors group-hover:bg-[var(--color-paper-border)]/20 sm:py-4"
             >
-              <span class="mt-0.5 font-zed-mono text-xs text-zed-muted">
+              <span class="mt-0.5 font-paper-mono text-xs text-paper-muted">
                 {{ phase.number }}
               </span>
               <div class="space-y-1">
-                <p class="text-sm font-medium text-zed">
+                <p class="text-sm font-medium text-paper">
                   {{ phase.label }}
                 </p>
-                <p class="text-sm text-zed-muted">
+                <p class="text-sm text-paper-muted">
                   {{ phase.description }}
                 </p>
               </div>
@@ -124,34 +124,34 @@
 
             <!-- Right: AI augmentation -->
             <div
-              class="flex flex-col gap-1 bg-[var(--color-zed-border)]/10 px-4 py-3 transition-colors group-hover:bg-[var(--color-zed-border)]/25 sm:py-4"
+              class="flex flex-col gap-1 bg-[var(--color-paper-border)]/10 px-4 py-3 transition-colors group-hover:bg-[var(--color-paper-border)]/25 sm:py-4"
             >
               <div class="flex flex-wrap items-center justify-between gap-3">
-                <p class="text-sm font-medium text-zed">
+                <p class="text-sm font-medium text-paper">
                   {{ phase.ai.label }}
                 </p>
                 <div class="inline-flex flex-wrap items-center gap-2">
                   <span
-                    class="inline-flex items-center gap-1 rounded-full border border-zed bg-[var(--color-zed-border)]/40 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em]"
+                    class="inline-flex items-center gap-1 rounded-full border border-paper bg-[var(--color-paper-border)]/40 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em]"
                   >
                     <span
                       class="h-1.5 w-1.5 rounded-full"
                       :class="toolDotClass(phase.ai.tool)"
                     />
-                    <span class="text-zed">
+                    <span class="text-paper">
                       {{ phase.ai.tool }}
                     </span>
                   </span>
                   <span
                     v-for="pill in phase.ai.extraPills"
                     :key="pill"
-                    class="inline-flex items-center gap-1 rounded-full border border-zed bg-[var(--color-zed-border)]/30 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-zed-muted"
+                    class="inline-flex items-center gap-1 rounded-full border border-paper bg-[var(--color-paper-border)]/30 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-paper-muted"
                   >
                     {{ pill }}
                   </span>
                 </div>
               </div>
-              <p class="text-sm text-zed-muted">
+              <p class="text-sm text-paper-muted">
                 {{ phase.ai.detail }}
               </p>
             </div>
@@ -160,7 +160,7 @@
           <!-- Connector line between rows -->
           <div
             v-if="index < phases.length - 1"
-            class="ml-8 h-4 border-l border-zed sm:ml-9"
+            class="ml-8 h-4 border-l border-paper sm:ml-9"
           />
           </AnimatedContent>
 
@@ -168,7 +168,7 @@
       </div>
       <AnimatedContent>
 
-<p class="margin-auto mt-2 text-center text-sm text-zed-muted">
+<p class="margin-auto mt-2 text-center text-sm text-paper-muted">
 Not every project gets this full loop. For smaller initiatives, experiments, or tight
 timelines I might run a lighter version or skip steps. This is the playbook for when
 the stakes justify it.
@@ -321,7 +321,7 @@ function tagClass(tag: PhaseTag) {
   if (tag === 'Design') {
     return 'border-fuchsia-500/50 bg-fuchsia-500/15 text-fuchsia-800'
   }
-  return 'border-zed bg-[var(--color-zed-border)]/40 text-zed-muted'
+  return 'border-paper bg-[var(--color-paper-border)]/40 text-paper-muted'
 }
 
 function toolDotClass(tool: ToolName) {

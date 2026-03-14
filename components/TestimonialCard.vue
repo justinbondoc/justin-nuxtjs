@@ -1,19 +1,19 @@
 <template>
   <SpotlightCard
     :class="[
-      'flex h-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex-col rounded-[var(--radius-zed)] border p-5 sm:p-6 md:p-8 lg:p-10 text-left transition-colors cursor-pointer',
-      highlight ? 'border-[var(--color-zed-primary)]/40 bg-[var(--color-zed-white)]' : 'border-zed bg-[var(--color-zed-white)]',
+      'flex h-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex-col rounded-[var(--radius-paper)] border p-5 sm:p-6 md:p-8 lg:p-10 text-left transition-colors cursor-pointer',
+      highlight ? 'border-[var(--color-paper-primary)]/40 bg-[var(--color-paper-white)]' : 'border-paper bg-[var(--color-paper-white)]',
     ]"
     :spotlight-color="highlight ? 'rgba(0, 95, 204, 0.08)' : 'rgba(0, 95, 204, 0.04)'"
     @click="modalOpen = true"
   >
     <article class="relative flex min-h-0 flex-1 flex-col">
-      <blockquote class="mb-4 sm:mb-6 flex-1 text-zed text-base leading-relaxed line-clamp-8 sm:text-lg md:text-xl">
+      <blockquote class="mb-4 sm:mb-6 flex-1 text-paper text-base leading-relaxed line-clamp-8 sm:text-lg md:text-xl">
         "{{ quote }}"
       </blockquote>
 
       <div class="flex flex-wrap items-start gap-3 sm:gap-4">
-        <div class="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-[var(--color-zed-border)]/50">
+        <div class="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-[var(--color-paper-border)]/50">
           <img
             v-if="photo"
             :src="photo"
@@ -23,25 +23,25 @@
           >
           <div
             v-if="photoError || !photo"
-            class="flex h-full w-full items-center justify-center text-lg font-medium text-zed-muted"
+            class="flex h-full w-full items-center justify-center text-lg font-medium text-paper-muted"
           >
             {{ name.charAt(0) }}
           </div>
         </div>
         <div class="min-w-0 flex-1">
           <div class="flex flex-wrap items-center gap-2">
-            <span class="font-zed-serif font-semibold text-zed text-base sm:text-lg">{{ name }}</span>
+            <span class="font-paper-serif font-semibold text-paper text-base sm:text-lg">{{ name }}</span>
             <span
               v-if="highlightLabel"
-              class="inline-flex items-center rounded-full border border-[var(--color-zed-primary)]/50 bg-[var(--color-zed-primary)]/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-[var(--color-zed-primary)]"
+              class="inline-flex items-center rounded-full border border-[var(--color-paper-primary)]/50 bg-[var(--color-paper-primary)]/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-[var(--color-paper-primary)]"
             >
               {{ highlightLabel }}
             </span>
           </div>
-          <p class="mt-0.5 text-sm text-zed-muted sm:text-base">
+          <p class="mt-0.5 text-sm text-paper-muted sm:text-base">
             {{ role }}{{ company ? ` at ${company}` : '' }}
           </p>
-          <p class="mt-1 text-xs text-zed-muted sm:text-sm">
+          <p class="mt-1 text-xs text-paper-muted sm:text-sm">
             {{ relationship }}
           </p>
           <a
@@ -49,7 +49,7 @@
             :href="linkedin"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-zed-muted transition-colors hover:text-[var(--color-zed-primary)]"
+            class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-paper-muted transition-colors hover:text-[var(--color-paper-primary)]"
             @click.stop
           >
             Go to their LinkedIn
@@ -78,12 +78,12 @@
           @click="modalOpen = false"
         />
         <div
-          class="relative flex max-h-[90vh] w-full max-w-lg flex-col rounded-[var(--radius-zed)] border border-zed bg-[var(--color-zed-white)] shadow-[var(--shadow-zed-drop)]"
+          class="relative flex max-h-[90vh] w-full max-w-lg flex-col rounded-[var(--radius-paper)] border border-paper bg-[var(--color-paper-white)] shadow-[var(--shadow-paper-drop)]"
           @click.stop
         >
-          <div class="flex shrink-0 items-center justify-between gap-4 border-b border-zed p-4 sm:p-5">
+          <div class="flex shrink-0 items-center justify-between gap-4 border-b border-paper p-4 sm:p-5">
             <div class="flex min-w-0 items-start gap-3">
-              <div class="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-[var(--color-zed-border)]/50">
+              <div class="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-[var(--color-paper-border)]/50">
                 <img
                   v-if="photo"
                   :src="photo"
@@ -92,32 +92,32 @@
                 >
                 <div
                   v-else
-                  class="flex h-full w-full items-center justify-center text-lg font-medium text-zed-muted"
+                  class="flex h-full w-full items-center justify-center text-lg font-medium text-paper-muted"
                 >
                   {{ name.charAt(0) }}
                 </div>
               </div>
               <div class="min-w-0">
-                <h2 id="modal-title" class="font-zed-serif font-semibold text-zed">
+                <h2 id="modal-title" class="font-paper-serif font-semibold text-paper">
                   {{ name }}
                   <span
                     v-if="highlightLabel"
-                    class="ml-2 inline-flex items-center rounded-full border border-[var(--color-zed-primary)]/50 bg-[var(--color-zed-primary)]/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-[var(--color-zed-primary)]"
+                    class="ml-2 inline-flex items-center rounded-full border border-[var(--color-paper-primary)]/50 bg-[var(--color-paper-primary)]/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-[var(--color-paper-primary)]"
                   >
                     {{ highlightLabel }}
                   </span>
                 </h2>
-                <p class="mt-0.5 text-sm text-zed-muted">
+                <p class="mt-0.5 text-sm text-paper-muted">
                   {{ role }}{{ company ? ` at ${company}` : '' }}
                 </p>
-                <p class="mt-1 text-xs text-zed-muted">
+                <p class="mt-1 text-xs text-paper-muted">
                   {{ relationship }}
                 </p>
               </div>
             </div>
             <button
               type="button"
-              class="shrink-0 rounded-[var(--radius-zed)] p-2 text-zed-muted transition-colors hover:bg-black/5 hover:text-zed"
+              class="shrink-0 rounded-[var(--radius-paper)] p-2 text-paper-muted transition-colors hover:bg-black/5 hover:text-paper"
               aria-label="Close"
               @click="modalOpen = false"
             >
@@ -127,7 +127,7 @@
             </button>
           </div>
           <div class="min-h-0 flex-1 overflow-y-auto p-4 sm:p-5">
-            <blockquote class="text-zed leading-relaxed">
+            <blockquote class="text-paper leading-relaxed">
               "{{ quote }}"
             </blockquote>
             <a
@@ -135,7 +135,7 @@
               :href="linkedin"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-zed-muted transition-colors hover:text-[var(--color-zed-primary)]"
+              class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-paper-muted transition-colors hover:text-[var(--color-paper-primary)]"
             >
               Go to their LinkedIn
               <span aria-hidden="true">→</span>
