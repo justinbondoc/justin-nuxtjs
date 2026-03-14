@@ -47,21 +47,6 @@
     </AnimatedContent>
 
     <AnimatedContent
-      :distance="60"
-      direction="vertical"
-      :reverse="false"
-      :duration="0.6"
-      ease="power3.out"
-      :initial-opacity="0"
-      :animate-opacity="true"
-      :scale="1"
-      :threshold="0.1"
-      :delay="0"
-    >
-      <SectionSplitter />
-    </AnimatedContent>
-
-    <AnimatedContent
       :distance="100"
       direction="vertical"
       :reverse="false"
@@ -202,7 +187,7 @@
           </SpotlightCard>
           <SpotlightCard
             class="rounded-[var(--radius-paper)] border border-dashed border-paper bg-[var(--color-paper-white)]"
-            :spotlight-color="'rgba(0, 95, 204, 0.04)'"
+            :spotlight-color="'rgba(59, 130, 246, 0.08)'"
           >
             <div class="flex flex-col my-auto h-full items-center justify-center text-center">
               <p class="text-sm font-medium text-paper-muted">More soon...</p>
@@ -212,31 +197,16 @@
       </AnimatedContent>
     </section>
 
-    <AnimatedContent
-      :distance="60"
-      direction="vertical"
-      :reverse="false"
-      :duration="0.6"
-      ease="power3.out"
-      :initial-opacity="0"
-      :animate-opacity="true"
-      :scale="1"
-      :threshold="0.1"
-      :delay="0"
-    >
-      <SectionSplitter />
-    </AnimatedContent>
-
     <section id="contact" class="relative min-h-[800px] border-t border-paper py-10 sm:py-14 scroll-mt-24 overflow-hidden">
       <div class="absolute inset-0">
         <Dither
           :wave-speed="0.06"
           :wave-frequency="3"
           :wave-amplitude="0.3"
-          :base-color="[1, 1, 1]"
-          :wave-color="[0.96, 0.97, 1]"
-          :color-num="2.8"
-          :pixel-size="2"
+          :base-color="[0.98, 0.98, 1]"
+          :wave-color="[0.90, 0.90, 0.99]"
+          :color-num="4"
+          :pixel-size="1"
           :disable-animation="false"
           :enable-mouse-interaction="true"
           :mouse-radius="1"

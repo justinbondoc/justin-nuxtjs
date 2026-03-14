@@ -56,7 +56,7 @@
         allowfullscreen
       />
     </template>
-    <figcaption v-if="caption" class="mt-2 text-sm text-slate-400">
+    <figcaption v-if="caption" class="mt-2 text-sm text-paper-muted">
       {{ caption }}
     </figcaption>
   </figure>

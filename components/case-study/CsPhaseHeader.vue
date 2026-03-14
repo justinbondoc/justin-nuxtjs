@@ -6,7 +6,7 @@
       :style="{ backgroundImage: `url(${bgImage})` }"
     />
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
-      <span v-if="label" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+      <span v-if="label" class="block text-xs font-semibold uppercase tracking-wider text-paper-muted">
         {{ label }}
       </span>
       <h2 v-if="title" class="mt-1 text-4xl font-semibold tracking-tight">

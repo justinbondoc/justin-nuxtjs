@@ -1,7 +1,7 @@
 <template>
   <section v-if="solution" class="cs-solution pt-10 pb-6 sm:pt-14 sm:pb-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
-      <p v-if="solution.overview" class="text-slate-300">
+      <p v-if="solution.overview" class="text-paper">
         {{ solution.overview }}
       </p>
       <div v-if="solution.baselineImages?.length" class="mt-8 space-y-6">
@@ -28,24 +28,24 @@
         <article
           v-for="(feat, i) in solution.features"
           :key="i"
-          class="border-t border-neutral-700/70 pt-8 first:border-t-0 first:pt-0"
+          class="border-t border-paper pt-8 first:border-t-0 first:pt-0"
         >
-          <h3 v-if="feat.title" class="text-2xl font-semibold text-white">
+          <h3 v-if="feat.title" class="text-2xl font-semibold text-paper">
             {{ feat.title }}
           </h3>
-          <p v-if="feat.shortDescription" class="mt-1 text-sm text-slate-300">
+          <p v-if="feat.shortDescription" class="mt-1 text-sm text-paper">
             {{ feat.shortDescription }}
           </p>
-          <p v-if="feat.problem" class="mt-2 text-sm text-slate-400">
+          <p v-if="feat.problem" class="mt-2 text-sm text-paper-muted">
             {{ feat.problem }}
           </p>
-          <p v-if="feat.solution" class="mt-2 text-slate-300">
+          <p v-if="feat.solution" class="mt-2 text-paper">
             {{ feat.solution }}
           </p>
           <NuxtLink
             v-if="feat.skillPage"
             :to="feat.skillPage"
-            class="mt-3 inline-flex items-center gap-1.5 text-sm text-green-400 hover:text-green-300 transition-colors"
+            class="mt-3 inline-flex items-center gap-1.5 text-sm text-[var(--color-paper-primary)] hover:text-[var(--color-paper-primary-hover)] transition-colors"
           >
             View skill source
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

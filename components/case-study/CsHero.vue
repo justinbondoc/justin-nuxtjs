@@ -4,10 +4,10 @@
       <h1 v-if="meta.title" class="text-4xl font-semibold tracking-tight">
         <GradientText>{{ meta.title }}</GradientText>
       </h1>
-      <p v-if="meta.oneLiner" class="mt-2 max-w-7xl text-slate-300">
+      <p v-if="meta.oneLiner" class="mt-2 max-w-7xl text-paper">
         {{ meta.oneLiner }}
       </p>
-      <div v-if="meta.role || meta.timeline || (meta.tools && meta.tools.length)" class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-400">
+      <div v-if="meta.role || meta.timeline || (meta.tools && meta.tools.length)" class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-paper-muted">
         <span v-if="meta.role">{{ meta.role }}</span>
         <span v-if="meta.timeline">{{ meta.timeline }}</span>
         <span v-if="meta.industry">{{ meta.industry }}</span>

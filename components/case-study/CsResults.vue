@@ -15,30 +15,30 @@
             <SplitText
               :text="String(stat.value)"
               tag="span"
-              class="block text-5xl font-semibold tabular-nums tracking-tight text-white sm:text-6xl md:text-7xl"
+              class="block text-5xl font-semibold tabular-nums tracking-tight text-paper sm:text-6xl md:text-7xl"
               split-type="chars"
               :delay="60"
               :duration="0.9"
             />
           </div>
-          <p class="mt-3 text-sm font-medium leading-snug text-slate-400 sm:text-base">
+          <p class="mt-3 text-sm font-medium leading-snug text-paper-muted sm:text-base">
             {{ stat.label }}
           </p>
         </div>
       </div>
 
-      <ul v-if="results.quantitative?.length" class="mt-10 list-inside list-disc space-y-1 text-slate-300">
+      <ul v-if="results.quantitative?.length" class="mt-10 list-inside list-disc space-y-1 text-paper">
         <li v-for="(q, i) in results.quantitative" :key="'q-' + i">
           {{ q }}
         </li>
       </ul>
-      <ul v-if="results.qualitative?.length" class="mt-6 list-inside list-disc space-y-1 text-slate-300">
+      <ul v-if="results.qualitative?.length" class="mt-6 list-inside list-disc space-y-1 text-paper">
         <li v-for="(q, i) in results.qualitative" :key="'ql-' + i">
           {{ q }}
         </li>
       </ul>
-      <p v-if="results.retrospective" class="mt-4 text-slate-400">
-        <span class="font-medium text-slate-300">Retrospective:</span> {{ results.retrospective }}
+      <p v-if="results.retrospective" class="mt-4 text-paper-muted">
+        <span class="font-medium text-paper">Retrospective:</span> {{ results.retrospective }}
       </p>
     </div>
   </section>

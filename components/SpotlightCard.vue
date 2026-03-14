@@ -33,7 +33,7 @@ interface SpotlightCardProps {
   spotlightColor?: string;
 }
 
-const { className = '', spotlightColor = 'rgba(0, 95, 204, 0.08)' } = defineProps<SpotlightCardProps>();
+const { className = '', spotlightColor = 'rgba(59, 130, 246, 0.14)' } = defineProps<SpotlightCardProps>();
 
 const divRef = useTemplateRef<HTMLDivElement>('divRef');
 const isFocused = ref<boolean>(false);

@@ -53,7 +53,7 @@
       <div class="mt-8 flex items-center gap-3">
         <div class="hidden h-px flex-1 bg-linear-to-r from-transparent via-[var(--color-paper-border)] to-[var(--color-paper-border)] sm:block" />
         <div
-          class="inline-flex items-center gap-2 rounded-full border border-paper bg-[var(--color-paper-panel)]/50 px-3 py-1.5 text-[0.7rem] text-paper"
+          class="inline-flex items-center gap-2 rounded-full border border-paper px-3 py-1.5 text-[0.7rem] text-paper"
         >
           <span class="h-2 w-2 rounded-full bg-[var(--color-paper-primary)]" />
           <span class="font-paper-mono text-[0.65rem] uppercase tracking-[0.16em] text-paper-muted">Slack</span>

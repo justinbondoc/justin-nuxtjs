@@ -4,13 +4,13 @@
       <h2 class="mb-4 text-4xl font-semibold tracking-tight">
         <GradientText>Problem</GradientText>
       </h2>
-      <p v-if="problem.userProblem" class="text-slate-300">
+      <p v-if="problem.userProblem" class="text-paper">
         {{ problem.userProblem }}
       </p>
-      <p v-if="problem.businessProblem" class="mt-4 text-slate-300">
+      <p v-if="problem.businessProblem" class="mt-4 text-paper">
         {{ problem.businessProblem }}
       </p>
-      <p v-if="problem.whyNow" class="mt-4 text-sm text-slate-400">
+      <p v-if="problem.whyNow" class="mt-4 text-sm text-paper-muted">
         {{ problem.whyNow }}
       </p>
       <div v-if="problem.workflowImage?.src" class="mt-8">

@@ -4,7 +4,7 @@
       'flex h-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex-col rounded-[var(--radius-paper)] border p-5 sm:p-6 md:p-8 lg:p-10 text-left transition-colors cursor-pointer',
       highlight ? 'border-[var(--color-paper-primary)]/40 bg-[var(--color-paper-white)]' : 'border-paper bg-[var(--color-paper-white)]',
     ]"
-    :spotlight-color="highlight ? 'rgba(0, 95, 204, 0.08)' : 'rgba(0, 95, 204, 0.04)'"
+    :spotlight-color="highlight ? 'rgba(59, 130, 246, 0.14)' : 'rgba(59, 130, 246, 0.08)'"
     @click="modalOpen = true"
   >
     <article class="relative flex min-h-0 flex-1 flex-col">

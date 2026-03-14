@@ -38,8 +38,8 @@
       </p>
       <form class="mx-auto mb-6 w-full max-w-2xl" @submit.prevent="onSubmit">
         <div
-          class="relative flex-1 min-w-0 rounded-[var(--radius-paper)] border border-paper bg-[var(--color-paper-white)] transition-shadow duration-300"
-          :style="isFocused ? {} : { boxShadow: '0 0 0 1px var(--color-paper-border)' }"
+          class="relative flex-1 min-w-0 rounded-[var(--radius-paper)] border border-[var(--color-paper-primary)] bg-[var(--color-paper-white)] transition-shadow duration-300"
+          :style="isFocused ? { boxShadow: '0 0 0 1px var(--color-paper-primary), 0 0 8px var(--color-paper-primary)' } : { boxShadow: '0 0 0 1px var(--color-paper-primary), 0 0 20px var(--color-paper-primary)' }"
         >
           <div class="relative rounded-[var(--radius-paper)]">
             <textarea
