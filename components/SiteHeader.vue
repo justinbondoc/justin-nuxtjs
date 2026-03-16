@@ -22,17 +22,17 @@
           About
         </NuxtLink>
         <NuxtLink
-        to="/#research"
-        class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+          to="/#portfolio"
+          class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
         >
-        Research process
-      </NuxtLink>
-      <NuxtLink
-        to="/#portfolio"
-        class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
-      >
-        Portfolio
-      </NuxtLink>
+          Portfolio
+        </NuxtLink>
+        <NuxtLink
+          to="/#research"
+          class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+        >
+          Research process
+        </NuxtLink>
       <NuxtLink
           to="/resume"
           class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"

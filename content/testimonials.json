@@ -3,6 +3,7 @@
     "id": "ceo",
     "name": "Victor Hsu",
     "photo": null,
+    "excerpt": "Justin brings rare clarity to product decisions and always pushes for the right user outcome.",
     "quote": "Justin brings rare clarity to product decisions and always pushes for the right user outcome. He's someone I trust to own a problem end to end.",
     "role": "CEO",
     "company": "Axure",
@@ -14,9 +15,11 @@
     "id": "cto",
     "name": "Martin Smith",
     "photo": null,
+    "excerpt": "He understands both the user and the technical tradeoffs.",
     "quote": "Working with Justin on the platform roadmap was a pleasure. He understands both the user and the technical tradeoffs.",
     "role": "CTO",
     "company": "Axure",
+    "relationship": "I worked closely with Justin as a cross-functional partner on product and engineering initiatives.",
     "linkedin": "https://linkedin.com/in/example",
     "highlight": "cto"
   },
@@ -24,17 +27,19 @@
     "id": "raman-paulau",
     "name": "Raman Paulau",
     "photo": "/images/testimonials/raman-paulau.jpeg",
+    "excerpt": "Justin’s ability to thrive across sales, design, engineering, and product strategy is rare — he’s been absolutely key to shipping multiple major projects.",
     "quote": "Justin's career at Axure is a masterclass in growth and versatility. I've watched him evolve from an exceptional Sales Engineer, where he drove client adoption and secured deals of Axure Cloud On-Premises, into a high-impact Product Manager leading transformational initiatives. As a PM, Justin owned the complete redesign of Axure Cloud's UI, managing everything from Figma design through QA execution. Beyond that he did the hands-on developer work himself, contributing code to the Nuxt migration of axure.com and building the new Changelog feature. He's also been instrumental in updating our documentation at docs.axure.com to reflect these major changes and producing short videos demonstrating new features from our bigger releases. What impresses me most is Justin's ability to thrive across sales, design, engineering, and product strategy. He's a true powerhouse who has been absolutely key to shipping multiple major projects. Working alongside him has genuinely elevated my own performance and ambition. I wholeheartedly recommend Justin for any role requiring technical depth, strategic thinking, and the ability to drive execution across complex, cross-functional initiatives.",
     "role": "Senior Software Engineer",
-    "company": "Axure Software Solutions",
+    "company": "Axure",
     "linkedin": "https://www.linkedin.com/in/ramanpaulau/"
   },
   {
     "id": "ben-radosevich",
     "name": "Ben Radosevich",
     "photo": "/images/testimonials/ben-radosevich.jpeg",
+    "excerpt": "I’d often discuss an idea with him during an afternoon, then find that he’d built it by the next morning.",
     "quote": "Justin and I worked together at Axure for almost eight years, five of which were spent in close collaboration on Axure's cloud products. Justin possesses a unique combination of deep technical ability, creative range, and thoughtful product vision that makes him an extraordinarily effective product manager.\n\nJustin inherited our cloud-based design and collaboration platform when it was in a state of transition from a legacy MVP to a more modern and functional tool. Justin led several major initiatives, including a full frontend redesign and rebuild, a substantial rearchitecting of the data model and interaction layer, and the development and implementation of a pricing model as the platform became a standalone commercial product. He also developed and led the implementation of major features and design decisions for our greenfield real-time collaboration tools.\n\nThrough our work together, I was always impressed with Justin's ability to explore ideas with curiosity and then thoughtfully but decisively act on what he'd learned. When most of the company was in early experimentation with AI tools, Justin was using them to build production-ready product demos and implement UI changes. I'd often discuss an idea with him during an afternoon, then find that he'd built it by the next morning.\n\nJustin manages to be an exceptionally productive colleague while maintaining a sense of humility and approachability that makes him a pleasure to work with. He'd be an asset to any team, and I'd be thrilled to work with him again.",
-    "role": "Senior Software Engineer, Backend Engineering & Distributed Systems",
+    "role": "Senior Software Engineer",
     "company": "Axure",
     "linkedin": "https://www.linkedin.com/in/benradosevich/"
   },
@@ -42,27 +47,30 @@
     "id": "tuomas-brock",
     "name": "Tuomas Brock",
     "photo": "/images/testimonials/tuomas-brock.jpeg",
+    "excerpt": "Justin consistently delivered clear, detailed product specs that gave me what I needed to build with confidence.",
     "quote": "I worked alongside Justin for more than seven years at Axure, most recently collaborating closely as the developer on projects he managed. He was instrumental in the design and release of Axure Cloud’s collaborative Whiteboard and Document products while also managing the adjusting landscape for the existing product portfolio. Justin consistently delivered clear and detailed product specs that gave me what I needed to build with confidence. When questions came up, he was always available for ad hoc calls to walk through designs in real time and to quickly pivot and adjust specifications based on changing requirements and technical realities. He embraced AI tooling for product planning with a level of enthusiasm and aptitude that genuinely impressed me. He was quick to identify where these tools could add value and incorporated them in ways that meaningfully sharpened his already strong process, including providing functional proof of concept prototypes. Underpinning all of it was a genuine care for the end user. Justin was always focused on delivering the best possible solutions for Axure’s users - from the full product down to the micro interaction. That clarity of purpose showed in everything he did.",
     "role": "Software Engineer",
-    "company": "Axure Software Solutions",
+    "company": "Axure",
     "linkedin": "https://www.linkedin.com/in/tuomas-b-a586a650/"
   },
   {
     "id": "heewon-jane-ryu",
     "name": "Jane Ryu",
     "photo": "/images/testimonials/jane-ryu.jpeg",
+    "excerpt": "Justin is one of the most highly self-motivated workers I’ve ever met — creative, optimistic, and relentlessly thorough.",
     "quote": "I worked with Justin at Axure for several years, and I don't think I can recommend Justin enough. As I worked in QA, I frequently collaborated with Justin on our many products and the different features involved in each. When we began the first processes of updating our Cloud product, Justin was a key part in the rollout of the new features - whether that be design, UI/UX oddities, or just serving as a main product knowledge base - all while handling our other products in the same dedicated fashion (Axure RP, On-Premises Cloud, Cloud desktop app, plugins, etc). Justin is one of the most highly self-motivated workers I've ever met, having the creative and optimistic mindset of a product manager who can tackle industry norms, self-learning about new products and tools to implement into our own software, and finding bugs so naturally I frequently wished Justin would have been part of the QA team. I am confident Justin would be a great asset to any company that is lucky to have him.",
     "role": "QA Manager",
-    "company": "Axure Software Solutions",
+    "company": "Axure",
     "linkedin": "https://www.linkedin.com/in/heewonjaneryu/"
   },
   {
     "id": "frankie-costa",
     "name": "Frankie Costa",
     "photo": "/images/testimonials/frankie-costa.png",
+    "excerpt": "What consistently stands out about Justin is his determination and proactive mindset — he’s always looking for ways to improve how teams work together.",
     "quote": "I had the pleasure of working with Justin for over 5 years. When I joined the team, he was a Sales Engineer, and from day one, he was generous with his time and knowledge and always helped me to understand client needs and internal processes. When he later transitioned into product management, he quickly took ownership of key initiatives and brought the same dedication to his new role. What consistently stands out about Justin is his determination and proactive mindset. He's always looking for ways to improve how teams work together, whether that's by gathering meaningful customer insights, collaborating with developers to understand technical complexities or learning a new skill to fill gaps and keep projects moving forward. He's reliable, adaptable and brings his positive energy in every interaction. Justin would be a true asset to any product organization.",
     "role": "Product Manager",
-    "company": "Axure Software Solutions",
+    "company": "Axure",
     "linkedin": "https://www.linkedin.com/in/frankie-j-costa/"
   }
 ]

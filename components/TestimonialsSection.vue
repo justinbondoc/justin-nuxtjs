@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonials" class="overflow-x-hidden py-10 sm:py-14 scroll-mt-24">
+  <section id="testimonials" class="py-10 sm:py-14 scroll-mt-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
       <AnimatedContent
         :distance="60"
@@ -23,61 +23,67 @@
       </AnimatedContent>
     </div>
 
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 relative">
-      <!-- Gradient masks to constrain horizontal scroll visually -->
-      <div class="testimonials-fade-left" aria-hidden="true" />
-      <div class="testimonials-fade-right" aria-hidden="true" />
-      <div class="w-screen max-w-none -ml-4 sm:-ml-6 overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory md:snap-proximity">
-        <div class="flex gap-6 pl-4 pr-4 pb-2 pt-1 sm:pl-6 sm:pr-6 md:gap-8">
-        <AnimatedContent
-          v-for="(t, i) in rest"
-          :key="t.id"
-          :distance="50"
-          direction="vertical"
-          :duration="0.6"
-          ease="power3.out"
-          :initial-opacity="0"
-          :animate-opacity="true"
-          :threshold="0.1"
-          :delay="0.05 + (highlighted.length + i) * 0.06"
-          class="h-full shrink-0 w-[85vw] min-w-[300px] sm:w-[380px] sm:min-w-[380px] md:w-[420px] md:min-w-[420px] snap-start"
-        >
-          <TestimonialCard
-            :name="t.name"
-            :photo="t.photo"
-            :quote="t.quote"
-            :role="t.role"
-            :company="t.company"
-            :relationship="t.relationship"
-            :linkedin="t.linkedin"
-          />
-        </AnimatedContent>
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="grid gap-4 md:gap-5">
+        <!-- Top row: first 3 testimonials in a 3-column grid on desktop -->
+        <div class="grid gap-3 sm:gap-4 md:gap-5 sm:grid-cols-2 md:grid-cols-3">
+          <AnimatedContent
+            v-for="(t, i) in firstRow"
+            :key="t.id"
+            :distance="50"
+            direction="vertical"
+            :duration="0.6"
+            ease="power3.out"
+            :initial-opacity="0"
+            :animate-opacity="true"
+            :threshold="0.1"
+            :delay="0.05 + i * 0.06"
+            class="h-full"
+          >
+            <TestimonialCard
+              :name="t.name"
+              :photo="t.photo"
+              :excerpt="t.excerpt"
+              :quote="t.quote"
+              :role="t.role"
+              :company="t.company"
+              :relationship="t.relationship"
+              :linkedin="t.linkedin"
+            />
+          </AnimatedContent>
+        </div>
+
+        <!-- Second row: remaining testimonials in a 2-column grid on desktop -->
+        <div v-if="secondRow.length" class="grid gap-3 sm:gap-4 md:gap-5 sm:grid-cols-2 md:grid-cols-2">
+          <AnimatedContent
+            v-for="(t, i) in secondRow"
+            :key="t.id"
+            :distance="50"
+            direction="vertical"
+            :duration="0.6"
+            ease="power3.out"
+            :initial-opacity="0"
+            :animate-opacity="true"
+            :threshold="0.1"
+            :delay="0.05 + (firstRow.length + i) * 0.06"
+            class="h-full"
+          >
+            <TestimonialCard
+              :name="t.name"
+              :photo="t.photo"
+              :excerpt="t.excerpt"
+              :quote="t.quote"
+              :role="t.role"
+              :company="t.company"
+              :relationship="t.relationship"
+              :linkedin="t.linkedin"
+            />
+          </AnimatedContent>
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.testimonials-fade-left,
-.testimonials-fade-right {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4rem;
-  max-width: 15%;
-  pointer-events: none;
-  z-index: 1;
-}
-.testimonials-fade-left {
-  left: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.98), transparent);
-}
-.testimonials-fade-right {
-  right: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.98), transparent);
-}
-</style>
 
 <script setup lang="ts">
 import { getTestimonialsList } from '~/composables/useTestimonials'
@@ -86,6 +92,7 @@ type Testimonial = {
   id: string
   name: string
   photo?: string
+  excerpt?: string
   quote: string
   role: string
   company?: string
@@ -96,10 +103,16 @@ type Testimonial = {
 
 const list = getTestimonialsList() as Testimonial[]
 
+// Keep highlighted items in data if needed later, but don't render them for now.
 const highlighted = computed(() =>
   list.filter((t) => t.highlight === 'ceo' || t.highlight === 'cto')
 )
+
+// Only render non-highlighted testimonials, split into rows:
 const rest = computed(() =>
   list.filter((t) => t.highlight !== 'ceo' && t.highlight !== 'cto')
 )
+
+const firstRow = computed(() => rest.value.slice(0, 3))
+const secondRow = computed(() => rest.value.slice(3))
 </script>

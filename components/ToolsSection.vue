@@ -7,7 +7,7 @@
         {{ subheading }}
       </p>
       <h2 class="mb-6 text-7xl font-medium tracking-tight text-white">
-        Tools I use in a <GradientText>release cycle</GradientText>
+        Tools I use to <GradientText>discover, design, and ship</GradientText>
       </h2>
       <p class="mx-auto mb-12 max-w-5xl leading-relaxed text-slate-300">
         {{ description }}

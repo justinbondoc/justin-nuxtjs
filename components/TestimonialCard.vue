@@ -1,15 +1,15 @@
 <template>
   <SpotlightCard
     :class="[
-      'flex h-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex-col rounded-xl border p-5 sm:p-6 md:p-8 lg:p-10 text-left transition-colors cursor-pointer',
+      'group flex h-full min-h-[240px] sm:min-h-[280px] md:min-h-[320px] flex-col border p-4 sm:p-5 md:p-6 lg:p-7 text-left transition-colors cursor-pointer',
       highlight ? 'border-[#27FF64]/40 bg-slate-900/60' : 'border-slate-800 bg-slate-900/40',
     ]"
-    :spotlight-color="highlight ? 'rgba(39, 255, 100, 0.28)' : 'rgba(148, 163, 184, 0.12)'"
+    :spotlight-color="'rgba(39, 255, 100, 0.28)'"
     @click="modalOpen = true"
   >
     <article class="relative flex min-h-0 flex-1 flex-col">
-      <blockquote class="mb-4 sm:mb-6 flex-1 text-slate-200 text-base sm:text-lg md:text-xl leading-relaxed line-clamp-8">
-        "{{ quote }}"
+      <blockquote class="mb-3 flex-1 text-slate-200 text-sm sm:text-base leading-relaxed line-clamp-5">
+        “{{ displayQuote }}”
       </blockquote>
 
       <div class="flex flex-wrap items-start gap-3 sm:gap-4">
@@ -41,7 +41,7 @@
           <p class="mt-0.5 text-sm sm:text-base text-slate-400">
             {{ role }}{{ company ? ` at ${company}` : '' }}
           </p>
-          <p class="mt-1 text-xs sm:text-sm text-slate-500">
+          <p v-if="relationship" class="mt-1 text-xs sm:text-sm text-slate-500">
             {{ relationship }}
           </p>
           <a
@@ -56,6 +56,16 @@
             <span class="text-slate-500" aria-hidden="true">→</span>
           </a>
         </div>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between gap-3 border-t border-slate-700/60 pt-3">
+        <span class="text-xs font-medium text-slate-400">
+          Click to read the full quote
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-600/70 bg-slate-900/40 px-2.5 py-1 text-xs font-semibold text-white transition-colors group-hover:border-slate-500 group-hover:bg-slate-900/70">
+          Read full
+          <span class="text-slate-300" aria-hidden="true">→</span>
+        </span>
       </div>
     </article>
   </SpotlightCard>
@@ -154,14 +164,15 @@ const props = withDefaults(
   defineProps<{
     name: string
     photo?: string
+    excerpt?: string
     quote: string
     role: string
     company?: string
-    relationship: string
+    relationship?: string
     linkedin?: string
     highlight?: HighlightType
   }>(),
-  { photo: '', linkedin: '', company: '', highlight: false }
+  { photo: '', linkedin: '', company: '', relationship: '', highlight: false, excerpt: '' }
 )
 
 const photoError = ref(false)
@@ -185,6 +196,16 @@ const highlightLabel = computed(() => {
   if (props.highlight === 'ceo') return 'CEO'
   if (props.highlight === 'cto') return 'CTO'
   return ''
+})
+
+const displayQuote = computed(() => {
+  const fromExcerpt = (props.excerpt ?? '').trim()
+  if (fromExcerpt) return fromExcerpt
+
+  const q = props.quote.trim()
+  // fallback: first "sentence-ish" chunk
+  const match = q.match(/^(.+?[.!?])(\s|$)/)
+  return (match?.[1] ?? q).replace(/^["“”]+|["“”]+$/g, '')
 })
 </script>
 
