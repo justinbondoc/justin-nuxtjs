@@ -1,6 +1,7 @@
 <template>
   <main class="space-y-16 sm:space-y-20">
     <ChatHero />
+    <ChatModal v-model:show="showChatModal" />
 
     <AnimatedContent
       :distance="100"
@@ -255,6 +256,20 @@
 
 <script setup lang="ts">
 import { getCaseStudiesList } from '~/composables/useCaseStudy'
+import { useChatShortcut } from '~/composables/useChatShortcut'
+
+const { registerOpenModal, unregisterOpenModal } = useChatShortcut()
+const showChatModal = ref(false)
+
+onMounted(() => {
+  registerOpenModal(() => {
+    showChatModal.value = true
+  })
+})
+
+onBeforeUnmount(() => {
+  unregisterOpenModal()
+})
 
 useHead({
   script: [

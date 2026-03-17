@@ -57,6 +57,7 @@
       <form @submit.prevent="onSubmit" class="sticky bottom-0 bg-black pb-4 pt-2">
         <div class="relative">
           <input
+            ref="chatInputRef"
             v-model="input"
             type="text"
             placeholder="Ask about Justin..."
@@ -95,12 +96,14 @@
 import { Chat } from '@ai-sdk/vue';
 import { ref, computed, watch, onUnmounted } from 'vue';
 import { marked } from 'marked';
+import { useChatShortcut } from '~/composables/useChatShortcut'
 
 const STREAMING_GLYPHS = ['⣾', '⣽', '⣻', '⢿', '⡿'];
 const GLYPH_INTERVAL_MS = 80;
 
 const route = useRoute();
 const input = ref('');
+const chatInputRef = ref<HTMLInputElement | null>(null)
 const chat = new Chat({
   api: '/api/chat',
   onError: (err) => console.error(err),
@@ -136,8 +139,17 @@ watch(
   }
 );
 
+const { registerFocusChat, unregisterFocusChat } = useChatShortcut()
+
+onMounted(() => {
+  registerFocusChat(() => {
+    chatInputRef.value?.focus()
+  })
+})
+
 onUnmounted(() => {
   if (streamingInterval) clearInterval(streamingInterval);
+  unregisterFocusChat()
 });
 
 onMounted(() => {
