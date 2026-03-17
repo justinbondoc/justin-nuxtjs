@@ -96,7 +96,6 @@ LinkedIn
 https://linkedin.com/in/justin-bondoc
 
 Email  
-jstnbondoc@gmail.com
 
 Schedule a 30-minute call  
 https://calendly.com/jstnbondoc/30min
@@ -108,7 +107,7 @@ For references or detailed questions, visitors can reach out directly. When it m
 # Resume
 
 Justin Bondoc  
-Contact: (925) 818-1418 | jstnbondoc@gmail.com | Ontario, California
+Contact: Ontario, California
 
 Product Manager with 9+ years in B2B SaaS, including four years owning product at Axure Software Solutions. Skilled at delivering under constraint, making hard prioritization calls, and keeping teams aligned through ambiguity. Combines Product Management, UX Design, and Front-End Development experience with a Sales Engineering background that grounds product decisions in real customer needs.
 

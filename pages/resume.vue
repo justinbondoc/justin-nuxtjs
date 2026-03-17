@@ -11,15 +11,6 @@
           Product Manager
         </p>
         <p class="mt-3 text-sm text-slate-300 print:text-black flex flex-wrap gap-x-2 gap-y-1">
-          <span>(925) 818-1418</span>
-          <span class="text-slate-600">|</span>
-          <a
-            href="mailto:bondocjustin@yahoo.com"
-            class="underline decoration-slate-500/60 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400 print:text-black print:no-underline"
-          >
-            bondocjustin@yahoo.com
-          </a>
-          <span class="text-slate-600">|</span>
           <a
             href="https://www.linkedin.com/in/justin-bondoc"
             target="_blank"

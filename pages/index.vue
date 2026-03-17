@@ -55,7 +55,7 @@
           <SpotlightCard
             v-for="s in studies"
             :key="s.slug"
-            class="bg-neutral-900/50"
+            class="bg-neutral-900/50 rounded-xl border border-transparent transition-colors hover:border-lime-400/70 focus-within:border-lime-400/70 focus-within:ring-2 focus-within:ring-lime-400/20"
           >
             <NuxtLink
               :to="`/case-studies/${s.slug}`"
