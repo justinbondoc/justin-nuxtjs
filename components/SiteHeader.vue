@@ -3,15 +3,16 @@
     <div
       class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 text-sm text-slate-200 sm:px-6"
     >
-      <NuxtLink to="/" class="text-xs font-semibold tracking-[0.16em] text-slate-100 uppercase">
+      <NuxtLink to="/" class="text-xs font-semibold tracking-[0.16em] text-slate-100 uppercase" @click="onHomeClick">
         Justin Bondoc
       </NuxtLink>
 
       <!-- Desktop nav: visible from md up -->
       <nav class="hidden flex-wrap items-center gap-2 sm:gap-3 md:flex">
         <NuxtLink
-          to="/#top"
+          to="/"
           class="rounded-full px-2.5 py-1 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
+          @click="onHomeClick"
         >
           Home
         </NuxtLink>
@@ -109,9 +110,9 @@
         aria-label="Mobile navigation"
       >
         <NuxtLink
-          to="/#top"
+          to="/"
           class="rounded-lg px-3 py-2.5 text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-white"
-          @click="menuOpen = false"
+          @click="onHomeClick"
         >
           Home
         </NuxtLink>
@@ -157,5 +158,16 @@
 
 <script setup lang="ts">
 const menuOpen = ref(false)
+
+const route = useRoute()
+
+function onHomeClick(event: MouseEvent) {
+  menuOpen.value = false
+
+  if (route.path !== '/') return
+
+  event.preventDefault()
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
