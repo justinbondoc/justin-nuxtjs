@@ -52,6 +52,17 @@
             </div>
           </div>
         </div>
+        <!-- API limit hit – show friendly message -->
+        <div
+          v-if="apiLimitError"
+          class="message flex flex-col gap-1 items-start"
+        >
+          <div class="w-full max-w-[85%] sm:max-w-[80%]">
+            <div class="chat-response">
+              {{ API_LIMIT_MESSAGE }}
+            </div>
+          </div>
+        </div>
       </div>
 
       <form @submit.prevent="onSubmit" class="sticky bottom-0 bg-black pb-4 pt-2">
@@ -101,12 +112,23 @@ import { useChatShortcut } from '~/composables/useChatShortcut'
 const STREAMING_GLYPHS = ['⣾', '⣽', '⣻', '⢿', '⡿'];
 const GLYPH_INTERVAL_MS = 80;
 
+const API_LIMIT_MESSAGE = "Oops, hit my Anthropic API key limit! I guess this is a good problem to have 🙂";
+
 const route = useRoute();
 const input = ref('');
 const chatInputRef = ref<HTMLInputElement | null>(null)
+const apiLimitError = ref(false);
+
 const chat = new Chat({
   api: '/api/chat',
-  onError: (err) => console.error(err),
+  onError: (err) => {
+    const message = err instanceof Error ? err.message : String(err);
+    if (/reached your specified API usage limits/i.test(message)) {
+      apiLimitError.value = true;
+      return;
+    }
+    console.error(err);
+  },
 });
 
 const streamingPhase = ref(0);
@@ -174,6 +196,7 @@ function onKeydown(e: KeyboardEvent) {
 
 function onSubmit() {
   if (!input.value.trim()) return;
+  apiLimitError.value = false;
   chat.sendMessage({ text: input.value });
   input.value = '';
 }
