@@ -1,13 +1,13 @@
 <template>
   <main class="pb-20">
     <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-      <NuxtLink
+      <BackArrowLink
         to="/case-studies/three-claude-skills"
-        class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors mb-10"
+        :iconSize="14"
+        class="text-sm text-slate-400 hover:text-white transition-colors mb-10"
       >
-        <ArrowLeft :size="14" />
         Back to case study
-      </NuxtLink>
+      </BackArrowLink>
 
       <div v-if="pending" class="text-slate-400">Loading…</div>
       <div v-else-if="error" class="text-red-400">Failed to load skill.</div>
@@ -28,7 +28,6 @@
 
 <script setup>
 import { marked } from 'marked'
-import { ArrowLeft } from 'lucide-vue-next'
 
 const route = useRoute()
 const slug = Array.isArray(route.params.slug) ? route.params.slug[0] : route.params.slug
