@@ -2,14 +2,24 @@
   {
     "id": "ceo",
     "name": "Victor Hsu",
-    "photo": null,
-    "excerpt": "Justin brings rare clarity to product decisions and always pushes for the right user outcome.",
-    "quote": "Justin brings rare clarity to product decisions and always pushes for the right user outcome. He's someone I trust to own a problem end to end.",
+    "photo": "/images/testimonials/victor-hsu.jpeg",
+    "excerpt": "Justin strives for a deep understanding of the users and the products. He is constantly learning about the market and new products and technology that could benefit the roadmap. All that combined with his drive to consistently deliver great projects made him an incredible part of the team, and I give him my highest recommendation.",
+    "quote": "Justin is one of the most versatile, curious, and driven Product Managers I've worked with. Having managed him during his nearly 8 years at Axure, I saw him tackle everything from SOC 2 compliance and enterprise sales to leading the full-lifecycle delivery of Axure Cloud 3.0, which included a complex migration to a new framework.\n\nJustin strives for a deep understanding of the users and the products. He is constantly learning about the market and new products and technology that could benefit the roadmap. All that combined with his drive to consistently deliver great projects made him an incredible part of the team, and I give him my highest recommendation.",
     "role": "CEO",
     "company": "Axure",
-    "relationship": "I was Justin's manager. He reported to me on product and design initiatives.",
-    "linkedin": "https://linkedin.com/in/example",
+    "relationship": "I was Justin's manager during his nearly 8 years at Axure.",
+    "linkedin": "https://www.linkedin.com/in/victor-hsu-44653/",
     "highlight": "ceo"
+  },
+  {
+    "id": "joel-carrillo",
+    "name": "Joel Carrillo",
+    "photo": "/images/testimonials/joel-carrillo.jpeg",
+    "excerpt": "Justin was a key member of my team and someone I trusted in some of our highest stakes customer engagements.",
+    "quote": "Justin was a key member of my team and someone I trusted in some of our highest stakes customer engagements. He has a rare ability to run a compelling in-person or remote demos while navigating skepticism without ever putting a prospect on the defensive.\n\nWhat stood out most was his composure under scrutiny. Whether addressing perceived feature gaps or tough technical questions, Justin handled every interaction with honesty and precision. He didn't deflect, he acknowledged concerns directly, offered thoughtful workarounds when needed, and kept the conversation productive and engaging.\n\nHe was instrumental in closing millions in revenue, including multiple six-figure deals with Fortune 50 organizations. Justin was equally effective speaking with engineers, executives, and cross-functional stakeholders translating complex technical concepts into clear, relevant workflows that resonated across audiences.\n\nBeyond sales, he consistently demonstrated strong product instincts. He knew how to separate true platform needs from edge case requests, which made him a strong customer advocate and ultimately led to his transition into product management.\n\nAny team that values credibility, clarity, and execution in front of customers will benefit from having Justin.",
+    "role": "formerly Head of Enterprise Accounts",
+    "linkedin": "https://www.linkedin.com/in/joel-ponce-carrillo/",
+    "company": "Axure"
   },
   {
     "id": "cto",

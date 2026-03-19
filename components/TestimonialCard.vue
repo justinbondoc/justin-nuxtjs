@@ -1,10 +1,12 @@
 <template>
   <SpotlightCard
     :class="[
-      'group flex h-full min-h-[240px] sm:min-h-[280px] md:min-h-[320px] flex-col border p-4 sm:p-5 md:p-6 lg:p-7 text-left transition-colors cursor-pointer',
-      highlight ? 'border-[#27FF64]/40 bg-slate-900/60' : 'border-slate-800 bg-slate-900/40',
+      'group flex h-full min-h-[240px] sm:min-h-[280px] md:min-h-[320px] flex-col rounded-xl border p-4 sm:p-5 md:p-6 text-left transition-colors overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-lime-400/20',
+      highlight
+        ? 'border-transparent bg-neutral-900/50 hover:border-lime-400/70 focus-within:border-lime-400/70'
+        : 'border-transparent bg-neutral-900/50 hover:border-lime-400/70 focus-within:border-lime-400/70',
     ]"
-    :spotlight-color="'rgba(39, 255, 100, 0.28)'"
+    :spotlight-color="'rgba(163, 230, 53, 0.18)'"
     @click="modalOpen = true"
   >
     <article class="relative flex min-h-0 flex-1 flex-col">
@@ -13,7 +15,7 @@
       </blockquote>
 
       <div class="flex flex-wrap items-start gap-3 sm:gap-4">
-        <div class="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-slate-700">
+        <div class="relative h-12 w-12 sm:h-14 sm:w-14 shrink-0 overflow-hidden rounded-full bg-neutral-800">
           <img
             v-if="photo"
             :src="photo"
@@ -33,7 +35,7 @@
             <span class="font-semibold text-white text-base sm:text-lg">{{ name }}</span>
             <span
               v-if="highlightLabel"
-              class="inline-flex items-center rounded-full border border-[#27FF64]/50 bg-[#27FF64]/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-[#27FF64]"
+              class="inline-flex items-center rounded-full border border-lime-400/50 bg-lime-400/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-lime-400"
             >
               {{ highlightLabel }}
             </span>
@@ -49,24 +51,19 @@
             :href="linkedin"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+            class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-lime-300 transition-colors"
             @click.stop
           >
-            Go to their LinkedIn
+            LinkedIn
             <span class="text-slate-500" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
 
-      <div class="mt-4 flex items-center justify-between gap-3 border-t border-slate-700/60 pt-3">
-        <span class="text-xs font-medium text-slate-400">
-          Click to read the full quote
-        </span>
-        <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-600/70 bg-slate-900/40 px-2.5 py-1 text-xs font-semibold text-white transition-colors group-hover:border-slate-500 group-hover:bg-slate-900/70">
-          Read full
-          <span class="text-slate-300" aria-hidden="true">→</span>
-        </span>
-      </div>
+      <p class="mt-4 pt-3 border-t border-neutral-700/60 text-xs text-slate-500 group-hover:text-slate-400 transition-colors">
+        Click to read full quote
+        <span class="text-slate-500" aria-hidden="true">→</span>
+      </p>
     </article>
   </SpotlightCard>
 
@@ -88,12 +85,12 @@
           @click="modalOpen = false"
         />
         <div
-          class="relative flex max-h-[90vh] w-full max-w-lg flex-col rounded-xl border border-slate-700 bg-slate-900 shadow-xl"
+          class="relative flex max-h-[90vh] w-full max-w-lg flex-col rounded-xl border border-neutral-700 bg-neutral-900 shadow-xl"
           @click.stop
         >
-          <div class="flex shrink-0 items-center justify-between gap-4 border-b border-slate-700/80 p-4 sm:p-5">
+          <div class="flex shrink-0 items-center justify-between gap-4 border-b border-neutral-700/80 p-4 sm:p-5">
             <div class="flex min-w-0 items-start gap-3">
-              <div class="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-slate-700">
+              <div class="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-neutral-800">
                 <img
                   v-if="photo"
                   :src="photo"
@@ -112,7 +109,7 @@
                   {{ name }}
                   <span
                     v-if="highlightLabel"
-                    class="ml-2 inline-flex items-center rounded-full border border-[#27FF64]/50 bg-[#27FF64]/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-[#27FF64]"
+                    class="ml-2 inline-flex items-center rounded-full border border-lime-400/50 bg-lime-400/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-lime-400"
                   >
                     {{ highlightLabel }}
                   </span>
@@ -127,7 +124,7 @@
             </div>
             <button
               type="button"
-              class="shrink-0 rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+              class="shrink-0 rounded-lg p-2 text-slate-400 hover:bg-neutral-800 hover:text-white transition-colors"
               aria-label="Close"
               @click="modalOpen = false"
             >
@@ -145,9 +142,9 @@
               :href="linkedin"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+              class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-lime-300 transition-colors"
             >
-              Go to their LinkedIn
+              LinkedIn
               <span class="text-slate-500" aria-hidden="true">→</span>
             </a>
           </div>
@@ -158,7 +155,7 @@
 </template>
 
 <script setup lang="ts">
-type HighlightType = 'ceo' | 'cto' | boolean
+type HighlightType = 'ceo' | 'cto' | 'manager' | boolean
 
 const props = withDefaults(
   defineProps<{
@@ -195,6 +192,7 @@ onUnmounted(() => {
 const highlightLabel = computed(() => {
   if (props.highlight === 'ceo') return 'CEO'
   if (props.highlight === 'cto') return 'CTO'
+  if (props.highlight === 'manager') return 'Manager'
   return ''
 })
 

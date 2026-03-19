@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-black py-16 sm:py-20">
+  <section class="bg-black py-16 sm:py-20 overflow-x-hidden">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 text-center">
       <p
         class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-400"
