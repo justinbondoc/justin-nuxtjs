@@ -9,7 +9,7 @@ export default defineNuxtPlugin(() => {
     H: '/',
     A: '/#about',
     P: '/#portfolio',
-    U: '/#research',
+    T: '/#testimonials',
     R: '/resume',
     C: '/#contact'
   }

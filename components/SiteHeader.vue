@@ -50,15 +50,15 @@
           </span>
         </NuxtLink>
         <NuxtLink
-          to="/#research"
+          to="/#testimonials"
           class="rounded-sm px-2.5 py-1 text-slate-300 transition-colors hover:transition-none hover:rounded-none hover:bg-black hover:text-white hover:border-[#39ff14] border border-transparent"
         >
           <span class="inline-flex items-center gap-1">
-            <span>Research process</span>
+            <span>Testimonials</span>
             <kbd
               class="rounded-sm border border-slate-700/80 bg-slate-900/50 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-slate-300"
             >
-              U
+              T
             </kbd>
           </span>
         </NuxtLink>
@@ -211,16 +211,16 @@
           </span>
         </NuxtLink>
         <NuxtLink
-          to="/#research"
+          to="/#testimonials"
           class="rounded-sm px-3 py-2.5 text-slate-300 transition-colors hover:rounded-none hover:bg-black hover:text-white hover:border-[#39ff14] border border-transparent"
           @click="menuOpen = false"
         >
           <span class="flex items-center justify-between gap-3">
-            <span>Research process</span>
+            <span>Testimonials</span>
             <kbd
               class="rounded-sm border border-slate-700/80 bg-slate-900/50 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-slate-300"
             >
-              U
+              T
             </kbd>
           </span>
         </NuxtLink>
