@@ -6,10 +6,10 @@
     @blur="handleBlur"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
-    :class="['relative overflow-hidden p-4', className]"
+    :class="['relative overflow-hidden rounded-[inherit] p-4', className]"
   >
     <div
-      class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
+      class="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-500 ease-in-out"
       :style="{
         opacity,
         background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`

@@ -7,33 +7,53 @@
         <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">
           <GradientText class="text-4xl sm:text-5xl">Justin Bondoc</GradientText>
         </h1>
-        <p class="mt-3 text-sm text-slate-300 print:text-black">
-          <span>(925) 818-1418</span>
-          <span class="mx-1">|</span>
+        <p class="mt-1 text-sm font-medium text-slate-400 print:text-black">
+          Product Manager
+        </p>
+        <p class="mt-3 text-sm text-slate-300 print:text-black flex flex-wrap gap-x-2 gap-y-1">
           <a
-            href="mailto:jstnbondoc@gmail.com"
+            href="https://calendly.com/jstnbondoc/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             class="underline decoration-slate-500/60 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400 print:text-black print:no-underline"
           >
-            jstnbondoc@gmail.com
+            Contact me
           </a>
-          <span class="mx-1">|</span>
-          <span>Ontario, California 🇺🇸</span>
+          <span class="text-slate-600">|</span>
+          <a
+            href="https://www.linkedin.com/in/justin-bondoc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline decoration-slate-500/60 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400 print:text-black print:no-underline"
+          >
+            linkedin.com/in/justin-bondoc
+          </a>
+          <span class="text-slate-600">|</span>
+          <a
+            href="https://justinbondoc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline decoration-slate-500/60 underline-offset-2 hover:text-lime-300 hover:decoration-lime-400 print:text-black print:no-underline"
+          >
+            justinbondoc.com
+          </a>
+          <span class="text-slate-600">|</span>
+          <span>Ontario, CA</span>
         </p>
 
         <p class="mt-4 text-sm text-slate-200 leading-relaxed print:text-black">
-          Product Manager with 9+ years in B2B SaaS, including 4 years owning product at Axure Software
-          Solutions. Skilled at delivering under constraint, making hard prioritization calls, and keeping
-          teams aligned through ambiguity. Combines Product Management, UX Design, and Front-End Development
-          experience with a Sales Engineering background that grounds product decisions in real customer needs.
+          Product Manager with 10+ years in B2B SaaS, including 4 years leading product at Axure. Delivered under
+          constraints, making tough prioritization calls and aligning teams through ambiguity. Blends Product, UX,
+          Front-End, and Sales Engineering to build customer-grounded solutions.
         </p>
 
         <div class="mt-6 flex flex-wrap gap-3 print:hidden">
-          <NuxtLink
+          <BackArrowLink
             to="/"
-            class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+            class="mb-6 text-sm font-medium text-slate-400 transition-colors hover:text-slate-200"
           >
-            Back to home
-          </NuxtLink>
+            Back home
+          </BackArrowLink>
         </div>
       </header>
       </AnimatedContent>
@@ -42,51 +62,80 @@
       <AnimatedContent :delay="0.1" class="print:opacity-100">
       <section class="mb-8 break-inside-avoid">
         <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
-          Experience
+          Work Experience
         </h2>
 
         <article class="mb-5">
           <header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
             <h3 class="text-sm font-semibold print:text-black">
-              <GradientText class="text-sm">Product Manager | Axure Software Solutions</GradientText>
+              <GradientText class="text-sm">Product Manager II | Axure Software Solutions</GradientText>
             </h3>
             <p class="text-xs text-slate-400 print:text-black">
-              San Diego, CA | 2022 – March 2026
+              San Diego, CA | Jul 2023 – Mar 2026
             </p>
           </header>
           <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
             <li>
-              Originated <strong>Axure Cloud 3.0</strong> update, built the full vision, spec, and design system
-              using Figma. Led it through design and development to become a flagship Cloud initiative.
+              Defined and executed a multi-year product strategy to evolve <strong>Axure Cloud</strong> from a prototype
+              sharing tool into a Notion-style collaborative workspace, anchoring the roadmap around full-text search,
+              whiteboards, and org-based collaboration.
             </li>
             <li>
-              Owned the <strong>Axure Cloud Organizations</strong> initiative end-to-end, coordinating months
-              of complex cross-functional development for a high-stakes, enterprise-grade feature.
+              Led the transition from single-user to organization-based subscriptions, unlocking a new buyer persona
+              beyond the individual prototyper and expanding Axure Cloud's addressable market.
             </li>
             <li>
-              Shipped a wide range of features across <strong>Axure Cloud</strong> and <strong>Axure RP</strong>,
-              including on-demand generation to increase prototype viewing speeds by up to 10x in Cloud
-              performance improvements.
+              Collaborated with engineering to upgrade Axure Cloud from vanilla JavaScript and jQuery to
+              <strong>Vue 3.0</strong>, improving load times by up to <strong>10x</strong>.
             </li>
             <li>
-              Drove adoption of product analytics (<strong>PostHog</strong>) and established a more
-              data-driven approach to roadmap and release decisions.
+              Drove UI modernization by standardizing the front end with <strong>TailwindCSS</strong> and
+              <strong>Reka UI</strong>, accelerating development cycles.
             </li>
             <li>
-              Led user research and customer interviews; distilled qualitative insights into prioritization
-              decisions and roadmap strategy.
+              Introduced <strong>Claude Code</strong> into the PM workflow, building AI agents that reduced changelog
+              production from days to minutes and completed documentation work that had been deprioritized indefinitely.
             </li>
             <li>
-              Managed sprint and release planning in <strong>Jira</strong>, established a consistent release
-              cadence, and introduced experimentation-based specs to accelerate iteration cycles.
+              Championed and personally implemented <strong>PostHog</strong> for product analytics, unlocking user-level
+              data that enabled proactive outreach, doubled customer interview volume, and directly informed roadmap
+              prioritization.
             </li>
             <li>
-              Captured and communicated product strategy to the broader company in ways that created alignment
-              and excitement across teams.
+              Reduced engineering bottlenecks by personally handling front-end UI polish in the codebase, allowing
+              developers to stay focused on higher-complexity work.
+            </li>
+          </ul>
+        </article>
+
+        <article class="mb-5">
+          <header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
+            <h3 class="text-sm font-semibold print:text-black">
+              <GradientText class="text-sm">Product Manager I | Axure Software Solutions</GradientText>
+            </h3>
+            <p class="text-xs text-slate-400 print:text-black">
+              San Diego, CA | Jul 2021 – Jul 2023
+            </p>
+          </header>
+          <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
+            <li>
+              Delivered one of Axure RP's most requested features by leading a 6-month "Easier Layout" epic, shipping
+              a family of intelligent canvas features including smart distance snapping, auto-alignment, and tidy-up
+              that eliminated a tedious multi-step manual workflow.
             </li>
             <li>
-              Worked directly with the CEO and CTO to keep product direction aligned with company goals and
-              OKRs.
+              Removed a critical enterprise sales blocker by redesigning the trial experience from a manual key-based
+              system to self-serve 30-day account trials, eliminating ops overhead and enabling per-seat purchasing
+              that accelerated deal cycles.
+            </li>
+            <li>
+              Rescued a high-impact but stalled on-demand generation feature from being cut, re-prioritizing it,
+              resolving UX edge cases, and driving it to launch, resulting in up to <strong>10x</strong> improvement
+              in prototype viewing speeds.
+            </li>
+            <li>
+              Reduced friction on Axure RP's most-used interaction by shipping a smart default that automatically
+              sets the action state based on user search input, eliminating a redundant manual step.
             </li>
           </ul>
         </article>
@@ -97,29 +146,28 @@
               <GradientText class="text-sm">Sales Engineer | Axure Software Solutions</GradientText>
             </h3>
             <p class="text-xs text-slate-400 print:text-black">
-              San Diego, CA | August 2018 – 2022
+              San Diego, CA | Aug 2018 – Jul 2021
             </p>
           </header>
           <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
             <li>
-              Led enterprise on-premises implementations of <strong>Axure Cloud for Business</strong>, managing
-              complex technical deployments for large accounts.
+              Built Axure's on-premises onboarding process from scratch using structured project management, laying the
+              groundwork for the Customer Success department and contributing to millions in closed revenue through a
+              repeatable implementation playbook adopted across support and sales.
             </li>
             <li>
-              Served as the company's primary liaison for <strong>SOC 2 compliance</strong>, owning security
-              questionnaire responses and collaborating with legal and engineering on audit preparation.
+              Reduced enterprise security questionnaire completion time from ~1 week to minutes by standardizing
+              responses into a self-serve resource adopted by the broader sales team.
             </li>
             <li>
-              Spearheaded adoption of internal tooling (<strong>Frontapp</strong> and <strong>Loopio</strong>) and built
-              reports and integrations that improved visibility across Sales and CS teams.
+              Served as primary liaison for <strong>SOC 2 compliance</strong> efforts, coordinating with legal and
+              engineering to unblock stalled enterprise deals and convert previously non-starter opportunities into
+              closed revenue.
             </li>
             <li>
-              Earned <strong>CAPM certification</strong> and applied project management discipline to create
-              scalable processes for onboarding, knowledge transfer, and support team enablement.
-            </li>
-            <li>
-              Acted as a trusted go-between for Sales, Engineering, and Product, representing both customer
-              needs and platform constraints.
+              Improved enterprise adoption by synthesizing structured feedback from high-priority accounts into
+              actionable product insight, directly influencing roadmap decisions that reduced installation complexity
+              and resolved key UX friction points.
             </li>
           </ul>
         </article>
@@ -130,7 +178,7 @@
               <GradientText class="text-sm">Sales Engineer | MadCap Software</GradientText>
             </h3>
             <p class="text-xs text-slate-400 print:text-black">
-              San Diego, CA | January 2016 – August 2018
+              San Diego, CA | Jan 2016 – Aug 2018
             </p>
           </header>
           <ul class="mt-2 list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
@@ -139,11 +187,7 @@
               and compelling to non-technical buyers.
             </li>
             <li>
-              Led discovery and demo calls that surfaced user insights directly incorporated into product
-              strategy.
-            </li>
-            <li>
-              Created onboarding materials, built internal tools, and trained new hires across technical teams.
+              Led discovery and demo calls that surfaced user insights directly incorporated into product strategy.
             </li>
             <li>
               Spoke at industry conferences and led workshops for enterprise clients and internal teams.
@@ -153,16 +197,27 @@
       </section>
       </AnimatedContent>
 
-      <!-- Education & Certifications -->
+      <!-- Education -->
       <AnimatedContent :delay="0.15" class="print:opacity-100">
       <section class="mb-8 break-inside-avoid">
         <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
-          Education &amp; Certifications
+          Education
         </h2>
         <ul class="list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
           <li>
-            B.A. Visual Arts: Media Computing class of 2014 | UC San Diego
+            B.A. Visual Arts: Media Computing, Class of 2014 | UC San Diego
           </li>
+        </ul>
+      </section>
+      </AnimatedContent>
+
+      <!-- Certificates -->
+      <AnimatedContent :delay="0.2" class="print:opacity-100">
+      <section class="mb-8 break-inside-avoid">
+        <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
+          Certificates
+        </h2>
+        <ul class="list-disc list-outside pl-6 space-y-1.5 text-sm text-slate-200 print:text-black">
           <li>
             Certified Associate in Project Management (CAPM) | Project Management Institute
           </li>
@@ -171,7 +226,7 @@
       </AnimatedContent>
 
       <!-- References -->
-      <AnimatedContent :delay="0.2" class="print:opacity-100">
+      <AnimatedContent :delay="0.25" class="print:opacity-100">
       <section class="break-inside-avoid">
         <h2 class="mb-3 text-xl font-semibold tracking-tight print:text-black">
           References
@@ -189,7 +244,6 @@
 useSeoMeta({
   title: 'Justin Bondoc – Resume',
   description:
-    'Resume for Justin Bondoc, Product Manager with 9+ years in B2B SaaS, UX, and Sales Engineering.',
+    'Resume for Justin Bondoc, Product Manager with 10+ years in B2B SaaS, UX, and Sales Engineering.',
 })
 </script>
-

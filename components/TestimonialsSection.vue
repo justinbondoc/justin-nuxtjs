@@ -24,11 +24,10 @@
     </div>
 
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
-      <div class="w-screen max-w-none -ml-4 sm:-ml-6 overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory md:snap-proximity">
-        <div class="flex gap-6 pl-4 pr-4 pb-2 pt-1 sm:pl-6 sm:pr-6 md:gap-8">
+      <div class="grid gap-4 md:gap-5">
+        <!-- Victor: full-width, pops off grid with transform + glow -->
         <AnimatedContent
-          v-for="(t, i) in rest"
-          :key="t.id"
+          v-if="victor"
           :distance="50"
           direction="vertical"
           :duration="0.6"
@@ -36,19 +35,54 @@
           :initial-opacity="0"
           :animate-opacity="true"
           :threshold="0.1"
-          :delay="0.05 + (highlighted.length + i) * 0.06"
-          class="h-full shrink-0 w-[85vw] min-w-[300px] sm:w-[380px] sm:min-w-[380px] md:w-[420px] md:min-w-[420px] snap-start"
+          :delay="0.05"
+          class="origin-center"
         >
-          <TestimonialCard
-            :name="t.name"
-            :photo="t.photo"
-            :quote="t.quote"
-            :role="t.role"
-            :company="t.company"
-            :relationship="t.relationship"
-            :linkedin="t.linkedin"
-          />
+          <div
+            class="scale-[1.06] -translate-y-2 transition-transform duration-300 will-change-transform rounded-xl overflow-hidden"
+            style="box-shadow: 0 0 200px -8px rgba(163, 230, 53, 0.35), 0 0 24px -4px rgba(163, 230, 53, 0.2);"
+          >
+            <TestimonialCard
+              :name="victor.name"
+              :photo="victor.photo"
+              :excerpt="victor.excerpt"
+              :quote="victor.quote"
+              :role="victor.role"
+              :company="victor.company"
+              :relationship="victor.relationship"
+              :linkedin="victor.linkedin"
+              highlight="ceo"
+            />
+          </div>
         </AnimatedContent>
+
+        <!-- Others: 3 per row -->
+        <div class="grid gap-3 sm:gap-4 md:gap-5 sm:grid-cols-2 md:grid-cols-3">
+          <AnimatedContent
+            v-for="(t, i) in others"
+            :key="t.id"
+            :distance="50"
+            direction="vertical"
+            :duration="0.6"
+            ease="power3.out"
+            :initial-opacity="0"
+            :animate-opacity="true"
+            :threshold="0.1"
+            :delay="0.05 + (i + 1) * 0.06"
+            class="h-full"
+          >
+            <TestimonialCard
+              :name="t.name"
+              :photo="t.photo"
+              :excerpt="t.excerpt"
+              :quote="t.quote"
+              :role="t.role"
+              :company="t.company"
+              :relationship="t.relationship"
+              :linkedin="t.linkedin"
+              :highlight="(t.highlight as 'ceo' | 'cto' | 'manager' | undefined)"
+            />
+          </AnimatedContent>
         </div>
       </div>
     </div>
@@ -62,20 +96,21 @@ type Testimonial = {
   id: string
   name: string
   photo?: string
+  excerpt?: string
   quote: string
   role: string
   company?: string
   relationship: string
   linkedin?: string
-  highlight?: 'ceo' | 'cto'
+  highlight?: string
 }
 
 const list = getTestimonialsList() as Testimonial[]
 
-const highlighted = computed(() =>
-  list.filter((t) => t.highlight === 'ceo' || t.highlight === 'cto')
-)
-const rest = computed(() =>
-  list.filter((t) => t.highlight !== 'ceo' && t.highlight !== 'cto')
+const victor = computed(() => list.find((t) => t.id === 'ceo'))
+
+// Others in 2×3 grid (exclude Victor + Martin)
+const others = computed(() =>
+  list.filter((t) => t.id !== 'ceo' && t.id !== 'cto')
 )
 </script>

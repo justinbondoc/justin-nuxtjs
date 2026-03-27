@@ -10,8 +10,9 @@
         <GradientText>and how AI makes it faster</GradientText>
       </h2>
       <p class="margin-auto text-center text-slate-300">
-        I keep a steady stream of product signals coming in and run a clear research loop.
+        I keep a steady stream of product signals coming in and run a clear research loop. <br><GradientText>Prototypes are key to iterate on ideas in my workflow</GradientText>.
       </p>
+
 
       <!-- Always-on signal sources -->
       <div class="mt-8">
@@ -161,10 +162,19 @@
             class="ml-8 h-4 border-l border-slate-800 sm:ml-9"
           />
           </AnimatedContent>
+
         </div>
       </div>
+      <AnimatedContent>
 
+<p class="margin-auto mt-2 text-center text-sm text-slate-400 ">
+Not every project gets this full loop. For smaller initiatives, experiments, or tight
+timelines I might run a lighter version or skip steps. This is the playbook for when
+the stakes justify it.
+</p>
+</AnimatedContent>
     </div>
+
   </section>
 </template>
 

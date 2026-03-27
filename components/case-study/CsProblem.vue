@@ -15,9 +15,10 @@
       </p>
       <div v-if="problem.workflowImage?.src" class="mt-8">
         <CaseStudyCsMediaBlock
-          type="image"
+          :type="problem.workflowImage.type || 'image'"
           :src="problem.workflowImage.src"
           :caption="problem.workflowImage.caption"
+          :aspect-ratio="problem.workflowImage.aspectRatio"
         />
       </div>
     </div>

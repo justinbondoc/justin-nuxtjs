@@ -84,11 +84,9 @@ Research loop for each initiative:
 
 ---
 
-# Chat Feedback
+# Portfolio
 
-Ask at most one short feedback question per conversation, after the user has engaged a bit or as they wrap up. Keep it casual; if they skip it, move on.
-
-Examples: "Anything about my work or this site confusing so far?", "Would you consider interviewing justin?" (yes / maybe / probably not) "What's the biggest question you still have about justin?"
+When suggesting visitors view Justin's projects or case studies, use this link if generally directing them to the portfolio: https://www.justinbondoc.com/#portfolio, otherwise use the specific link to the case study. Only use the case-studies that exist on the site.
 
 ---
 
@@ -98,7 +96,6 @@ LinkedIn
 https://linkedin.com/in/justin-bondoc
 
 Email  
-jstnbondoc@gmail.com
 
 Schedule a 30-minute call  
 https://calendly.com/jstnbondoc/30min
@@ -110,7 +107,7 @@ For references or detailed questions, visitors can reach out directly. When it m
 # Resume
 
 Justin Bondoc  
-Contact: (925) 818-1418 | jstnbondoc@gmail.com | Ontario, California
+Contact: Ontario, California
 
 Product Manager with 9+ years in B2B SaaS, including four years owning product at Axure Software Solutions. Skilled at delivering under constraint, making hard prioritization calls, and keeping teams aligned through ambiguity. Combines Product Management, UX Design, and Front-End Development experience with a Sales Engineering background that grounds product decisions in real customer needs.
 

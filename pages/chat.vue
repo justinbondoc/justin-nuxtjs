@@ -1,15 +1,9 @@
 <template>
   <div class="chat chat-font min-h-screen bg-black">
     <div class="mx-auto max-w-3xl px-4 py-6 sm:px-6">
-      <NuxtLink
-        to="/"
-        class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition-colors hover:text-slate-200"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="m12 19-7-7 7-7" />
-        </svg>
+      <BackArrowLink to="/" class="mb-6 text-sm font-medium text-slate-400 transition-colors hover:text-slate-200">
         Back home
-      </NuxtLink>
+      </BackArrowLink>
 
       <div class="space-y-6 pb-4">
         <div
@@ -52,40 +46,42 @@
             </div>
           </div>
         </div>
+        <!-- API limit hit – show friendly message -->
+        <div
+          v-if="apiLimitError"
+          class="message flex flex-col gap-1 items-start"
+        >
+          <div class="w-full max-w-[85%] sm:max-w-[80%]">
+            <div class="chat-response">
+              {{ API_LIMIT_MESSAGE }}
+            </div>
+          </div>
+        </div>
       </div>
 
       <form @submit.prevent="onSubmit" class="sticky bottom-0 bg-black pb-4 pt-2">
-        <ElectricBorder
-          :color="'#28FF85'"
-          :speed="1"
-          :chaos="isFocused ? 0.08 : 0.3"
-          :thickness="4"
-          :style="{ borderRadius: '16px' }"
-        >
-          <div class="relative">
-            <input
-              v-model="input"
-              type="text"
-              placeholder="Ask about Justin..."
-              class="input w-full rounded-2xl border-0 bg-black/70 py-3 pl-4 pr-12 text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none"
-              autocomplete="off"
-              @focus="isFocused = true"
-              @blur="isFocused = false"
-              @keydown="onKeydown"
-            />
-            <button
-              type="submit"
-              aria-label="Send"
-              :disabled="chat.status === 'streaming' || chat.status === 'submitted'"
-              class="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-green-600 text-white transition-colors hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 19V5" />
-                <path d="M5 12l7-7 7 7" />
-              </svg>
-            </button>
-          </div>
-        </ElectricBorder>
+        <div class="relative">
+          <input
+            ref="chatInputRef"
+            v-model="input"
+            type="text"
+            placeholder="Ask about Justin..."
+            class="input w-full rounded-2xl border border-lime-700 bg-black/70 py-3 pl-4 pr-12 text-sm text-slate-50 placeholder:text-slate-500 focus:border-lime-500/50 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:ring-offset-2 focus:ring-offset-black"
+            autocomplete="off"
+            @keydown="onKeydown"
+          />
+          <button
+            type="submit"
+            aria-label="Send"
+            :disabled="chat.status === 'streaming' || chat.status === 'submitted'"
+            class="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-green-600 text-white transition-colors hover:bg-green-500 disabled:opacity-50 disabled:pointer-events-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 19V5" />
+              <path d="M5 12l7-7 7 7" />
+            </svg>
+          </button>
+        </div>
       </form>
       <p class="text-center text-sm text-slate-500">
         This might get things wrong.
@@ -105,16 +101,28 @@
 import { Chat } from '@ai-sdk/vue';
 import { ref, computed, watch, onUnmounted } from 'vue';
 import { marked } from 'marked';
+import { useChatShortcut } from '~/composables/useChatShortcut'
 
 const STREAMING_GLYPHS = ['⣾', '⣽', '⣻', '⢿', '⡿'];
 const GLYPH_INTERVAL_MS = 80;
 
+const API_LIMIT_MESSAGE = "Oops, hit my Anthropic API key limit! I guess this is a good problem to have 🙂";
+
 const route = useRoute();
 const input = ref('');
-const isFocused = ref(false);
+const chatInputRef = ref<HTMLInputElement | null>(null)
+const apiLimitError = ref(false);
+
 const chat = new Chat({
   api: '/api/chat',
-  onError: (err) => console.error(err),
+  onError: (err) => {
+    const message = err instanceof Error ? err.message : String(err);
+    if (/reached your specified API usage limits/i.test(message)) {
+      apiLimitError.value = true;
+      return;
+    }
+    console.error(err);
+  },
 });
 
 const streamingPhase = ref(0);
@@ -147,8 +155,17 @@ watch(
   }
 );
 
+const { registerFocusChat, unregisterFocusChat } = useChatShortcut()
+
+onMounted(() => {
+  registerFocusChat(() => {
+    chatInputRef.value?.focus()
+  })
+})
+
 onUnmounted(() => {
   if (streamingInterval) clearInterval(streamingInterval);
+  unregisterFocusChat()
 });
 
 onMounted(() => {
@@ -173,6 +190,7 @@ function onKeydown(e: KeyboardEvent) {
 
 function onSubmit() {
   if (!input.value.trim()) return;
+  apiLimitError.value = false;
   chat.sendMessage({ text: input.value });
   input.value = '';
 }

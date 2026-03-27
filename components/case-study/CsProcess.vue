@@ -52,9 +52,10 @@
         <CaseStudyCsMediaBlock
           v-for="(img, i) in process.images"
           :key="i"
-          type="image"
+          :type="img.type || 'image'"
           :src="img.src"
           :caption="img.caption"
+          :aspect-ratio="img.aspectRatio"
         />
       </div>
     </div>

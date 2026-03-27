@@ -14,10 +14,13 @@
       >
       <video
         v-else-if="type === 'video' && !isEmbedUrl"
-        :src="src"
         controls
+        playsinline
+        preload="metadata"
         class="h-full w-full object-contain"
-      />
+      >
+        <source :src="src" :type="isMp4 ? 'video/mp4' : undefined">
+      </video>
       <iframe
         v-else-if="type === 'video' && isEmbedUrl"
         :src="embedSrc"
@@ -37,10 +40,13 @@
       >
       <video
         v-else-if="type === 'video' && !isEmbedUrl"
-        :src="src"
         controls
+        playsinline
+        preload="metadata"
         class="w-full object-contain"
-      />
+      >
+        <source :src="src" :type="isMp4 ? 'video/mp4' : undefined">
+      </video>
       <iframe
         v-else-if="type === 'video' && isEmbedUrl"
         :src="embedSrc"
@@ -67,6 +73,11 @@ const props = defineProps({
 const isEmbedUrl = computed(() => {
   if (!props.src) return false
   return /youtube|youtu\.be|vimeo|player\.vimeo/.test(props.src)
+})
+
+const isMp4 = computed(() => {
+  if (!props.src) return false
+  return props.src.toLowerCase().endsWith('.mp4') || props.src.toLowerCase().includes('.mp4?')
 })
 
 const embedSrc = computed(() => {

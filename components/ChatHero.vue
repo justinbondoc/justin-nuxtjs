@@ -38,19 +38,16 @@
         10+ years in B2B SaaS. I run discovery, design solutions, and work with engineers to launch products.
       </p>
       <form class="mx-auto mb-6 w-full max-w-2xl" @submit.prevent="onSubmit">
-        <ElectricBorder
-          :color="'#28FF85'"
-          :speed="1"
-          :chaos="isFocused ? 0.08 : 0.3"
-          :thickness="4"
-          :style="{ borderRadius: '16px' }"
+        <div
+          class="relative flex-1 min-w-0 rounded-2xl border border-[#39ff14] bg-black/70 transition-shadow duration-300"
+          :style="isFocused ? {} : { boxShadow: '0 0 16px rgba(57, 255, 20, 0.5), 0 0 32px rgba(57, 255, 20, 0.25)' }"
         >
-          <div class="relative flex-1 min-w-0">
+          <div class="relative rounded-2xl">
             <textarea
               v-model="query"
               rows="4"
               placeholder="Hi! 👋 Ask me anything about my experience, case-studies, hobbies, or how I think..."
-              class="chat-font min-h-[120px] w-full resize-y rounded-2xl border-0 bg-black/70 px-4 py-3 pr-12 pb-10 text-base sm:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none sm:min-h-[100px]"
+              class="chat-font min-h-[120px] w-full resize-y rounded-2xl border-0 bg-transparent px-4 py-3 pr-12 pb-10 text-base sm:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none sm:min-h-[100px]"
               autocomplete="off"
               @focus="isFocused = true"
               @blur="isFocused = false"
@@ -67,7 +64,7 @@
               </svg>
             </button>
           </div>
-        </ElectricBorder>
+        </div>
       </form>
 
       <div class="flex flex-wrap justify-center gap-3">
@@ -84,10 +81,40 @@
           View resume
         </NuxtLink>
         <a
+          href="https://github.com/justinbondoc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+        >
+          GitHub
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            class="opacity-80"
+          >
+            <path d="M7 17L17 7" />
+            <path d="M7 7h10v10" />
+          </svg>
+        </a>
+        <a
           href="#portfolio"
           class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
         >
           View portfolio
+        </a>
+        <a
+          href="#testimonials"
+          class="inline-flex items-center justify-center rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
+        >
+          Testimonials
         </a>
         <a
           href="#research"
