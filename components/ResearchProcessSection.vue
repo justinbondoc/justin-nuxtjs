@@ -10,8 +10,7 @@
         <GradientText>and how AI makes it faster</GradientText>
       </h2>
       <p class="margin-auto text-center text-slate-300">
-        I keep a steady stream of product signals coming in and run a clear research loop for each
-        project.
+        I keep a steady stream of product signals coming in and run a clear research loop. <GradientText>Prototypesare key to testing ideas in my workflow</GradientText>.
       </p>
 
 
