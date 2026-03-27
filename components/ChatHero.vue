@@ -81,7 +81,7 @@
           View resume
         </NuxtLink>
         <a
-          href="https://github.com/jstnbondoc"
+          href="https://github.com/justinbondoc"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-700 bg-black/50 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-black/80 hover:text-white"
