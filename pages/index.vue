@@ -120,6 +120,36 @@
       :threshold="0.1"
       :delay="0"
     >
+      <TestimonialsSection />
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="60"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.6"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
+      <SectionSplitter />
+    </AnimatedContent>
+
+    <AnimatedContent
+      :distance="100"
+      direction="vertical"
+      :reverse="false"
+      :duration="0.8"
+      ease="power3.out"
+      :initial-opacity="0"
+      :animate-opacity="true"
+      :scale="1"
+      :threshold="0.1"
+      :delay="0"
+    >
       <ToolsSection />
     </AnimatedContent>
 
@@ -151,36 +181,6 @@
       :delay="0"
     >
       <ResearchProcessSection />
-    </AnimatedContent>
-
-    <AnimatedContent
-      :distance="60"
-      direction="vertical"
-      :reverse="false"
-      :duration="0.6"
-      ease="power3.out"
-      :initial-opacity="0"
-      :animate-opacity="true"
-      :scale="1"
-      :threshold="0.1"
-      :delay="0"
-    >
-      <SectionSplitter />
-    </AnimatedContent>
-
-    <AnimatedContent
-      :distance="100"
-      direction="vertical"
-      :reverse="false"
-      :duration="0.8"
-      ease="power3.out"
-      :initial-opacity="0"
-      :animate-opacity="true"
-      :scale="1"
-      :threshold="0.1"
-      :delay="0"
-    >
-      <TestimonialsSection />
     </AnimatedContent>
 
     <AnimatedContent
