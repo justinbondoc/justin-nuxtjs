@@ -10,9 +10,7 @@
         <GradientText>and how AI makes it faster</GradientText>
       </h2>
       <p class="margin-auto text-center text-slate-300">
-        I keep a steady stream of product signals coming in and run a clear research loop for each
-        project. I use Claude and Cursor at each step to sort information, highlight what matters
-        and move faster without skipping judgment.
+        I keep a steady stream of product signals coming in and run a clear research loop.
       </p>
 
       <!-- Always-on signal sources -->
