@@ -126,17 +126,17 @@
       {
         "step": "01",
         "heading": "Internal synthesis",
-        "body": "I pulled the last quarter of Front App tickets and CSM notes into a single doc. Two patterns stood out: workspace switching and finding files. The word \"slow\" kept showing up in tickets, which I flagged as something to check in more depth."
+        "body": "I pulled customer tickets and notes together. Two patterns stood out: people were having trouble finding files and navigating felt slow."
       },
       {
         "step": "02",
         "heading": "Internal interviews",
-        "body": "I ran 30-minute sessions with engineering and support. The key reframe came from CSMs: users did not usually say \"this is slow\"; they said \"I can't find it.\" Speed and discoverability were being mixed together in the support data, which helped narrow the problem."
+        "body": "I ran 30-minute sessions with engineering and support. Users did not usually say \"this is slow\"; they said \"I can't find it.\" Speed and discoverability were being mixed together in the support data, which helped narrow the problem."
       },
       {
         "step": "03",
         "heading": "Customer recruitment",
-        "body": "I recruited 5 participants from inbound customer feedback focusing on people who expressed frustration with navigation."
+        "body": "I recruited 5 participants from our user council."
       },
       {
         "step": "04",
@@ -151,23 +151,19 @@
       {
         "step": "06",
         "heading": "Internal validation",
-        "body": "I shared the designs in two rounds with CSMs and the support lead. They pointed out that recent files needed to be scoped to the active workspace, not global. Their mental model was \"what I was working on in this project,\" not \"everything I've opened,\" so I updated the spec before engineering started."
+        "body": "I shared the designs with engineering and product leadership."
       },
       {
         "step": "07",
         "heading": "External validation",
-        "body": "I then ran three follow-up sessions with customers using Axure RP prototypes from Figma imports. Cmd+K search was intuitive, workspace-scoped recent files matched expectations, and centralized settings tested well with admins, so we did not need big direction changes."
+        "body": "I then ran  follow-up sessions with customers using Axure RP prototypes. Cmd+K search was intuitive, workspace-scoped recent files matched expectations, and centralized settings tested well with admins, so we did not need big direction changes."
       }
     ],
     "challenges": {
       "technoFunctional": [
         "Migrating the front end from the legacy multi-page stack to a Vue 3 SPA meant rebuilding routing, state, and key flows without breaking existing shareable links. Cloud links are deeply embedded in customer workflows, so this was a hard constraint.",
         "Upgrading from Vue 2 to Vue 3 in the same release window required tight scope; we had to plan the migration so it did not block or delay feature work.",
-        "Settings and workspace logic were spread across multiple areas. Consolidating them without breaking existing organization and permission models required close collaboration with engineering during design."
-      ],
-      "experiential": [
-        "The internal finding that recent files needed to be scoped to the active workspace, not global, meant reworking the sidebar information architecture after the first design pass.",
-        "Running a full research loop inside a fixed Q4 ship date meant being explicit about which validation steps could run in parallel and which had to happen in order."
+        "Settings and workspace logic were spread across multiple areas."
       ]
     },
     "keyDecisions": [
@@ -178,10 +174,6 @@
       {
         "decision": "Make the sidebar the anchor of the refresh, with Whiteboards in mind.",
         "rationale": "Whiteboards was coming as a full-screen canvas experience, so the sidebar would become the primary way users navigate and return to files without losing context. We prioritized a revamped sidebar - collapsible for focus, with quick search (Cmd+K) and workspace-scoped recent files - so it could support the Whiteboards workflow and feel like the reliable home base for the rest of Cloud."
-      },
-      {
-        "decision": "Ship the Vue 3 SPA and the feature work together.",
-        "rationale": "The SPA migration was required to make navigation feel fast; without it, Cmd+K search would still trigger full page reloads. Shipping the new architecture and features together created a clear before-and-after story and avoided an in-between state that would be confusing for users and sales."
       },
       {
         "decision": "Replace dialogs with popovers wherever possible.",
@@ -240,16 +232,14 @@
     "phaseTitle": "Outcomes and learnings",
     "stats": [
       { "value": "8", "label": "Customer interviews conducted" },
-      { "value": "7", "label": "Improvements shipped alongside a full frontend rewrite" },
-      { "value": "<100ms", "label": "In-app page switches with SPA architecture" }
+      { "value": "7", "label": "Improvements shipped" },
+      { "value": "<100ms", "label": "In-app page switches" }
     ],
     "quantitative": [
-      "Moving to a Vue 3 SPA removed full page reloads on navigation. In-app page switches are now under 100ms and core Web Vitals improved."
+      "Moving to a Vue 3 SPA removed full page reloads on navigation. In-app page switches are now under 100ms."
     ],
     "qualitative": [
       "Navigation feedback was consistently positive after launch, one user put it directly: \"I like the nested folder structure in the sidebar so I don't need to jump in and out of workspaces. Much easier navigation.\" We didn't receive a single support question about navigation in the weeks after launch, which was a meaningful signal given how much of the pre-launch feedback had been about getting lost.",
-      "Choosing Vue and Tailwind for the project paid off in speed later on, though there was a real learning curve up front.",
-      "The lead engineer publicly posted about the project as 'Vue 3 with TanStack Query and pretty much a rewrite', the new codebase was a net reduction in lines of code, producing something cleaner, not just newer."
-    ]
+      "Choosing Vue and Tailwind for the project paid off in speed later on, though there was a real learning curve up front."    ]
   }
 }
