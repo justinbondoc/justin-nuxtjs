@@ -98,7 +98,6 @@ const logosRow1: LogoItem[] = [
   { src: '/images/logos/Linear.svg', name: 'Linear', href: 'https://linear.app', variant: 'wordmark' as const, tooltip: 'I track issues and ship in cycles here with the help-docs team.' },
   { src: '/images/logos/Jira.svg', name: 'Jira', href: 'https://atlassian.com/software/jira', variant: 'wordmark' as const, tooltip: 'I run sprints and backlogs where all software projects live.' },
   { src: '/images/logos/Confluence.svg', name: 'Confluence', href: 'https://atlassian.com/software/confluence', variant: 'wordmark' as const, tooltip: 'I keep specs, runbooks, and decisions in one place.' },
-  { src: '/images/logos/Productboard.svg', name: 'Productboard', href: 'https://productboard.com', variant: 'wordmark' as const, tooltip: 'I use it to manage feature requests and prioritize product-level work.' },
   { src: '/images/logos/PostHog.svg', name: 'PostHog', href: 'https://posthog.com', variant: 'wordmark' as const, tooltip: 'I measure product usage and analyze user behavior.' },
   // { src: '/images/logos/webflow.svg', name: 'Webflow', href: 'https://webflow.com', variant: 'wordmark' as const, tooltip: 'I build marketing sites and prototypes without touching code.' },
   { src: '/images/logos/nuxt.svg', name: 'Nuxt', href: 'https://nuxt.com', variant: 'wordmark' as const, tooltip: 'I use it to build this site and axure.com.' },
@@ -124,7 +123,7 @@ withDefaults(
     subheading: 'Discovery, design, and shipping',
     title: 'Tools I use every release cycle',
     description:
-      'I use these for product discovery, design, analytics, and building. From Figma and PostHog to Cursor and Nuxt, they keep me close to the work and able to ship quickly.',
+      'I use these for product discovery, design, analytics, and building. From Figma (Design) and PostHog (Product Analytics) to Cursor (AI IDE) and Nuxt (Web Framework), they keep me close to the work and able to ship quickly.',
   }
 )
 </script>

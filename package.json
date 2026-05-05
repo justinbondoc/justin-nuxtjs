@@ -17,16 +17,18 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^0.10.4",
     "@ai-sdk/anthropic": "^3.0.58",
     "@ai-sdk/vue": "^3.0.116",
     "@img-comparison-slider/vue": "^8.0.0",
+    "@neondatabase/serverless": "^0.10.4",
     "@vercel/analytics": "^1.6.1",
     "ai": "^6.0.116",
+    "dompurify": "^3.4.2",
     "gsap": "^3.14.2",
     "lucide-vue-next": "^0.575.0",
     "marked": "^17.0.4",
     "motion-v": "^2.0.0",
-    "ogl": "^1.0.11"
+    "ogl": "^1.0.11",
+    "zod": "^4.4.3"
   }
 }

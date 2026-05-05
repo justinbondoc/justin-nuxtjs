@@ -101,6 +101,7 @@
 import { Chat } from '@ai-sdk/vue';
 import { ref, computed, watch, onUnmounted } from 'vue';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 import { useChatShortcut } from '~/composables/useChatShortcut'
 
 const STREAMING_GLYPHS = ['⣾', '⣽', '⣻', '⢿', '⡿'];
@@ -178,7 +179,7 @@ onMounted(() => {
 
 function renderMarkdown(text: string) {
   if (!text) return '';
-  return marked(text);
+  return DOMPurify.sanitize(marked(text) as string);
 }
 
 function onKeydown(e: KeyboardEvent) {
