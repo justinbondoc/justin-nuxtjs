@@ -22,6 +22,7 @@
     "@img-comparison-slider/vue": "^8.0.0",
     "@neondatabase/serverless": "^0.10.4",
     "@vercel/analytics": "^1.6.1",
+    "@vueuse/core": "^14.3.0",
     "ai": "^6.0.116",
     "dompurify": "^3.4.2",
     "gsap": "^3.14.2",

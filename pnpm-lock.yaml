@@ -23,6 +23,9 @@ importers:
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(vue-router@4.6.4(vue@3.5.29))(vue@3.5.29)
+      '@vueuse/core':
+        specifier: ^14.3.0
+        version: 14.3.0(vue@3.5.29)
       ai:
         specifier: ^6.0.116
         version: 6.0.116(zod@4.4.3)
@@ -40,7 +43,7 @@ importers:
         version: 17.0.4
       motion-v:
         specifier: ^2.0.0
-        version: 2.0.0(@vueuse/core@14.2.1(vue@3.5.29))(vue@3.5.29)
+        version: 2.0.0(@vueuse/core@14.3.0(vue@3.5.29))(vue@3.5.29)
       ogl:
         specifier: ^1.0.11
         version: 1.0.11
@@ -1582,16 +1585,16 @@ packages:
   '@vue/shared@3.5.29':
     resolution: {integrity: sha512-w7SR0A5zyRByL9XUkCfdLs7t9XOHUyJ67qPGQjOou3p6GvBeBW+AVjUUmlxtZ4PIYaRvE+1LmK44O4uajlZwcg==}
 
-  '@vueuse/core@14.2.1':
-    resolution: {integrity: sha512-3vwDzV+GDUNpdegRY6kzpLm4Igptq+GA0QkJ3W61Iv27YWwW/ufSlOfgQIpN6FZRMG0mkaz4gglJRtq5SeJyIQ==}
+  '@vueuse/core@14.3.0':
+    resolution: {integrity: sha512-aHfz47g0ZhMtTVHmIzMVpJy8ePhhOy68GY5bv110+5DVtZ+W7BsOx+m61UNQqfrWyPztIHIanWa3E2tib3NFIw==}
     peerDependencies:
       vue: ^3.5.0
 
-  '@vueuse/metadata@14.2.1':
-    resolution: {integrity: sha512-1ButlVtj5Sb/HDtIy1HFr1VqCP4G6Ypqt5MAo0lCgjokrk2mvQKsK2uuy0vqu/Ks+sHfuHo0B9Y9jn9xKdjZsw==}
+  '@vueuse/metadata@14.3.0':
+    resolution: {integrity: sha512-BwxmbAzwAVF50+MW57GXOUEV61nFBGnlBvrTqj49PqWJu3uw7hdu72ztXeZ33RdZtDY6kO+bfCAE1PCn88Tktw==}
 
-  '@vueuse/shared@14.2.1':
-    resolution: {integrity: sha512-shTJncjV9JTI4oVNyF1FQonetYAiTBd+Qj7cY89SWbXSkx7gyhrgtEdF2ZAVWS1S3SHlaROO6F2IesJxQEkZBw==}
+  '@vueuse/shared@14.3.0':
+    resolution: {integrity: sha512-bZpge9eSXwa4ToSiqJ7j6KRwhAsneMFoSz3LMWKQDkqimm3D/tbFlrklrs/IOqC8tEcYmXQZJ6N0UrjhBirVCg==}
     peerDependencies:
       vue: ^3.5.0
 
@@ -5473,16 +5476,16 @@ snapshots:
 
   '@vue/shared@3.5.29': {}
 
-  '@vueuse/core@14.2.1(vue@3.5.29)':
+  '@vueuse/core@14.3.0(vue@3.5.29)':
     dependencies:
       '@types/web-bluetooth': 0.0.21
-      '@vueuse/metadata': 14.2.1
-      '@vueuse/shared': 14.2.1(vue@3.5.29)
+      '@vueuse/metadata': 14.3.0
+      '@vueuse/shared': 14.3.0(vue@3.5.29)
       vue: 3.5.29
 
-  '@vueuse/metadata@14.2.1': {}
+  '@vueuse/metadata@14.3.0': {}
 
-  '@vueuse/shared@14.2.1(vue@3.5.29)':
+  '@vueuse/shared@14.3.0(vue@3.5.29)':
     dependencies:
       vue: 3.5.29
 
@@ -6533,9 +6536,9 @@ snapshots:
 
   motion-utils@12.29.2: {}
 
-  motion-v@2.0.0(@vueuse/core@14.2.1(vue@3.5.29))(vue@3.5.29):
+  motion-v@2.0.0(@vueuse/core@14.3.0(vue@3.5.29))(vue@3.5.29):
     dependencies:
-      '@vueuse/core': 14.2.1(vue@3.5.29)
+      '@vueuse/core': 14.3.0(vue@3.5.29)
       framer-motion: 12.34.3
       hey-listen: 1.0.8
       motion-dom: 12.34.3

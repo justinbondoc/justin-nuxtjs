@@ -168,34 +168,6 @@
       <SectionSplitter />
     </AnimatedContent>
 
-    <AnimatedContent
-      :distance="100"
-      direction="vertical"
-      :reverse="false"
-      :duration="0.8"
-      ease="power3.out"
-      :initial-opacity="0"
-      :animate-opacity="true"
-      :scale="1"
-      :threshold="0.1"
-      :delay="0"
-    >
-    </AnimatedContent>
-
-    <AnimatedContent
-      :distance="60"
-      direction="vertical"
-      :reverse="false"
-      :duration="0.6"
-      ease="power3.out"
-      :initial-opacity="0"
-      :animate-opacity="true"
-      :scale="1"
-      :threshold="0.1"
-      :delay="0"
-    >
-      <SectionSplitter />
-    </AnimatedContent>
 
     <section id="contact" class="relative min-h-[800px] py-10 sm:py-14 scroll-mt-24 overflow-hidden">
       <div class="absolute inset-0">
